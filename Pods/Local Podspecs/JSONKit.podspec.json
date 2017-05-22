@@ -1,0 +1,17 @@
+{
+  "name": "JSONKit",
+  "version": "1.6",
+  "summary": "A Very High Performance Objective-C JSON Library.",
+  "homepage": "https://github.com/johnezang/JSONKit",
+  "authors": "John Engelhart",
+  "source": {
+    "git": "https://github.com/creativemess/JSONKit.git"
+  },
+  "source_files": "JSONKit.*",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

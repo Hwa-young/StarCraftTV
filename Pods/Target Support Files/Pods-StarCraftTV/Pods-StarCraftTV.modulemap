@@ -1,0 +1,6 @@
+framework module Pods_StarCraftTV {
+  umbrella header "Pods-StarCraftTV-umbrella.h"
+
+  export *
+  module * { export * }
+}
