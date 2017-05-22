@@ -9,10 +9,34 @@
 /* Begin PBXBuildFile section */
 		2B540C351ED272A2000A9879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C341ED272A2000A9879 /* main.m */; };
 		2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C371ED272A2000A9879 /* AppDelegate.m */; };
-		2B540C3B1ED272A2000A9879 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C3A1ED272A2000A9879 /* ViewController.m */; };
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
 		2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3F1ED272A2000A9879 /* Assets.xcassets */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
+		2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DBD1ED2B3AB00205FCA /* GAManager.m */; };
+		2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */; };
+		2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */; };
+		2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC61ED2B41900205FCA /* NSDictionary+Additions.m */; };
+		2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC81ED2B41900205FCA /* NSMutableArray+Additions.m */; };
+		2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DCA1ED2B41900205FCA /* NSMutableDictionary+Additions.m */; };
+		2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DCC1ED2B41900205FCA /* NSNumber+Additions.m */; };
+		2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DCE1ED2B41900205FCA /* NSObject+Additions.m */; };
+		2BA20E101ED2B41900205FCA /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DD01ED2B41900205FCA /* NSString+Additions.m */; };
+		2BA20E111ED2B41900205FCA /* UIAlertView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DD21ED2B41900205FCA /* UIAlertView+Additions.m */; };
+		2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DD41ED2B41900205FCA /* UIApplication+Additions.m */; };
+		2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DD61ED2B41900205FCA /* UIColor+Additions.m */; };
+		2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DDA1ED2B41900205FCA /* UIButton+Additions.m */; };
+		2BA20E151ED2B41900205FCA /* UIButton+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DDC1ED2B41900205FCA /* UIButton+Animation.m */; };
+		2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DDE1ED2B41900205FCA /* UIImageView+Additions.m */; };
+		2BA20E171ED2B41900205FCA /* UIScreen+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DE01ED2B41900205FCA /* UIScreen+Additions.m */; };
+		2BA20E181ED2B41900205FCA /* UIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DE21ED2B41900205FCA /* UIScrollView+Additions.m */; };
+		2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DE41ED2B41900205FCA /* UIView+Additions.m */; };
+		2BA20E1A1ED2B41900205FCA /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DE61ED2B41900205FCA /* UIView+Animations.m */; };
+		2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DF71ED2B41900205FCA /* AESCrypt.m */; };
+		2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DF91ED2B41900205FCA /* NSData+Base64.m */; };
+		2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */; };
+		2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */; };
+		2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492F81ED2881A0063B884 /* RootViewController.m */; };
+		2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492FB1ED2882E0063B884 /* BaseViewController.m */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +45,63 @@
 		2B540C341ED272A2000A9879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B540C361ED272A2000A9879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B540C371ED272A2000A9879 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B540C391ED272A2000A9879 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2B540C3A1ED272A2000A9879 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B540C3D1ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B540C3F1ED272A2000A9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B540C421ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BA20DBC1ED2B3AB00205FCA /* GAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAManager.h; sourceTree = "<group>"; };
+		2BA20DBD1ED2B3AB00205FCA /* GAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAManager.m; sourceTree = "<group>"; };
+		2BA20DC11ED2B41900205FCA /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
+		2BA20DC31ED2B41900205FCA /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
+		2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		2BA20DC51ED2B41900205FCA /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
+		2BA20DC61ED2B41900205FCA /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
+		2BA20DC71ED2B41900205FCA /* NSMutableArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Additions.h"; sourceTree = "<group>"; };
+		2BA20DC81ED2B41900205FCA /* NSMutableArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Additions.m"; sourceTree = "<group>"; };
+		2BA20DC91ED2B41900205FCA /* NSMutableDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Additions.h"; sourceTree = "<group>"; };
+		2BA20DCA1ED2B41900205FCA /* NSMutableDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Additions.m"; sourceTree = "<group>"; };
+		2BA20DCB1ED2B41900205FCA /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
+		2BA20DCC1ED2B41900205FCA /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
+		2BA20DCD1ED2B41900205FCA /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
+		2BA20DCE1ED2B41900205FCA /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
+		2BA20DCF1ED2B41900205FCA /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		2BA20DD01ED2B41900205FCA /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		2BA20DD11ED2B41900205FCA /* UIAlertView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Additions.h"; sourceTree = "<group>"; };
+		2BA20DD21ED2B41900205FCA /* UIAlertView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Additions.m"; sourceTree = "<group>"; };
+		2BA20DD31ED2B41900205FCA /* UIApplication+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Additions.h"; sourceTree = "<group>"; };
+		2BA20DD41ED2B41900205FCA /* UIApplication+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Additions.m"; sourceTree = "<group>"; };
+		2BA20DD51ED2B41900205FCA /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		2BA20DD61ED2B41900205FCA /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		2BA20DD71ED2B41900205FCA /* TF_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TF_Additions.h; sourceTree = "<group>"; };
+		2BA20DD91ED2B41900205FCA /* UIButton+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Additions.h"; sourceTree = "<group>"; };
+		2BA20DDA1ED2B41900205FCA /* UIButton+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Additions.m"; sourceTree = "<group>"; };
+		2BA20DDB1ED2B41900205FCA /* UIButton+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animation.h"; sourceTree = "<group>"; };
+		2BA20DDC1ED2B41900205FCA /* UIButton+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Animation.m"; sourceTree = "<group>"; };
+		2BA20DDD1ED2B41900205FCA /* UIImageView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Additions.h"; sourceTree = "<group>"; };
+		2BA20DDE1ED2B41900205FCA /* UIImageView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Additions.m"; sourceTree = "<group>"; };
+		2BA20DDF1ED2B41900205FCA /* UIScreen+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Additions.h"; sourceTree = "<group>"; };
+		2BA20DE01ED2B41900205FCA /* UIScreen+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Additions.m"; sourceTree = "<group>"; };
+		2BA20DE11ED2B41900205FCA /* UIScrollView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Additions.h"; sourceTree = "<group>"; };
+		2BA20DE21ED2B41900205FCA /* UIScrollView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Additions.m"; sourceTree = "<group>"; };
+		2BA20DE31ED2B41900205FCA /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		2BA20DE41ED2B41900205FCA /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		2BA20DE51ED2B41900205FCA /* UIView+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animations.h"; sourceTree = "<group>"; };
+		2BA20DE61ED2B41900205FCA /* UIView+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animations.m"; sourceTree = "<group>"; };
+		2BA20DF31ED2B41900205FCA /* TF_Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TF_Core.h; sourceTree = "<group>"; };
+		2BA20DF41ED2B41900205FCA /* TF_Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TF_Singleton.h; sourceTree = "<group>"; };
+		2BA20DF61ED2B41900205FCA /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		2BA20DF71ED2B41900205FCA /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		2BA20DF81ED2B41900205FCA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		2BA20DF91ED2B41900205FCA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		2BA20DFA1ED2B41900205FCA /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		2BA20DFC1ED2B41900205FCA /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		2BE492F71ED2881A0063B884 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2BE492F81ED2881A0063B884 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2BE492FA1ED2882E0063B884 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2BE492FB1ED2882E0063B884 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarCraftTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.debug.xcconfig"; sourceTree = "<group>"; };
 		F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -44,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B43CEAC1ED2AD4000398AB5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DBF1ED2B41900205FCA /* Addition */,
+				2BA20DF21ED2B41900205FCA /* Core */,
+				2BA20DF51ED2B41900205FCA /* Crypto */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		2B540C271ED272A2000A9879 = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +150,16 @@
 		2B540C321ED272A2000A9879 /* StarCraftTV */ = {
 			isa = PBXGroup;
 			children = (
+				2BE492F51ED287E60063B884 /* Classes */,
+				2BA20DBB1ED2B3AB00205FCA /* Manager */,
+				2B43CEAC1ED2AD4000398AB5 /* Library */,
 				2B540C361ED272A2000A9879 /* AppDelegate.h */,
 				2B540C371ED272A2000A9879 /* AppDelegate.m */,
-				2B540C391ED272A2000A9879 /* ViewController.h */,
-				2B540C3A1ED272A2000A9879 /* ViewController.m */,
 				2B540C3C1ED272A2000A9879 /* Main.storyboard */,
 				2B540C3F1ED272A2000A9879 /* Assets.xcassets */,
 				2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */,
 				2B540C441ED272A2000A9879 /* Info.plist */,
+				2BE492F61ED287F60063B884 /* Resource */,
 				2B540C331ED272A2000A9879 /* Supporting Files */,
 			);
 			path = StarCraftTV;
@@ -84,6 +171,117 @@
 				2B540C341ED272A2000A9879 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BA20DBB1ED2B3AB00205FCA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DBC1ED2B3AB00205FCA /* GAManager.h */,
+				2BA20DBD1ED2B3AB00205FCA /* GAManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2BA20DBF1ED2B41900205FCA /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DC01ED2B41900205FCA /* Object */,
+				2BA20DD71ED2B41900205FCA /* TF_Additions.h */,
+				2BA20DD81ED2B41900205FCA /* View */,
+			);
+			path = Addition;
+			sourceTree = "<group>";
+		};
+		2BA20DC01ED2B41900205FCA /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DC11ED2B41900205FCA /* NSArray+Additions.h */,
+				2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */,
+				2BA20DC31ED2B41900205FCA /* NSDate+Additions.h */,
+				2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */,
+				2BA20DC51ED2B41900205FCA /* NSDictionary+Additions.h */,
+				2BA20DC61ED2B41900205FCA /* NSDictionary+Additions.m */,
+				2BA20DC71ED2B41900205FCA /* NSMutableArray+Additions.h */,
+				2BA20DC81ED2B41900205FCA /* NSMutableArray+Additions.m */,
+				2BA20DC91ED2B41900205FCA /* NSMutableDictionary+Additions.h */,
+				2BA20DCA1ED2B41900205FCA /* NSMutableDictionary+Additions.m */,
+				2BA20DCB1ED2B41900205FCA /* NSNumber+Additions.h */,
+				2BA20DCC1ED2B41900205FCA /* NSNumber+Additions.m */,
+				2BA20DCD1ED2B41900205FCA /* NSObject+Additions.h */,
+				2BA20DCE1ED2B41900205FCA /* NSObject+Additions.m */,
+				2BA20DCF1ED2B41900205FCA /* NSString+Additions.h */,
+				2BA20DD01ED2B41900205FCA /* NSString+Additions.m */,
+				2BA20DD11ED2B41900205FCA /* UIAlertView+Additions.h */,
+				2BA20DD21ED2B41900205FCA /* UIAlertView+Additions.m */,
+				2BA20DD31ED2B41900205FCA /* UIApplication+Additions.h */,
+				2BA20DD41ED2B41900205FCA /* UIApplication+Additions.m */,
+				2BA20DD51ED2B41900205FCA /* UIColor+Additions.h */,
+				2BA20DD61ED2B41900205FCA /* UIColor+Additions.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		2BA20DD81ED2B41900205FCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DD91ED2B41900205FCA /* UIButton+Additions.h */,
+				2BA20DDA1ED2B41900205FCA /* UIButton+Additions.m */,
+				2BA20DDB1ED2B41900205FCA /* UIButton+Animation.h */,
+				2BA20DDC1ED2B41900205FCA /* UIButton+Animation.m */,
+				2BA20DDD1ED2B41900205FCA /* UIImageView+Additions.h */,
+				2BA20DDE1ED2B41900205FCA /* UIImageView+Additions.m */,
+				2BA20DDF1ED2B41900205FCA /* UIScreen+Additions.h */,
+				2BA20DE01ED2B41900205FCA /* UIScreen+Additions.m */,
+				2BA20DE11ED2B41900205FCA /* UIScrollView+Additions.h */,
+				2BA20DE21ED2B41900205FCA /* UIScrollView+Additions.m */,
+				2BA20DE31ED2B41900205FCA /* UIView+Additions.h */,
+				2BA20DE41ED2B41900205FCA /* UIView+Additions.m */,
+				2BA20DE51ED2B41900205FCA /* UIView+Animations.h */,
+				2BA20DE61ED2B41900205FCA /* UIView+Animations.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BA20DF21ED2B41900205FCA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DF31ED2B41900205FCA /* TF_Core.h */,
+				2BA20DF41ED2B41900205FCA /* TF_Singleton.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2BA20DF51ED2B41900205FCA /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				2BA20DF61ED2B41900205FCA /* AESCrypt.h */,
+				2BA20DF71ED2B41900205FCA /* AESCrypt.m */,
+				2BA20DF81ED2B41900205FCA /* NSData+Base64.h */,
+				2BA20DF91ED2B41900205FCA /* NSData+Base64.m */,
+				2BA20DFA1ED2B41900205FCA /* NSData+CommonCrypto.h */,
+				2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */,
+				2BA20DFC1ED2B41900205FCA /* NSString+Base64.h */,
+				2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		2BE492F51ED287E60063B884 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2BE492FA1ED2882E0063B884 /* BaseViewController.h */,
+				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
+				2BE492F71ED2881A0063B884 /* RootViewController.h */,
+				2BE492F81ED2881A0063B884 /* RootViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2BE492F61ED287F60063B884 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		822E1593D4E8929BDA1703C2 /* Frameworks */ = {
@@ -116,6 +314,7 @@
 				2B540C2E1ED272A2000A9879 /* Resources */,
 				05C36C25D32382E6471310EC /* [CP] Embed Pods Frameworks */,
 				981A044CB5845C378173932F /* [CP] Copy Pods Resources */,
+				2B43CEBA1ED2AE4700398AB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -189,6 +388,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2B43CEBA1ED2AE4700398AB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run aae3f88b790b6d16353e96c54f74e016a2baae6b bf989de4b91fac66f4c2971b7b69b45727b5933044012c24fdc6994650e27b68";
+		};
 		981A044CB5845C378173932F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,9 +438,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B540C3B1ED272A2000A9879 /* ViewController.m in Sources */,
 				2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */,
+				2BA20E111ED2B41900205FCA /* UIAlertView+Additions.m in Sources */,
+				2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */,
+				2BA20E171ED2B41900205FCA /* UIScreen+Additions.m in Sources */,
 				2B540C351ED272A2000A9879 /* main.m in Sources */,
+				2BA20E151ED2B41900205FCA /* UIButton+Animation.m in Sources */,
+				2BA20E1A1ED2B41900205FCA /* UIView+Animations.m in Sources */,
+				2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */,
+				2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */,
+				2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */,
+				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
+				2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */,
+				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
+				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
+				2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */,
+				2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */,
+				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
+				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
+				2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */,
+				2BA20E181ED2B41900205FCA /* UIScrollView+Additions.m in Sources */,
+				2BA20E101ED2B41900205FCA /* NSString+Additions.m in Sources */,
+				2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */,
+				2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */,
+				2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */,
+				2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */,
+				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
+				2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,9 +587,14 @@
 			baseConfigurationReference = 3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = T8T47CW9W7;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarCraftTV/Library/GoogleAnalytics",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.porjectx.StarCraftTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -367,6 +608,10 @@
 				DEVELOPMENT_TEAM = T8T47CW9W7;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarCraftTV/Library/GoogleAnalytics",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.porjectx.StarCraftTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

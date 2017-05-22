@@ -14,6 +14,26 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - Google/Analytics (3.0.3):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/Core (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+  - GoogleAnalytics (3.17.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - JSONKit (1.6)
   - Reachability (3.2)
   - SAMKeychain (1.5.2)
@@ -21,6 +41,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Crashlytics
+  - Fabric
+  - Google/Analytics
   - JSONKit (from `https://gist.github.com/marcdown/5282955/raw/2a52cfd92f112f2a52669420c82c1bb1efd15d2a/JSONKit.podspec`)
   - Reachability
   - SAMKeychain
@@ -37,11 +60,19 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   JSONKit: 7e5866e48126a798d2c23e221c107aae0983192f
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
 
-PODFILE CHECKSUM: 84cb57f33e1daba94d34eb572ccccfaf43cdeedf
+PODFILE CHECKSUM: b75c0a1bb279cbbf3501bd18555216076221ae30
 
 COCOAPODS: 1.2.1

@@ -90,6 +90,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSONKit/JSONKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
@@ -97,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSONKit/JSONKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"

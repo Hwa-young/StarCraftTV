@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1CD7CC897EA4D70777A14D254B61A7E8"
+               BlueprintIdentifier = "2561651E5B6FF055549E50877FE4F6D3"
                BuildableName = "Pods_StarCraftTV.framework"
                BlueprintName = "Pods-StarCraftTV"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1CD7CC897EA4D70777A14D254B61A7E8"
+            BlueprintIdentifier = "2561651E5B6FF055549E50877FE4F6D3"
             BuildableName = "Pods_StarCraftTV.framework"
             BlueprintName = "Pods-StarCraftTV"
             ReferencedContainer = "container:Pods.xcodeproj">
