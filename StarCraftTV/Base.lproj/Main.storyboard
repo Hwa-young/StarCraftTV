@@ -28,21 +28,51 @@
                                     <constraint firstAttribute="height" constant="50" id="khM-d2-Huh"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g4f-dk-pu9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Edu-ta-8ub">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="buv-kE-m2O">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7L0-lo-LTM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CXd-JN-hAP"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g4f-dk-pu9" secondAttribute="trailing" id="5kg-7c-29f"/>
+                            <constraint firstItem="g4f-dk-pu9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9fp-KU-Lri"/>
                             <constraint firstAttribute="trailing" secondItem="EXh-ew-lFt" secondAttribute="trailing" id="AlU-GX-CY3"/>
+                            <constraint firstItem="g4f-dk-pu9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EyW-a4-oQy"/>
                             <constraint firstItem="EXh-ew-lFt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HpY-0u-CNw"/>
+                            <constraint firstItem="EXh-ew-lFt" firstAttribute="top" secondItem="g4f-dk-pu9" secondAttribute="bottom" id="XmS-Qt-mgi"/>
                             <constraint firstItem="EXh-ew-lFt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="luV-yM-ezT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EXh-ew-lFt" secondAttribute="bottom" id="npk-nb-irW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="EXh-ew-lFt" id="UfL-aT-Ftb"/>
+                        <outlet property="mCollectionView" destination="g4f-dk-pu9" id="Hb2-P1-Xh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

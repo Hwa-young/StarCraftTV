@@ -14,5 +14,6 @@
 @interface RootViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 
 @end

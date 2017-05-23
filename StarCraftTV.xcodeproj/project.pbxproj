@@ -181,6 +181,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2B6029951ED421690011EA01 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B7BB3B71ED3DC1000913D5C /* CollectionViewCell.h */,
+				2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */,
+				2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		2BA20DBB1ED2B3AB00205FCA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,13 +287,11 @@
 		2BE492F51ED287E60063B884 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2B6029951ED421690011EA01 /* CollectionViewCell */,
 				2BE492FA1ED2882E0063B884 /* BaseViewController.h */,
 				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
 				2BE492F71ED2881A0063B884 /* RootViewController.h */,
 				2BE492F81ED2881A0063B884 /* RootViewController.m */,
-				2B7BB3B71ED3DC1000913D5C /* CollectionViewCell.h */,
-				2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */,
-				2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
