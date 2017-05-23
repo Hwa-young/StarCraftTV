@@ -12,6 +12,9 @@
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
 		2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3F1ED272A2000A9879 /* Assets.xcassets */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
+		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
+		2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */; };
+		2B7BB3BB1ED3DC1000913D5C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */; };
 		2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DBD1ED2B3AB00205FCA /* GAManager.m */; };
 		2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */; };
 		2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */; };
@@ -49,6 +52,10 @@
 		2B540C3F1ED272A2000A9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B540C421ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2B7BB3B71ED3DC1000913D5C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		2BA20DBC1ED2B3AB00205FCA /* GAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAManager.h; sourceTree = "<group>"; };
 		2BA20DBD1ED2B3AB00205FCA /* GAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAManager.m; sourceTree = "<group>"; };
 		2BA20DC11ED2B41900205FCA /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
@@ -158,6 +165,7 @@
 				2B540C3C1ED272A2000A9879 /* Main.storyboard */,
 				2B540C3F1ED272A2000A9879 /* Assets.xcassets */,
 				2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */,
+				2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */,
 				2B540C441ED272A2000A9879 /* Info.plist */,
 				2BE492F61ED287F60063B884 /* Resource */,
 				2B540C331ED272A2000A9879 /* Supporting Files */,
@@ -273,6 +281,9 @@
 				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
 				2BE492F71ED2881A0063B884 /* RootViewController.h */,
 				2BE492F81ED2881A0063B884 /* RootViewController.m */,
+				2B7BB3B71ED3DC1000913D5C /* CollectionViewCell.h */,
+				2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */,
+				2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -365,8 +376,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
+				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,
 				2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */,
+				2B7BB3BB1ED3DC1000913D5C /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +477,7 @@
 				2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */,
 				2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */,
 				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
+				2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */,
 				2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

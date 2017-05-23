@@ -30,7 +30,7 @@ DEF_SINGLETON(GAManager)
 + (void)startTracker
 {
 	[GAI sharedInstance].dispatchInterval = 20;
-	[GAI sharedInstance].trackUncaughtExceptions = YES;
+	[GAI sharedInstance].trackUncaughtExceptions = NO;
 	[[GAI sharedInstance] trackerWithTrackingId:kTrackingId];
 }
 

@@ -21,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267~3448799853"];
+    [FIRApp configure];
+    
     // Fabric Start
     [Fabric with:@[[Crashlytics class]]];
 

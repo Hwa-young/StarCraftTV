@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface RootViewController : BaseViewController
+@import GoogleMobileAds;
+
+@interface RootViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end

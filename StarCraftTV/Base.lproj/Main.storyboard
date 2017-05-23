@@ -20,8 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXh-ew-lFt" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="khM-d2-Huh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EXh-ew-lFt" secondAttribute="trailing" id="AlU-GX-CY3"/>
+                            <constraint firstItem="EXh-ew-lFt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HpY-0u-CNw"/>
+                            <constraint firstItem="EXh-ew-lFt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="luV-yM-ezT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EXh-ew-lFt" secondAttribute="bottom" id="npk-nb-irW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bannerView" destination="EXh-ew-lFt" id="UfL-aT-Ftb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
