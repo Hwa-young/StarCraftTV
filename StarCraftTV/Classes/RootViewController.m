@@ -9,6 +9,8 @@
 #import "RootViewController.h"
 #import "CollectionViewCell.h"
 
+#import <TLYShyNavBar/TLYShyNavBarManager.h>
+
 @interface RootViewController ()
 
 @end
@@ -28,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.shyNavBarManager.scrollView = self.mCollectionView;
     
     // request google admob banner view
     [self loadADdata];

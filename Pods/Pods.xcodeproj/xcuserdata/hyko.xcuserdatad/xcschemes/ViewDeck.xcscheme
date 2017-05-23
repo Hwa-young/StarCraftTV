@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CC7FE5F4AD2A94B5EB9A954ACA8CA957'
+               BlueprintIdentifier = '5F35E2424B9CE2BCF98648B177C7FF80'
                BlueprintName = 'ViewDeck'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ViewDeck.framework'>

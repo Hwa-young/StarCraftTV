@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TLYShyNavBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ViewDeck.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2561651E5B6FF055549E50877FE4F6D3</key>
+		<key>40A17127D1A7EF34860E456C292C4670</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E0E592F02737A1FF9088451A382EBE0</key>
+		<key>5F35E2424B9CE2BCF98648B177C7FF80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67948C564C4B80C405174003C30F12BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CF5BCB1859C03C84B96799E9AF1CF8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>871C7F43A46702BE192A7B83001B7A0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC7FE5F4AD2A94B5EB9A954ACA8CA957</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E38C65E2269F06CD5864BD973C7E1251</key>
 		<dict>
 			<key>primary</key>
 			<true/>

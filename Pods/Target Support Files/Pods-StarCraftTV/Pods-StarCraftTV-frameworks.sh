@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JSONKit/JSONKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TLYShyNavBar/TLYShyNavBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ViewDeck/ViewDeck.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -102,6 +103,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JSONKit/JSONKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Reachability/Reachability.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TLYShyNavBar/TLYShyNavBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ViewDeck/ViewDeck.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
