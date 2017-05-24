@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ViewDeck/IIViewDeckController.h>
 #import "BaseViewController.h"
 
 @import GoogleMobileAds;
 
-@interface RootViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDelegate>
+@interface RootViewController : IIViewDeckController
 
-@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
-@property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
+@property (weak, nonatomic) IBOutlet GADBannerView *mBannerView;
+
+- (IBAction)openCategoryViewController:(id)sender;
+- (IBAction)openSettingViewController:(id)sender;
 
 @end

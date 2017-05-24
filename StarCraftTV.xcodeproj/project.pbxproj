@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BBF1ED53F33008FFC17 /* icons8-info@2x.png */; };
+		2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC01ED53F33008FFC17 /* icons8-menu@2x.png */; };
+		2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC11ED53F33008FFC17 /* icons8-search@2x.png */; };
+		2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC21ED53F33008FFC17 /* icons8-settings@2x.png */; };
+		2B0D3BCE1ED53F33008FFC17 /* icons8-settings_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC31ED53F33008FFC17 /* icons8-settings_filled@2x.png */; };
+		2B0D3BCF1ED53F33008FFC17 /* icons8-info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC51ED53F33008FFC17 /* icons8-info@3x.png */; };
+		2B0D3BD01ED53F33008FFC17 /* icons8-menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC61ED53F33008FFC17 /* icons8-menu@3x.png */; };
+		2B0D3BD11ED53F33008FFC17 /* icons8-search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC71ED53F33008FFC17 /* icons8-search@3x.png */; };
+		2B0D3BD21ED53F33008FFC17 /* icons8-settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC81ED53F33008FFC17 /* icons8-settings@3x.png */; };
+		2B0D3BD31ED53F33008FFC17 /* icons8-settings_filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BC91ED53F33008FFC17 /* icons8-settings_filled@3x.png */; };
+		2B0D3BD71ED544BD008FFC17 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D3BD51ED544BD008FFC17 /* SettingViewController.m */; };
+		2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */; };
+		2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */; };
+		2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */; };
 		2B540C351ED272A2000A9879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C341ED272A2000A9879 /* main.m */; };
 		2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C371ED272A2000A9879 /* AppDelegate.m */; };
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
@@ -38,12 +52,32 @@
 		2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DF91ED2B41900205FCA /* NSData+Base64.m */; };
 		2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */; };
 		2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */; };
+		2BDF203E1ED558CE0078952D /* YoutubeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */; };
+		2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */; };
+		2BDF20431ED562870078952D /* YoutubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF20411ED562870078952D /* YoutubeViewController.m */; };
+		2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20421ED562870078952D /* YoutubeViewController.xib */; };
 		2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492F81ED2881A0063B884 /* RootViewController.m */; };
 		2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492FB1ED2882E0063B884 /* BaseViewController.m */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B0D3BBF1ED53F33008FFC17 /* icons8-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-info@2x.png"; sourceTree = "<group>"; };
+		2B0D3BC01ED53F33008FFC17 /* icons8-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu@2x.png"; sourceTree = "<group>"; };
+		2B0D3BC11ED53F33008FFC17 /* icons8-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-search@2x.png"; sourceTree = "<group>"; };
+		2B0D3BC21ED53F33008FFC17 /* icons8-settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings@2x.png"; sourceTree = "<group>"; };
+		2B0D3BC31ED53F33008FFC17 /* icons8-settings_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings_filled@2x.png"; sourceTree = "<group>"; };
+		2B0D3BC51ED53F33008FFC17 /* icons8-info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-info@3x.png"; sourceTree = "<group>"; };
+		2B0D3BC61ED53F33008FFC17 /* icons8-menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu@3x.png"; sourceTree = "<group>"; };
+		2B0D3BC71ED53F33008FFC17 /* icons8-search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-search@3x.png"; sourceTree = "<group>"; };
+		2B0D3BC81ED53F33008FFC17 /* icons8-settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings@3x.png"; sourceTree = "<group>"; };
+		2B0D3BC91ED53F33008FFC17 /* icons8-settings_filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings_filled@3x.png"; sourceTree = "<group>"; };
+		2B0D3BD41ED544BC008FFC17 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		2B0D3BD51ED544BD008FFC17 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
+		2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
+		2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
 		2B540C301ED272A2000A9879 /* StarCraftTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarCraftTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B540C341ED272A2000A9879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B540C361ED272A2000A9879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +139,12 @@
 		2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		2BA20DFC1ED2B41900205FCA /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeListViewController.h; sourceTree = "<group>"; };
+		2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeListViewController.m; sourceTree = "<group>"; };
+		2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoutubeListViewController.xib; sourceTree = "<group>"; };
+		2BDF20401ED562870078952D /* YoutubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeViewController.h; sourceTree = "<group>"; };
+		2BDF20411ED562870078952D /* YoutubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeViewController.m; sourceTree = "<group>"; };
+		2BDF20421ED562870078952D /* YoutubeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoutubeViewController.xib; sourceTree = "<group>"; };
 		2BE492F71ED2881A0063B884 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2BE492F81ED2881A0063B884 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2BE492FA1ED2882E0063B884 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -126,6 +166,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0D3BBE1ED53F33008FFC17 /* icons@2x */ = {
+			isa = PBXGroup;
+			children = (
+				2B0D3BBF1ED53F33008FFC17 /* icons8-info@2x.png */,
+				2B0D3BC01ED53F33008FFC17 /* icons8-menu@2x.png */,
+				2B0D3BC11ED53F33008FFC17 /* icons8-search@2x.png */,
+				2B0D3BC21ED53F33008FFC17 /* icons8-settings@2x.png */,
+				2B0D3BC31ED53F33008FFC17 /* icons8-settings_filled@2x.png */,
+			);
+			path = "icons@2x";
+			sourceTree = "<group>";
+		};
+		2B0D3BC41ED53F33008FFC17 /* icons@3x */ = {
+			isa = PBXGroup;
+			children = (
+				2B0D3BC51ED53F33008FFC17 /* icons8-info@3x.png */,
+				2B0D3BC61ED53F33008FFC17 /* icons8-menu@3x.png */,
+				2B0D3BC71ED53F33008FFC17 /* icons8-search@3x.png */,
+				2B0D3BC81ED53F33008FFC17 /* icons8-settings@3x.png */,
+				2B0D3BC91ED53F33008FFC17 /* icons8-settings_filled@3x.png */,
+			);
+			path = "icons@3x";
+			sourceTree = "<group>";
+		};
 		2B43CEAC1ED2AD4000398AB5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +356,18 @@
 				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
 				2BE492F71ED2881A0063B884 /* RootViewController.h */,
 				2BE492F81ED2881A0063B884 /* RootViewController.m */,
+				2B0D3BD41ED544BC008FFC17 /* SettingViewController.h */,
+				2B0D3BD51ED544BD008FFC17 /* SettingViewController.m */,
+				2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */,
+				2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */,
+				2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */,
+				2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */,
+				2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */,
+				2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */,
+				2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */,
+				2BDF20401ED562870078952D /* YoutubeViewController.h */,
+				2BDF20411ED562870078952D /* YoutubeViewController.m */,
+				2BDF20421ED562870078952D /* YoutubeViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -299,6 +375,8 @@
 		2BE492F61ED287F60063B884 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2B0D3BBE1ED53F33008FFC17 /* icons@2x */,
+				2B0D3BC41ED53F33008FFC17 /* icons@3x */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -383,9 +461,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */,
+				2B0D3BCF1ED53F33008FFC17 /* icons8-info@3x.png in Resources */,
+				2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */,
+				2B0D3BD01ED53F33008FFC17 /* icons8-menu@3x.png in Resources */,
+				2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */,
+				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
+				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
+				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
+				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
+				2B0D3BCE1ED53F33008FFC17 /* icons8-settings_filled@2x.png in Resources */,
+				2B0D3BD21ED53F33008FFC17 /* icons8-settings@3x.png in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
+				2B0D3BD31ED53F33008FFC17 /* icons8-settings_filled@3x.png in Resources */,
+				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
 				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,
+				2B0D3BD11ED53F33008FFC17 /* icons8-search@3x.png in Resources */,
 				2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */,
 				2B7BB3BB1ED3DC1000913D5C /* CollectionViewCell.xib in Resources */,
 			);
@@ -466,6 +558,7 @@
 				2B540C351ED272A2000A9879 /* main.m in Sources */,
 				2BA20E151ED2B41900205FCA /* UIButton+Animation.m in Sources */,
 				2BA20E1A1ED2B41900205FCA /* UIView+Animations.m in Sources */,
+				2B0D3BD71ED544BD008FFC17 /* SettingViewController.m in Sources */,
 				2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */,
 				2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */,
 				2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */,
@@ -476,9 +569,11 @@
 				2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */,
 				2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */,
 				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
+				2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */,
 				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
 				2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */,
 				2BA20E181ED2B41900205FCA /* UIScrollView+Additions.m in Sources */,
+				2BDF203E1ED558CE0078952D /* YoutubeListViewController.m in Sources */,
 				2BA20E101ED2B41900205FCA /* NSString+Additions.m in Sources */,
 				2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */,
 				2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */,
@@ -486,6 +581,7 @@
 				2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */,
 				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
 				2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */,
+				2BDF20431ED562870078952D /* YoutubeViewController.m in Sources */,
 				2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

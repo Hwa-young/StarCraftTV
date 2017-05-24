@@ -31,6 +31,8 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="161" y="56"/>
         </collectionViewCell>
     </objects>
 </document>
