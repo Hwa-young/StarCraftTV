@@ -11,11 +11,13 @@ use_frameworks!
 	pod 'SAMKeychain'
 	pod 'Reachability'
 	pod 'ViewDeck'
+	pod 'TLYShyNavBar'
+	pod 'XCDYouTubeKit'
+    
 	pod 'Fabric'
 	pod 'Crashlytics'
 	pod 'Google/Analytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
-    pod 'TLYShyNavBar'
 
 end
