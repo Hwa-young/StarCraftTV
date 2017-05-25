@@ -20,22 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXh-ew-lFt" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="khM-d2-Huh"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EXh-ew-lFt" secondAttribute="trailing" id="AlU-GX-CY3"/>
-                            <constraint firstItem="EXh-ew-lFt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HpY-0u-CNw"/>
-                            <constraint firstItem="EXh-ew-lFt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="luV-yM-ezT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EXh-ew-lFt" secondAttribute="bottom" id="npk-nb-irW"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KVV-Yr-Lxh">
                         <barButtonItem key="leftBarButtonItem" image="icons8-settings.png" style="plain" id="4b7-YJ-LoQ">
@@ -50,9 +35,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="mBannerView" destination="EXh-ew-lFt" id="CnG-eD-HDC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,16 +43,16 @@
         <!--Navigation Controller-->
         <scene sceneID="5Z7-1I-KKm">
             <objects>
-                <navigationController id="ifn-1h-7wN" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="ifn-1h-7wN" sceneMemberID="viewController">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5m1-u8-CbA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d5S-0y-wLx">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DhM-G4-cKo" customClass="CustomToolBar">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6f6-7Y-0R9"/>
@@ -79,6 +61,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lni-7d-tRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-796" y="-139"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="ea1-bt-B4d">
+            <objects>
+                <viewControllerPlaceholder id="ZFT-zF-UOO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oY-jC-EaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

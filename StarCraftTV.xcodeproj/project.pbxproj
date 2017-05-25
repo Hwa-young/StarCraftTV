@@ -56,6 +56,8 @@
 		2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */; };
 		2BDF20431ED562870078952D /* YoutubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF20411ED562870078952D /* YoutubeViewController.m */; };
 		2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20421ED562870078952D /* YoutubeViewController.xib */; };
+		2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */; };
+		2BDF20481ED5860A0078952D /* icons8-circled_play_filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20471ED5860A0078952D /* icons8-circled_play_filled@3x.png */; };
 		2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492F81ED2881A0063B884 /* RootViewController.m */; };
 		2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492FB1ED2882E0063B884 /* BaseViewController.m */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
@@ -145,6 +147,8 @@
 		2BDF20401ED562870078952D /* YoutubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeViewController.h; sourceTree = "<group>"; };
 		2BDF20411ED562870078952D /* YoutubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeViewController.m; sourceTree = "<group>"; };
 		2BDF20421ED562870078952D /* YoutubeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoutubeViewController.xib; sourceTree = "<group>"; };
+		2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-circled_play_filled@2x.png"; sourceTree = "<group>"; };
+		2BDF20471ED5860A0078952D /* icons8-circled_play_filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-circled_play_filled@3x.png"; sourceTree = "<group>"; };
 		2BE492F71ED2881A0063B884 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2BE492F81ED2881A0063B884 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2BE492FA1ED2882E0063B884 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		2B0D3BBE1ED53F33008FFC17 /* icons@2x */ = {
 			isa = PBXGroup;
 			children = (
+				2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */,
 				2B0D3BBF1ED53F33008FFC17 /* icons8-info@2x.png */,
 				2B0D3BC01ED53F33008FFC17 /* icons8-menu@2x.png */,
 				2B0D3BC11ED53F33008FFC17 /* icons8-search@2x.png */,
@@ -181,6 +186,7 @@
 		2B0D3BC41ED53F33008FFC17 /* icons@3x */ = {
 			isa = PBXGroup;
 			children = (
+				2BDF20471ED5860A0078952D /* icons8-circled_play_filled@3x.png */,
 				2B0D3BC51ED53F33008FFC17 /* icons8-info@3x.png */,
 				2B0D3BC61ED53F33008FFC17 /* icons8-menu@3x.png */,
 				2B0D3BC71ED53F33008FFC17 /* icons8-search@3x.png */,
@@ -472,6 +478,8 @@
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
 				2B0D3BCE1ED53F33008FFC17 /* icons8-settings_filled@2x.png in Resources */,
+				2BDF20481ED5860A0078952D /* icons8-circled_play_filled@3x.png in Resources */,
+				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
 				2B0D3BD21ED53F33008FFC17 /* icons8-settings@3x.png in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2B0D3BD31ED53F33008FFC17 /* icons8-settings_filled@3x.png in Resources */,

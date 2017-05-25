@@ -12,9 +12,14 @@
 
 @import GoogleMobileAds;
 
+@interface CustomToolBar : UIToolbar
+
+@end
+
+
 @interface RootViewController : IIViewDeckController
 
-@property (weak, nonatomic) IBOutlet GADBannerView *mBannerView;
+@property (strong, nonatomic) GADBannerView *mBannerView;
 
 - (IBAction)openCategoryViewController:(id)sender;
 - (IBAction)openSettingViewController:(id)sender;
