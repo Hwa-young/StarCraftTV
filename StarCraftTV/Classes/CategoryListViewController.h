@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryListViewController : UIViewController
+@interface CategoryListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *menuTableview;
 
 @end

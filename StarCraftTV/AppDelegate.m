@@ -32,9 +32,22 @@
     
     if (launchOptions == nil)
         [GAManager trackWithView:@"app start"];
+    
+    [self loadBootData];
 
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)loadBootData
+{
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"boot" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+    NSError *error = nil;
+    NSDictionary *dicData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:dicData forKey:@"boot"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
