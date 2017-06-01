@@ -7,19 +7,22 @@
 //
 
 #import "SettingViewController.h"
-
+#import "CategoryListViewController.h"
 @interface SettingViewController ()
 
 @end
 
 @implementation SettingViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self.menuTableview setScrollsToTop:YES];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -37,8 +40,18 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        
+        [cell.textLabel setText:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        [cell.textLabel setTextColor:[UIColor whiteColor]];
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CategoryListViewController *category = [[CategoryListViewController alloc] init];
+    [self.navigationController pushViewController:category animated:YES];
 }
 
 /*

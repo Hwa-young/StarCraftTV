@@ -12,6 +12,7 @@
 #import "VideoListCollectionViewCell.h"
 #import "Video.h"
 #import "VideoPlayerViewController.h"
+#import "YoutubeViewController.h"
 
 @interface VideoListCollectionViewController ()
 
@@ -96,13 +97,16 @@
 
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
     
-    Video* video=[[Video alloc] init];
-    video=[_videoArray objectAtIndex:indexPath.row];
-    NSLog(@"the video data is %@",video.showAllVideoData);
-    VideoPlayerViewController* videoPlayerVC=[self.storyboard instantiateViewControllerWithIdentifier:@"VideoPlayerVC"];
-    videoPlayerVC.videoID=video.videoID;
-    [self.navigationController pushViewController:videoPlayerVC animated:YES];
+//    Video* video=[[Video alloc] init];
+//    video=[_videoArray objectAtIndex:indexPath.row];
+//    NSLog(@"the video data is %@",video.showAllVideoData);
+//    VideoPlayerViewController* videoPlayerVC=[self.storyboard instantiateViewControllerWithIdentifier:@"VideoPlayerVC"];
+//    videoPlayerVC.videoID=video.videoID;
+//    [self.navigationController pushViewController:videoPlayerVC animated:YES];
     
     return YES;
 }

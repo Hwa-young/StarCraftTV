@@ -14,14 +14,10 @@
 #import "VideoListCollectionViewController.h"
 #import "Video.h"
 
-@interface PlayListTableViewController (){
-    NSMutableArray *playListArray;
-}
-
-@end
-
 @implementation PlayListTableViewController
--(void)viewWillAppear:(BOOL)animated{
+
+- (void)viewWillAppear:(BOOL)animated
+{
 //    NSString* channelID=@"UCBkNpeyvBO2TdPGVC_PsPUA";
 //    NSString* YOUTUBEAPIKEY=@"AIzaSyDzrIplc-gRzsviQyn8ndTv7Usaa4SvBdU";
 //    items=[[NSArray alloc] init];
@@ -34,41 +30,45 @@
     
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+    [self.tableView registerClass:[PlayListTableViewCell self] forCellReuseIdentifier:@"PlayListTableViewCell"];
+    
     [super viewDidLoad];
-    self.tableView.delegate=self;
     playListArray=[[NSMutableArray alloc] init];
     [self serviceCallForPlayList];
     
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     self.clearsSelectionOnViewWillAppear = YES;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
 //#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
 //#warning Incomplete implementation, return the number of rows
     return playListArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PlayListTableViewCell *cell = (PlayListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlayListTableViewCell *cell = (PlayListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PlayListTableViewCell"];
     // Configure the cell...
     
     Playlist *playlist=[[Playlist alloc] init];
@@ -76,37 +76,38 @@
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
     playlist=[playListArray objectAtIndex:indexPath.row];
     cell.playListName.text=playlist.playlistName;
+    cell.playListName.textColor=[UIColor redColor];
     cell.playListImg.image=image;
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     Playlist* playlist=[[Playlist alloc] init];
     playlist=[playListArray objectAtIndex:indexPath.row];
     NSLog(@"the items %@",playlist.playListID);
     [self serviceCallForVideos:playlist.playListID];
-    
-    
-    
-    
 }
 
 #pragma mark - API Method
--(void)serviceCallForPlayList{
+
+- (void)serviceCallForPlayList
+{
     NSString* channelID=yCHANNELID;
-    NSDictionary* userData=@{
-                             
-                             };
+    NSDictionary* userData=@{};
     [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=%@&key=%@",channelID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getData:) andTarget:self];
 //    [SVProgressHUD show];
 }
--(void)serviceCallForVideos:(NSString*)playlistID{
-    NSDictionary* userData=@{
-                             
-                             };
+
+- (void)serviceCallForVideos:(NSString*)playlistID
+{
+    NSDictionary* userData=@{};
     [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=%@&key=%@",playlistID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getVideoData:) andTarget:self];
 //    [SVProgressHUD show];
 }
--(void)getData:(id)response{
+
+- (void)getData:(id)response
+{
    // NSLog(@"the response is %@",response);
      NSArray* items=[response valueForKey:yITEMS];
     
@@ -125,10 +126,10 @@
     NSLog(@"the items are %@",[items objectAtIndex:0]);
     [self.tableView reloadData];
 //    [SVProgressHUD dismiss];
-    
 }
 
--(void)getVideoData:(id)response{
+- (void)getVideoData:(id)response
+{
     NSLog(@"the videoData is %@",response);
     NSArray* videos=[response valueForKey:yITEMS];
     NSMutableArray* allVideos=[[NSMutableArray alloc] init];
@@ -144,60 +145,16 @@
         NSLog(@"the video specific data is %@",vid.showAllVideoData);
     }
 //    [SVProgressHUD dismiss];
-    VideoListCollectionViewController *collectionView =[self.storyboard instantiateViewControllerWithIdentifier:@"VideoListVC"];
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    VideoListCollectionViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"VideoListVC"];
     collectionView.videoArray=allVideos;
     [self.navigationController pushViewController:collectionView animated:TRUE];
-    
 }
--(void)requestError:(id)error{
+
+- (void)requestError:(id)error
+{
     NSLog(@"the error is %@",error);
 }
-
-
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

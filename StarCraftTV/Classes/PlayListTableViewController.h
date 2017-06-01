@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayListTableViewController : UITableViewController
+{
+    NSMutableArray *playListArray;
+}
 
 
 @end

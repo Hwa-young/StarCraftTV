@@ -13,7 +13,6 @@ use_frameworks!
 	pod 'ViewDeck'
 	pod 'TLYShyNavBar'
 	pod 'XCDYouTubeKit'
-    
 	pod 'Fabric'
 	pod 'Crashlytics'
 	pod 'Google/Analytics'

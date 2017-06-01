@@ -25,7 +25,7 @@
 
 - (void)setSelected:(BOOL)selected
 {
-    NSLog(@"Selected");
+    //NSLog(@"Selected");
 }
 
 @end

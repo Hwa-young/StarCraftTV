@@ -10,4 +10,7 @@
 
 @interface YoutubeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeightConstraint;
+
 @end

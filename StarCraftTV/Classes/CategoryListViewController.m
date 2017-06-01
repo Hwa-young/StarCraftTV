@@ -7,6 +7,7 @@
 //
 
 #import "CategoryListViewController.h"
+#import "PlayListTableViewController.h"
 
 @interface CategoryListViewController ()
 
@@ -14,12 +15,15 @@
 
 @implementation CategoryListViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self.menuTableview setScrollsToTop:YES];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -37,18 +41,19 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        
+        [cell.textLabel setText:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        [cell.textLabel setTextColor:[UIColor whiteColor]];
     }
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PlayListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"PlayListTableViewController"];
+    [self.navigationController pushViewController:collectionView animated:TRUE];
 }
-*/
 
 @end
