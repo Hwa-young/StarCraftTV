@@ -98,15 +98,22 @@
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-    
 //    Video* video=[[Video alloc] init];
 //    video=[_videoArray objectAtIndex:indexPath.row];
 //    NSLog(@"the video data is %@",video.showAllVideoData);
 //    VideoPlayerViewController* videoPlayerVC=[self.storyboard instantiateViewControllerWithIdentifier:@"VideoPlayerVC"];
 //    videoPlayerVC.videoID=video.videoID;
 //    [self.navigationController pushViewController:videoPlayerVC animated:YES];
+
+    Video* video=[[Video alloc] init];
+    video=[_videoArray objectAtIndex:indexPath.row];
+
+    
+    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    [vc setVideoID:video.videoID];
+    [vc setVideoThumnailImage:video.videoImg];
+
+    [self.navigationController pushViewController:vc animated:YES];
     
     return YES;
 }

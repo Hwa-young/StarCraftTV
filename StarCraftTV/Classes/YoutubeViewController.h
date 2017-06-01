@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTPlayerView.h"
 
-@interface YoutubeViewController : UIViewController
+@interface YoutubeViewController : UIViewController <YTPlayerViewDelegate>
 
+@property (strong, nonatomic) NSString* videoID;
+@property (strong, nonatomic) NSString* videoThumnailImage;
+
+@property (weak, nonatomic) IBOutlet UIView             *playerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeightConstraint;
 
