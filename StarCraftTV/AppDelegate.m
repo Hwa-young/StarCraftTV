@@ -12,6 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <Google/Analytics.h>
 
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +22,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    [[[SDWebImageManager sharedManager] imageCache] deleteOldFiles];
+//    [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
+    
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267~3448799853"];
     [FIRApp configure];
     

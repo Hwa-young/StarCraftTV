@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TLYShyNavBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1649FAF405E8E45F09F9FFDC5E6B713E</key>
+		<key>057C23BBCC98E57C29BCE049C480EE12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23DC750CDD80B0720D970C849C73205C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33207DC0606836B6D306D15F318DB90C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C6BED74FEEC73C8AA7069EDDD517FEF</key>
+		<key>5B222E0ABDD5D834B1B38848B865178F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DA8787CC92F77B4955B513E792ECA43</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4BAB1E9B0D50E8AC87482048BE824FC8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7CEFABD8B8DC0987454E4FFAABD7EF41</key>
+		<key>949AA7BFA0D866B79ADE79115BF35B34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +107,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C899F36E7AA303FDF7141F8E6C3FDC9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5680ADAC6AA756C9EDB169319C971A5</key>
+		<key>FDFE54B8E55D7399E8C68C2D0C1FBEDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCEC8823E2F4BD0F5B07F49A4C74F43D</key>
+		<key>FE774CFD790B1F223924F3006318109A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
