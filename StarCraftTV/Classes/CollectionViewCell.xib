@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,13 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9v-ih-qQ6">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H9v-ih-qQ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Information" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owm-z5-Z2e">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owm-z5-Z2e">
                         <rect key="frame" x="10" y="60" width="355" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,6 +30,16 @@
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="H9v-ih-qQ6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5My-gD-Ubm"/>
+                <constraint firstAttribute="trailing" secondItem="owm-z5-Z2e" secondAttribute="trailing" constant="10" id="Kth-QR-jkb"/>
+                <constraint firstItem="owm-z5-Z2e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="SCg-XO-PVk"/>
+                <constraint firstAttribute="trailing" secondItem="H9v-ih-qQ6" secondAttribute="trailing" id="bwn-us-GUs"/>
+                <constraint firstAttribute="bottom" secondItem="H9v-ih-qQ6" secondAttribute="bottom" id="c2B-6O-XcI"/>
+                <constraint firstItem="owm-z5-Z2e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="cXM-KZ-pP3"/>
+                <constraint firstAttribute="bottom" secondItem="owm-z5-Z2e" secondAttribute="bottom" constant="10" id="fiL-cz-Tyn"/>
+                <constraint firstItem="H9v-ih-qQ6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="saj-8U-B9M"/>
+            </constraints>
             <point key="canvasLocation" x="161" y="56"/>
         </collectionViewCell>
     </objects>

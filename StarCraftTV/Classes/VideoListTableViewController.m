@@ -66,6 +66,7 @@
     cell.videoName.text=video.videoName;
     cell.videoImage.image=image;
 
+
     return cell;
 }
 

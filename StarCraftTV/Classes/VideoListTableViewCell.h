@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *videoImage;
 @property (strong, nonatomic) IBOutlet UILabel *videoName;
+@property (strong, nonatomic) IBOutlet UILabel *videoDutaionTime;
 
 @end

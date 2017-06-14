@@ -100,7 +100,7 @@
 - (void)serviceCallForVideos:(NSString*)playlistID
 {
     NSDictionary* userData = @{};
-    [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=%@&key=%@",playlistID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getVideoData:) andTarget:self];
+    [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&maxResults=50&playlistId=%@&key=%@",playlistID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getVideoData:) andTarget:self];
 }
 
 - (void)getData:(id)response
