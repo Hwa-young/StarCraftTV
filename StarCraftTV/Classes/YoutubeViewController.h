@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YTPlayerView.h"
 
-@interface YoutubeViewController : UIViewController <YTPlayerViewDelegate>
+@interface YoutubeViewController : UIViewController
 
 @property (strong, nonatomic) NSString* videoID;
 @property (strong, nonatomic) NSString* videoThumnailImage;

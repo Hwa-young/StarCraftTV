@@ -20,7 +20,5 @@ use_frameworks!
 	pod 'Google/Analytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
-    
-    pod "youtube-ios-player-helper", "~> 0.1.4"
 
 end

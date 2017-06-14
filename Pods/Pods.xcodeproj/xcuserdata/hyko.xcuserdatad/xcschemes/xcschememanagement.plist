@@ -59,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>youtube-ios-player-helper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -72,32 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A8CC80A9B890E8B2AA9843FAD608D80</key>
+		<key>12C419299D42F725E1AEE11151D37363</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>424CB347C8CC61824A6A3F0F0193F42A</key>
+		<key>360D20F240D12C9088CFBA0AA8213A81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57AC99E84515D833DDAA70EC32996B02</key>
+		<key>6E0B8A9C38261AC1326E07A32F397468</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C362B1E59FC75CAE9FBCB3A4E7B5402</key>
+		<key>74C5D7505360C9E537D7FAD69E8AB687</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7ED6C9D30ECF8A61C21D5D030F942628</key>
+		<key>7E137932F54EE8EDC62AF2BA858D8D17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9456FBD05795BDBCA922CFD0F900BF74</key>
+		<key>B20EA2C9B4BD40AD90A6C3D7DA050B20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD5ADBEEBD1C29D3FD613A175D39DE0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CCC2E35CD98EED1511ECE341DBD50688</key>
+		<key>B3877CED2EC886BE1379A0762E5756F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8ECDFAB0B63B5D3A645F17226D1772F</key>
+		<key>E9F1D52DF00C4A07E70A20EC7F8CE636</key>
 		<dict>
 			<key>primary</key>
 			<true/>

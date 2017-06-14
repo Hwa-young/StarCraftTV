@@ -28,22 +28,6 @@
 
     [self.videoPlayerViewController.moviePlayer prepareToPlay];
     self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
-
-    
-
-//    NSString *videoId =_videoID;
-//
-//    NSDictionary *playerVars = @{
-//                                 @"controls" : @0,
-//                                 @"playsinline" : @1,
-//                                 @"autohide" : @1,
-//                                 @"showinfo" : @0,
-//                                 @"modestbranding" : @1,
-//                                 @"origin" :@"http://www.youtube.com"
-//                                 };
-//    self.playerView.delegate = self;
-//    [self.playerView loadWithVideoId:videoId playerVars:playerVars];
-
 }
 
 - (void) viewWillDisappear:(BOOL)animated

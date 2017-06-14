@@ -51,7 +51,6 @@ PODS:
   - TLYShyNavBar (1.1.1)
   - ViewDeck (3.1.0)
   - XCDYouTubeKit (2.5.5)
-  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - AFNetworking
@@ -68,7 +67,6 @@ DEPENDENCIES:
   - TLYShyNavBar
   - ViewDeck
   - XCDYouTubeKit
-  - youtube-ios-player-helper (~> 0.1.4)
 
 EXTERNAL SOURCES:
   JSONKit:
@@ -99,8 +97,7 @@ SPEC CHECKSUMS:
   TLYShyNavBar: d200e598923fbc2bd21a5c5efdfabf4898b11da0
   ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
-  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: be6c829727af6224b98b3ba09570ae62073358db
+PODFILE CHECKSUM: c1393da124c8e625137a62c5f41ba050256c5a4f
 
 COCOAPODS: 1.2.1

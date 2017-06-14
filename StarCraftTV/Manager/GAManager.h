@@ -13,16 +13,9 @@
 
 AS_SINGLETON(GAManager)
 
-+ (void)startTracker;
-
-+ (void)stopTracker;
-
 + (void)trackWithView:(NSString*)titleString;
-
 + (void)startTrackingSession;
-
 + (void)endTrackingSession;
-
 + (void)dispatchUsingBackgroundTask;
 
 

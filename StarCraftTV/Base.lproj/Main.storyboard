@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="-140.77961019490255"/>
+            <point key="canvasLocation" x="-309" y="-141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z7-1I-KKm">
@@ -60,7 +60,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lni-7d-tRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="-139"/>
+            <point key="canvasLocation" x="-755" y="-141"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="ea1-bt-B4d">
@@ -84,12 +84,12 @@
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <segue destination="om0-Ru-7ss" kind="push" id="M89-jF-UFE"/>
+                        <segue destination="om0-Ru-7ss" kind="show" id="M89-jF-UFE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xP1-gT-2gT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="-140.77961019490255"/>
+            <point key="canvasLocation" x="126" y="-141"/>
         </scene>
         <!--Video List Table View Controller-->
         <scene sceneID="cJt-be-Vst">
@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lpu-b4-93Y" id="NU1-t4-hvi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSX-fx-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="-141"/>
+            <point key="canvasLocation" x="577" y="-140"/>
         </scene>
     </scenes>
     <resources>
