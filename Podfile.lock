@@ -16,7 +16,6 @@ PODS:
     - AFNetworking/NSURLSession
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
-  - DGActivityIndicatorView (2.1.1)
   - Fabric (1.6.11)
   - Firebase/AdMob (3.17.0):
     - Firebase/Core
@@ -48,6 +47,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.1.2)
   - TLYShyNavBar (1.1.1)
   - ViewDeck (3.1.0)
   - XCDYouTubeKit (2.5.5)
@@ -56,7 +56,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Crashlytics
-  - DGActivityIndicatorView
   - Fabric
   - Firebase/AdMob
   - Firebase/Core
@@ -65,6 +64,7 @@ DEPENDENCIES:
   - Reachability
   - SAMKeychain
   - SDWebImage (~> 3.8)
+  - SVProgressHUD
   - TLYShyNavBar
   - ViewDeck
   - XCDYouTubeKit
@@ -82,7 +82,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
@@ -96,11 +95,12 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TLYShyNavBar: d200e598923fbc2bd21a5c5efdfabf4898b11da0
   ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 3ddd0f192a136ac42ce283ab17e1d367c677b992
+PODFILE CHECKSUM: be6c829727af6224b98b3ba09570ae62073358db
 
 COCOAPODS: 1.2.1

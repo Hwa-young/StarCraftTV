@@ -11,8 +11,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Google/Analytics.h>
-//#import <SDW>
-//#import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/SDWebImageManager.h>
 
 
 @interface AppDelegate ()
@@ -24,8 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [[[SDWebImageManager sharedManager] imageCache] clearDiskOnCompletion:nil];
-//    [[[[SDWebImageManager sharedManager] imageCache] config] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
+    [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
+    [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
     
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267~3448799853"];
     [FIRApp configure];

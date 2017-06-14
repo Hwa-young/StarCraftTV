@@ -19,9 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 
-    
     NSString *videoId =_videoID;
     NSString *videoIdentifier = videoId;
     self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];
@@ -88,15 +86,5 @@
                                  completion:^(id<UIViewControllerTransitionCoordinatorContext> context){
                                  }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

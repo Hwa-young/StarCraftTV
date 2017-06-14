@@ -9,9 +9,10 @@
 #import "Video.h"
 
 @implementation Video
--(NSString*)showAllVideoData{
+
+-(NSString*)showAllVideoData
+{
     return [NSString stringWithFormat:@"the video name is %@ video image url is %@ video id is %@",_videoName,_videoImg,_videoID];
 }
-
 
 @end

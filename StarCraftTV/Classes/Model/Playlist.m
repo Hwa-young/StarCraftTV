@@ -9,7 +9,9 @@
 #import "Playlist.h"
 
 @implementation Playlist
--(NSString*)showPlaylistData{
+
+-(NSString*)showPlaylistData
+{
     return [NSString stringWithFormat:@"the playlist name is %@ the playlist image url is %@ the playlist id is %@",self.playlistName,self.imgURL,self.playListID];
 }
 

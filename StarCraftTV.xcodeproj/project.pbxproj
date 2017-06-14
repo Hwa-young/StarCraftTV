@@ -21,6 +21,10 @@
 		2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */; };
 		2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */; };
 		2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */; };
+		2B35CD231EF10BFE00584B78 /* PlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */; };
+		2B35CD261EF11AF700584B78 /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */; };
+		2B35CD2A1EF11BB500584B78 /* VideoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CD281EF11BB500584B78 /* VideoListTableViewCell.m */; };
+		2B35CD2B1EF11BB500584B78 /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B35CD291EF11BB500584B78 /* VideoListTableViewCell.xib */; };
 		2B540C351ED272A2000A9879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C341ED272A2000A9879 /* main.m */; };
 		2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C371ED272A2000A9879 /* AppDelegate.m */; };
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
@@ -31,10 +35,7 @@
 		2B5E97B51EDD3A8F0006DAD8 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97B31EDD3A8F0006DAD8 /* Video.m */; };
 		2B5E97BB1EDD3BAC0006DAD8 /* HTTPRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97BA1EDD3BAC0006DAD8 /* HTTPRequestHandler.m */; };
 		2B5E97C21EDD3C100006DAD8 /* PlayListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97BD1EDD3C100006DAD8 /* PlayListTableViewController.m */; };
-		2B5E97C31EDD3C100006DAD8 /* VideoListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97BF1EDD3C100006DAD8 /* VideoListCollectionViewController.m */; };
-		2B5E97C41EDD3C100006DAD8 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97C11EDD3C100006DAD8 /* VideoPlayerViewController.m */; };
 		2B5E97C91EDD3C9B0006DAD8 /* PlayListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97C61EDD3C9B0006DAD8 /* PlayListTableViewCell.m */; };
-		2B5E97CA1EDD3C9B0006DAD8 /* VideoListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97C81EDD3C9B0006DAD8 /* VideoListCollectionViewCell.m */; };
 		2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
 		2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */; };
@@ -90,6 +91,12 @@
 		2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
 		2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
 		2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListTableViewCell.xib; sourceTree = "<group>"; };
+		2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
+		2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
+		2B35CD271EF11BB500584B78 /* VideoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewCell.h; sourceTree = "<group>"; };
+		2B35CD281EF11BB500584B78 /* VideoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewCell.m; sourceTree = "<group>"; };
+		2B35CD291EF11BB500584B78 /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
 		2B540C301ED272A2000A9879 /* StarCraftTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarCraftTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B540C341ED272A2000A9879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B540C361ED272A2000A9879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,14 +115,8 @@
 		2B5E97BA1EDD3BAC0006DAD8 /* HTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestHandler.m; sourceTree = "<group>"; };
 		2B5E97BC1EDD3C100006DAD8 /* PlayListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListTableViewController.h; sourceTree = "<group>"; };
 		2B5E97BD1EDD3C100006DAD8 /* PlayListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListTableViewController.m; sourceTree = "<group>"; };
-		2B5E97BE1EDD3C100006DAD8 /* VideoListCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCollectionViewController.h; sourceTree = "<group>"; };
-		2B5E97BF1EDD3C100006DAD8 /* VideoListCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCollectionViewController.m; sourceTree = "<group>"; };
-		2B5E97C01EDD3C100006DAD8 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
-		2B5E97C11EDD3C100006DAD8 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		2B5E97C51EDD3C9B0006DAD8 /* PlayListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListTableViewCell.h; sourceTree = "<group>"; };
 		2B5E97C61EDD3C9B0006DAD8 /* PlayListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListTableViewCell.m; sourceTree = "<group>"; };
-		2B5E97C71EDD3C9B0006DAD8 /* VideoListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCollectionViewCell.h; sourceTree = "<group>"; };
-		2B5E97C81EDD3C9B0006DAD8 /* VideoListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCollectionViewCell.m; sourceTree = "<group>"; };
 		2B660E1B1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
 		2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -226,6 +227,46 @@
 			path = "icons@3x";
 			sourceTree = "<group>";
 		};
+		2B35CD2C1EF120FC00584B78 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B0D3BD41ED544BC008FFC17 /* SettingViewController.h */,
+				2B0D3BD51ED544BD008FFC17 /* SettingViewController.m */,
+				2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */,
+			);
+			name = SettingViewController;
+			sourceTree = "<group>";
+		};
+		2B35CD2D1EF1210D00584B78 /* CategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */,
+				2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */,
+				2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */,
+			);
+			name = CategoryViewController;
+			sourceTree = "<group>";
+		};
+		2B35CD2E1EF1216C00584B78 /* Main Youtube List ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */,
+				2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */,
+				2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */,
+			);
+			name = "Main Youtube List ViewController";
+			sourceTree = "<group>";
+		};
+		2B35CD2F1EF1219D00584B78 /* YoutubeViewController(Player) */ = {
+			isa = PBXGroup;
+			children = (
+				2BDF20401ED562870078952D /* YoutubeViewController.h */,
+				2BDF20411ED562870078952D /* YoutubeViewController.m */,
+				2BDF20421ED562870078952D /* YoutubeViewController.xib */,
+			);
+			name = "YoutubeViewController(Player)";
+			sourceTree = "<group>";
+		};
 		2B43CEAC1ED2AD4000398AB5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,18 +350,20 @@
 			path = HTTPRequestHandler;
 			sourceTree = "<group>";
 		};
-		2B6029951ED421690011EA01 /* CollectionViewCell */ = {
+		2B6029951ED421690011EA01 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				2B5E97C51EDD3C9B0006DAD8 /* PlayListTableViewCell.h */,
 				2B5E97C61EDD3C9B0006DAD8 /* PlayListTableViewCell.m */,
-				2B5E97C71EDD3C9B0006DAD8 /* VideoListCollectionViewCell.h */,
-				2B5E97C81EDD3C9B0006DAD8 /* VideoListCollectionViewCell.m */,
+				2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */,
 				2B7BB3B71ED3DC1000913D5C /* CollectionViewCell.h */,
 				2B7BB3B81ED3DC1000913D5C /* CollectionViewCell.m */,
 				2B7BB3B91ED3DC1000913D5C /* CollectionViewCell.xib */,
+				2B35CD271EF11BB500584B78 /* VideoListTableViewCell.h */,
+				2B35CD281EF11BB500584B78 /* VideoListTableViewCell.m */,
+				2B35CD291EF11BB500584B78 /* VideoListTableViewCell.xib */,
 			);
-			name = CollectionViewCell;
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		2B660E1A1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback */ = {
@@ -430,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				2B5E97B61EDD3B320006DAD8 /* Constants */,
-				2B6029951ED421690011EA01 /* CollectionViewCell */,
+				2B6029951ED421690011EA01 /* TableViewCell */,
 				2B5E97B81EDD3BAC0006DAD8 /* HTTPRequestHandler */,
 				2B5E97AF1EDD3A8F0006DAD8 /* Model */,
 				2B660E1A1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback */,
@@ -438,24 +481,14 @@
 				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
 				2BE492F71ED2881A0063B884 /* RootViewController.h */,
 				2BE492F81ED2881A0063B884 /* RootViewController.m */,
-				2B0D3BD41ED544BC008FFC17 /* SettingViewController.h */,
-				2B0D3BD51ED544BD008FFC17 /* SettingViewController.m */,
-				2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */,
-				2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */,
-				2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */,
-				2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */,
-				2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */,
-				2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */,
-				2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */,
-				2BDF20401ED562870078952D /* YoutubeViewController.h */,
-				2BDF20411ED562870078952D /* YoutubeViewController.m */,
-				2BDF20421ED562870078952D /* YoutubeViewController.xib */,
+				2B35CD2E1EF1216C00584B78 /* Main Youtube List ViewController */,
+				2B35CD2C1EF120FC00584B78 /* SettingViewController */,
+				2B35CD2D1EF1210D00584B78 /* CategoryViewController */,
+				2B35CD2F1EF1219D00584B78 /* YoutubeViewController(Player) */,
 				2B5E97BC1EDD3C100006DAD8 /* PlayListTableViewController.h */,
 				2B5E97BD1EDD3C100006DAD8 /* PlayListTableViewController.m */,
-				2B5E97BE1EDD3C100006DAD8 /* VideoListCollectionViewController.h */,
-				2B5E97BF1EDD3C100006DAD8 /* VideoListCollectionViewController.m */,
-				2B5E97C01EDD3C100006DAD8 /* VideoPlayerViewController.h */,
-				2B5E97C11EDD3C100006DAD8 /* VideoPlayerViewController.m */,
+				2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */,
+				2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -551,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */,
+				2B35CD231EF10BFE00584B78 /* PlayListTableViewCell.xib in Resources */,
 				2B0D3BCF1ED53F33008FFC17 /* icons8-info@3x.png in Resources */,
 				2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */,
 				2B0D3BD01ED53F33008FFC17 /* icons8-menu@3x.png in Resources */,
@@ -558,6 +592,7 @@
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
+				2B35CD2B1EF11BB500584B78 /* VideoListTableViewCell.xib in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
@@ -643,7 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5E97C31EDD3C100006DAD8 /* VideoListCollectionViewController.m in Sources */,
+				2B35CD261EF11AF700584B78 /* VideoListTableViewController.m in Sources */,
 				2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */,
 				2BA20E111ED2B41900205FCA /* UIAlertView+Additions.m in Sources */,
 				2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */,
@@ -656,7 +691,6 @@
 				2B0D3BD71ED544BD008FFC17 /* SettingViewController.m in Sources */,
 				2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */,
 				2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */,
-				2B5E97C41EDD3C100006DAD8 /* VideoPlayerViewController.m in Sources */,
 				2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */,
 				2B5E97C91EDD3C9B0006DAD8 /* PlayListTableViewCell.m in Sources */,
 				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
@@ -664,6 +698,7 @@
 				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
 				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
 				2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */,
+				2B35CD2A1EF11BB500584B78 /* VideoListTableViewCell.m in Sources */,
 				2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */,
 				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
 				2B5E97B51EDD3A8F0006DAD8 /* Video.m in Sources */,
@@ -677,7 +712,6 @@
 				2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */,
 				2B5E97C21EDD3C100006DAD8 /* PlayListTableViewController.m in Sources */,
 				2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */,
-				2B5E97CA1EDD3C9B0006DAD8 /* VideoListCollectionViewCell.m in Sources */,
 				2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */,
 				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
 				2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */,

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayListTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *playListImg;
 @property (weak, nonatomic) IBOutlet UILabel *playListName;
 

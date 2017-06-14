@@ -8,10 +8,13 @@
 
 #import "HTTPRequestHandler.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @implementation HTTPRequestHandler
 
 +(void)HTTPGetMethod:(NSString *) stringURL andParameter:(NSDictionary *) parameter andSelector:(SEL) selector andTarget:(id)target{
+    
+    [SVProgressHUD show];
     
     NSLog(@"Sending Request to:%@ with parameter:%@",stringURL, parameter);
     
@@ -23,11 +26,13 @@
         
         [target performSelectorOnMainThread:selector withObject:responseObject waitUntilDone:YES];
         NSLog(@"===========Sucess Block HTTPGet=============");
+        [SVProgressHUD dismiss];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [target performSelectorOnMainThread:@selector(requestError:) withObject:error waitUntilDone:YES];
         NSLog(@"===========Failure Block=============");
+        [SVProgressHUD dismiss];
         
     }];
 

@@ -11,39 +11,37 @@
 #import "PlayListTableViewCell.h"
 #import "Constants.h"
 #import "Playlist.h"
-#import "VideoListCollectionViewController.h"
+#import "VideoListTableViewController.h"
 #import "Video.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @implementation PlayListTableViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-//    NSString* channelID=@"UCBkNpeyvBO2TdPGVC_PsPUA";
-//    NSString* YOUTUBEAPIKEY=@"AIzaSyDzrIplc-gRzsviQyn8ndTv7Usaa4SvBdU";
-//    items=[[NSArray alloc] init];
-//    // Do any additional setup after loading the view, typically from a nib.
-//    NSDictionary* userData=@{
-//                             
-//                             };
-//    [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=%@&key=%@",channelID,YOUTUBEAPIKEY] andParameter:userData andSelector:@selector(getData:) andTarget:self];
-//    [SVProgressHUD show];
-    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        // Custom initialization
+    }
+    return self;
 }
 
 - (void)viewDidLoad
 {
-    [self.tableView registerClass:[PlayListTableViewCell self] forCellReuseIdentifier:@"PlayListTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PlayListTableViewCell" bundle:nil] forCellReuseIdentifier:@"PlayListTableViewCell"];
     
     [super viewDidLoad];
-    playListArray=[[NSMutableArray alloc] init];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if(playListArray != (id)[NSNull null])
+        playListArray = [[NSMutableArray alloc] init];
+    
     [self serviceCallForPlayList];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-     self.clearsSelectionOnViewWillAppear = YES;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,23 +67,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PlayListTableViewCell *cell = (PlayListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PlayListTableViewCell"];
-    // Configure the cell...
     
-    Playlist *playlist=[[Playlist alloc] init];
-    NSURL* url=[NSURL URLWithString:playlist.imgURL];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-    playlist=[playListArray objectAtIndex:indexPath.row];
-    cell.playListName.text=playlist.playlistName;
-    cell.playListName.textColor=[UIColor redColor];
-    cell.playListImg.image=image;
+    Playlist *playlist = [playListArray objectAtIndex:indexPath.row];
+    [cell.playListImg sd_setImageWithURL:[NSURL URLWithString:playlist.imgURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(error)
+        {
+        }
+    }];
+
+    cell.playListName.text = playlist.playlistName;
+    cell.playListName.textColor = [UIColor redColor];
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Playlist* playlist=[[Playlist alloc] init];
-    playlist=[playListArray objectAtIndex:indexPath.row];
-    NSLog(@"the items %@",playlist.playListID);
+    Playlist* playlist = [playListArray objectAtIndex:indexPath.row];
+//    NSLog(@"the items %@",playlist.playListID);
     [self serviceCallForVideos:playlist.playListID];
 }
 
@@ -93,17 +92,15 @@
 
 - (void)serviceCallForPlayList
 {
-    NSString* channelID=yCHANNELID;
-    NSDictionary* userData=@{};
+    NSString* channelID = yCHANNELID;
+    NSDictionary* userData = @{};
     [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=%@&key=%@",channelID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getData:) andTarget:self];
-//    [SVProgressHUD show];
 }
 
 - (void)serviceCallForVideos:(NSString*)playlistID
 {
-    NSDictionary* userData=@{};
+    NSDictionary* userData = @{};
     [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=%@&key=%@",playlistID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getVideoData:) andTarget:self];
-//    [SVProgressHUD show];
 }
 
 - (void)getData:(id)response
@@ -125,7 +122,6 @@
     
     NSLog(@"the items are %@",[items objectAtIndex:0]);
     [self.tableView reloadData];
-//    [SVProgressHUD dismiss];
 }
 
 - (void)getVideoData:(id)response
@@ -144,10 +140,9 @@
     for (Video* vid in allVideos) {
         NSLog(@"the video specific data is %@",vid.showAllVideoData);
     }
-//    [SVProgressHUD dismiss];
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    VideoListCollectionViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"VideoListVC"];
+    VideoListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"VideoListTableViewController"];
     collectionView.videoArray=allVideos;
     [self.navigationController pushViewController:collectionView animated:TRUE];
 }
@@ -155,6 +150,21 @@
 - (void)requestError:(id)error
 {
     NSLog(@"the error is %@",error);
+}
+
+- (void)scrollViewDidScroll: (UIScrollView*)scrollView
+{
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset == 0)
+    {
+        // then we are at the top
+    }
+    else if (scrollOffset + scrollViewHeight > scrollContentSizeHeight-1000 )
+    {
+    }
 }
 
 @end

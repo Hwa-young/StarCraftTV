@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DGActivityIndicatorView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,32 +72,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>057C23BBCC98E57C29BCE049C480EE12</key>
+		<key>1A8CC80A9B890E8B2AA9843FAD608D80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23DC750CDD80B0720D970C849C73205C</key>
+		<key>424CB347C8CC61824A6A3F0F0193F42A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33207DC0606836B6D306D15F318DB90C</key>
+		<key>57AC99E84515D833DDAA70EC32996B02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3814077B60A225441E135CD435F07186</key>
+		<key>6C362B1E59FC75CAE9FBCB3A4E7B5402</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B222E0ABDD5D834B1B38848B865178F</key>
+		<key>7ED6C9D30ECF8A61C21D5D030F942628</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>949AA7BFA0D866B79ADE79115BF35B34</key>
+		<key>9456FBD05795BDBCA922CFD0F900BF74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C899F36E7AA303FDF7141F8E6C3FDC9A</key>
+		<key>BD5ADBEEBD1C29D3FD613A175D39DE0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCC2E35CD98EED1511ECE341DBD50688</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDFE54B8E55D7399E8C68C2D0C1FBEDA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE774CFD790B1F223924F3006318109A</key>
+		<key>D8ECDFAB0B63B5D3A645F17226D1772F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
