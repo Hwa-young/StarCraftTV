@@ -8,6 +8,7 @@ use_frameworks!
 	pod 'JSONKit', :podspec => 'https://gist.github.com/marcdown/5282955/raw/2a52cfd92f112f2a52669420c82c1bb1efd15d2a/JSONKit.podspec'
 
 	pod 'AFNetworking'
+    pod 'DGActivityIndicatorView'
 	pod 'SAMKeychain'
 	pod 'Reachability'
 	pod 'ViewDeck'
@@ -18,7 +19,5 @@ use_frameworks!
 	pod 'Google/Analytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
-    
-    pod 'youtube-ios-player-helper'
 
 end

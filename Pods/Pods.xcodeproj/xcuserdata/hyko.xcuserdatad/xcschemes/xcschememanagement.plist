@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,11 +54,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>youtube-ios-player-helper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -62,32 +62,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1CC631837205547B84662F7885CB1911</key>
+		<key>03A975FC0D23E575E8D4A0462B169540</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34334EC4D70544EAD73DD2B5A9548D0F</key>
+		<key>0EB6A139E36A727BCC2D7CEE275D87EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B87FB5B593EC32CCD0AA617F94FB458</key>
+		<key>3814077B60A225441E135CD435F07186</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82F993C0727B56BE7BDA300A017D2602</key>
+		<key>671A163748C430B45AF006D73D5B4ED3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CADCE9139E1BC467721BD2FE0562FE1</key>
+		<key>912E9212FEFCD571F2CC55664FAC069A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF20A9DB330099DE17E132B427E329BA</key>
+		<key>9908D2C4B6CD1DF9C3945AAA90BE3878</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF6D0D8D34453382B92EF28C7A84E265</key>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<key>E74A2202D30501DC0C9D71D38CB51311</key>
 		<dict>
 			<key>primary</key>
 			<true/>
