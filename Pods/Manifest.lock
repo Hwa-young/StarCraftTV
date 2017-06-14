@@ -45,9 +45,9 @@ PODS:
   - JSONKit (1.6)
   - Reachability (3.2)
   - SAMKeychain (1.5.2)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - TLYShyNavBar (1.1.1)
   - ViewDeck (3.1.0)
   - XCDYouTubeKit (2.5.5)
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - JSONKit (from `https://gist.github.com/marcdown/5282955/raw/2a52cfd92f112f2a52669420c82c1bb1efd15d2a/JSONKit.podspec`)
   - Reachability
   - SAMKeychain
-  - SDWebImage
+  - SDWebImage (~> 3.8)
   - TLYShyNavBar
   - ViewDeck
   - XCDYouTubeKit
@@ -95,12 +95,12 @@ SPEC CHECKSUMS:
   JSONKit: 7e5866e48126a798d2c23e221c107aae0983192f
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   TLYShyNavBar: d200e598923fbc2bd21a5c5efdfabf4898b11da0
   ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: d59be33d0abb811a91950c82b28808c74b40d7f0
+PODFILE CHECKSUM: 3ddd0f192a136ac42ce283ab17e1d367c677b992
 
 COCOAPODS: 1.2.1

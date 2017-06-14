@@ -10,7 +10,7 @@ use_frameworks!
 	pod 'AFNetworking'
     pod 'DGActivityIndicatorView'
 	pod 'SAMKeychain'
-    pod 'SDWebImage'
+    pod 'SDWebImage', '~>3.8'
 	pod 'Reachability'
 	pod 'ViewDeck'
 	pod 'TLYShyNavBar'
