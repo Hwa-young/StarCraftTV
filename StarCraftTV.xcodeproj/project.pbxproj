@@ -21,6 +21,16 @@
 		2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */; };
 		2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */; };
 		2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */; };
+		2B23AF521EF22A33007EF22A /* ActivitiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF471EF22A33007EF22A /* ActivitiItem.m */; };
+		2B23AF531EF22A33007EF22A /* YTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF491EF22A33007EF22A /* YTChannel.m */; };
+		2B23AF541EF22A33007EF22A /* YTItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4B1EF22A33007EF22A /* YTItem.m */; };
+		2B23AF551EF22A33007EF22A /* YTPlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4D1EF22A33007EF22A /* YTPlaylistItem.m */; };
+		2B23AF561EF22A33007EF22A /* YTSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4F1EF22A33007EF22A /* YTSearchItem.m */; };
+		2B23AF571EF22A33007EF22A /* YTSnippetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF511EF22A33007EF22A /* YTSnippetItem.m */; };
+		2B23AF5F1EF22A75007EF22A /* YouTubeAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF5A1EF22A75007EF22A /* YouTubeAPIHelper.m */; };
+		2B23AF601EF22A75007EF22A /* YoutubeSearchContants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF5C1EF22A75007EF22A /* YoutubeSearchContants.m */; };
+		2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF631EF24106007EF22A /* YTTableViewCell.m */; };
+		2B23AF661EF24F7B007EF22A /* YTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */; };
 		2B35CD231EF10BFE00584B78 /* PlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */; };
 		2B35CD261EF11AF700584B78 /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */; };
 		2B35CD2A1EF11BB500584B78 /* VideoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CD281EF11BB500584B78 /* VideoListTableViewCell.m */; };
@@ -91,6 +101,25 @@
 		2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
 		2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
 		2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		2B23AF461EF22A33007EF22A /* ActivitiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiItem.h; sourceTree = "<group>"; };
+		2B23AF471EF22A33007EF22A /* ActivitiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiItem.m; sourceTree = "<group>"; };
+		2B23AF481EF22A33007EF22A /* YTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTChannel.h; sourceTree = "<group>"; };
+		2B23AF491EF22A33007EF22A /* YTChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTChannel.m; sourceTree = "<group>"; };
+		2B23AF4A1EF22A33007EF22A /* YTItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTItem.h; sourceTree = "<group>"; };
+		2B23AF4B1EF22A33007EF22A /* YTItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTItem.m; sourceTree = "<group>"; };
+		2B23AF4C1EF22A33007EF22A /* YTPlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlaylistItem.h; sourceTree = "<group>"; };
+		2B23AF4D1EF22A33007EF22A /* YTPlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlaylistItem.m; sourceTree = "<group>"; };
+		2B23AF4E1EF22A33007EF22A /* YTSearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSearchItem.h; sourceTree = "<group>"; };
+		2B23AF4F1EF22A33007EF22A /* YTSearchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSearchItem.m; sourceTree = "<group>"; };
+		2B23AF501EF22A33007EF22A /* YTSnippetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSnippetItem.h; sourceTree = "<group>"; };
+		2B23AF511EF22A33007EF22A /* YTSnippetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSnippetItem.m; sourceTree = "<group>"; };
+		2B23AF591EF22A75007EF22A /* YouTubeAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeAPIHelper.h; sourceTree = "<group>"; };
+		2B23AF5A1EF22A75007EF22A /* YouTubeAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeAPIHelper.m; sourceTree = "<group>"; };
+		2B23AF5B1EF22A75007EF22A /* YoutubeSearchContants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeSearchContants.h; sourceTree = "<group>"; };
+		2B23AF5C1EF22A75007EF22A /* YoutubeSearchContants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeSearchContants.m; sourceTree = "<group>"; };
+		2B23AF621EF24106007EF22A /* YTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTableViewCell.h; sourceTree = "<group>"; };
+		2B23AF631EF24106007EF22A /* YTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTableViewCell.m; sourceTree = "<group>"; };
+		2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTTableViewCell.xib; sourceTree = "<group>"; };
 		2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayListTableViewCell.xib; sourceTree = "<group>"; };
 		2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
 		2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
@@ -227,6 +256,17 @@
 			path = "icons@3x";
 			sourceTree = "<group>";
 		};
+		2B23AF581EF22A75007EF22A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2B23AF591EF22A75007EF22A /* YouTubeAPIHelper.h */,
+				2B23AF5A1EF22A75007EF22A /* YouTubeAPIHelper.m */,
+				2B23AF5B1EF22A75007EF22A /* YoutubeSearchContants.h */,
+				2B23AF5C1EF22A75007EF22A /* YoutubeSearchContants.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2B35CD2C1EF120FC00584B78 /* SettingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +365,18 @@
 		2B5E97AF1EDD3A8F0006DAD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B23AF461EF22A33007EF22A /* ActivitiItem.h */,
+				2B23AF471EF22A33007EF22A /* ActivitiItem.m */,
+				2B23AF481EF22A33007EF22A /* YTChannel.h */,
+				2B23AF491EF22A33007EF22A /* YTChannel.m */,
+				2B23AF4A1EF22A33007EF22A /* YTItem.h */,
+				2B23AF4B1EF22A33007EF22A /* YTItem.m */,
+				2B23AF4C1EF22A33007EF22A /* YTPlaylistItem.h */,
+				2B23AF4D1EF22A33007EF22A /* YTPlaylistItem.m */,
+				2B23AF4E1EF22A33007EF22A /* YTSearchItem.h */,
+				2B23AF4F1EF22A33007EF22A /* YTSearchItem.m */,
+				2B23AF501EF22A33007EF22A /* YTSnippetItem.h */,
+				2B23AF511EF22A33007EF22A /* YTSnippetItem.m */,
 				2B5E97B01EDD3A8F0006DAD8 /* Playlist.h */,
 				2B5E97B11EDD3A8F0006DAD8 /* Playlist.m */,
 				2B5E97B21EDD3A8F0006DAD8 /* Video.h */,
@@ -353,6 +405,9 @@
 		2B6029951ED421690011EA01 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				2B23AF621EF24106007EF22A /* YTTableViewCell.h */,
+				2B23AF631EF24106007EF22A /* YTTableViewCell.m */,
+				2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */,
 				2B5E97C51EDD3C9B0006DAD8 /* PlayListTableViewCell.h */,
 				2B5E97C61EDD3C9B0006DAD8 /* PlayListTableViewCell.m */,
 				2B35CD221EF10BFE00584B78 /* PlayListTableViewCell.xib */,
@@ -366,13 +421,13 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
-		2B660E1A1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback */ = {
+		2B660E1A1EDFA8DF000FC747 /* MP+BackgroundPlayback */ = {
 			isa = PBXGroup;
 			children = (
 				2B660E1B1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.h */,
 				2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */,
 			);
-			name = "MPMoviePlayerController+BackgroundPlayback";
+			name = "MP+BackgroundPlayback";
 			path = "Model/MPMoviePlayerController+BackgroundPlayback";
 			sourceTree = "<group>";
 		};
@@ -472,11 +527,12 @@
 		2BE492F51ED287E60063B884 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2B23AF581EF22A75007EF22A /* Helpers */,
 				2B5E97B61EDD3B320006DAD8 /* Constants */,
 				2B6029951ED421690011EA01 /* TableViewCell */,
 				2B5E97B81EDD3BAC0006DAD8 /* HTTPRequestHandler */,
 				2B5E97AF1EDD3A8F0006DAD8 /* Model */,
-				2B660E1A1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback */,
+				2B660E1A1EDFA8DF000FC747 /* MP+BackgroundPlayback */,
 				2BE492FA1ED2882E0063B884 /* BaseViewController.h */,
 				2BE492FB1ED2882E0063B884 /* BaseViewController.m */,
 				2BE492F71ED2881A0063B884 /* RootViewController.h */,
@@ -597,6 +653,7 @@
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
 				2B0D3BCE1ED53F33008FFC17 /* icons8-settings_filled@2x.png in Resources */,
+				2B23AF661EF24F7B007EF22A /* YTTableViewCell.xib in Resources */,
 				2BDF20481ED5860A0078952D /* icons8-circled_play_filled@3x.png in Resources */,
 				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
 				2B0D3BD21ED53F33008FFC17 /* icons8-settings@3x.png in Resources */,
@@ -678,6 +735,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B23AF561EF22A33007EF22A /* YTSearchItem.m in Sources */,
 				2B35CD261EF11AF700584B78 /* VideoListTableViewController.m in Sources */,
 				2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */,
 				2BA20E111ED2B41900205FCA /* UIAlertView+Additions.m in Sources */,
@@ -688,12 +746,15 @@
 				2BA20E151ED2B41900205FCA /* UIButton+Animation.m in Sources */,
 				2BA20E1A1ED2B41900205FCA /* UIView+Animations.m in Sources */,
 				2B5E97B41EDD3A8F0006DAD8 /* Playlist.m in Sources */,
+				2B23AF5F1EF22A75007EF22A /* YouTubeAPIHelper.m in Sources */,
 				2B0D3BD71ED544BD008FFC17 /* SettingViewController.m in Sources */,
 				2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */,
 				2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */,
 				2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */,
+				2B23AF531EF22A33007EF22A /* YTChannel.m in Sources */,
 				2B5E97C91EDD3C9B0006DAD8 /* PlayListTableViewCell.m in Sources */,
 				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
+				2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */,
 				2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */,
 				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
 				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
@@ -709,15 +770,20 @@
 				2BDF203E1ED558CE0078952D /* YoutubeListViewController.m in Sources */,
 				2BA20E101ED2B41900205FCA /* NSString+Additions.m in Sources */,
 				2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */,
+				2B23AF571EF22A33007EF22A /* YTSnippetItem.m in Sources */,
 				2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */,
+				2B23AF521EF22A33007EF22A /* ActivitiItem.m in Sources */,
+				2B23AF541EF22A33007EF22A /* YTItem.m in Sources */,
 				2B5E97C21EDD3C100006DAD8 /* PlayListTableViewController.m in Sources */,
 				2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */,
+				2B23AF551EF22A33007EF22A /* YTPlaylistItem.m in Sources */,
 				2BA20E0C1ED2B41900205FCA /* NSMutableArray+Additions.m in Sources */,
 				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
 				2B7BB3BA1ED3DC1000913D5C /* CollectionViewCell.m in Sources */,
 				2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				2BDF20431ED562870078952D /* YoutubeViewController.m in Sources */,
 				2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */,
+				2B23AF601EF22A75007EF22A /* YoutubeSearchContants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

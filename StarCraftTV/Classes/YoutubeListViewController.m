@@ -10,39 +10,56 @@
 #import "CollectionViewCell.h"
 #import "YoutubeViewController.h"
 
+#import "YTTableViewCell.h"
+#import "YTSearchItem.h"
+#import "YTItem.h"
+#import "YouTubeAPIHelper.h"
+#import "ActivitiItem.h"
+
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
 @interface YoutubeListViewController ()
+
+@property (strong, atomic) YTSearchItem *searchItem;
+@property (strong, atomic) NSMutableArray *tableItem;
+@property (strong, atomic) NSMutableDictionary *parameters;
+@property (copy, nonatomic) NSString *keySearchOld;
+
+@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 
 @end
 
 @implementation YoutubeListViewController
 
+dispatch_queue_t queueImage;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    [self loadADdata];
-    // Do any additional setup after loading the view from its nib.
-    
-    self.shyNavBarManager.scrollView = self.mCollectionView;
+
+    self.shyNavBarManager.scrollView = self.tableView;
     self.shyNavBarManager.scrollView.scrollsToTop = YES;
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
+
+    self.tableView.alwaysBounceVertical = YES;
+    self.tableView.backgroundColor = [UIColor redColor];
     
-    [self.mCollectionView registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionViewCell"];
+    queueImage = dispatch_queue_create("thumbnaisVideo", NULL);
+    self.tableItem = [NSMutableArray array];
+    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
-    self.mCollectionView.alwaysBounceVertical = YES;
-    self.mCollectionView.backgroundColor = [UIColor redColor];
-    
-//    UICollectionViewFlowLayout *flow =(UICollectionViewFlowLayout*)self.mCollectionView.collectionViewLayout;
-//    flow.sectionHeadersPinToVisibleBounds = YES;
-//    flow.sectionInset = UIEdgeInsetsMake(18, 18, 4, 18);
-//    flow.minimumInteritemSpacing = 4.0f;
-//    flow.minimumLineSpacing = 4.0f;
+    UISearchBar *searchBar = [UISearchBar new];
+    searchBar.placeholder = @"Enter text search";
+    searchBar.delegate = self;
+    self.navigationItem.titleView = searchBar;
+
+    [self initDataForTable];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.mCollectionView.scrollsToTop = YES;
+    self.tableView.scrollsToTop = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,80 +68,51 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+- (void)initDataForTable
 {
-    return UIEdgeInsetsMake(0, 0, 2, 0);
-//    return UIEdgeInsetsMake(18, 18, 4, 18);
+    [self.tableItem removeAllObjects];
+
+    [self.youtubeAPI settingAccessToken:@""];
+    [self.youtubeAPI getListVideoByKeySearch:@"" completion:^(BOOL success, NSError *error) {
+        [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+        [self.tableView reloadData];
+    }];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    float resizedWidth = collectionView.frame.size.width;
-//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) collectionViewLayout;
-//    if (IS_IPAD)
-//    {
-//        resizedWidth = (resizedWidth - (layout.minimumInteritemSpacing * 5) - 100) / 5;
-//    }
-//    else
-//    {
-//        resizedWidth = (resizedWidth - (layout.minimumInteritemSpacing * 2) - 36) / 3;
-//    }
-//
-//    resizedWidth = floorf(resizedWidth);
-//
-//    float resizedHeight = resizedWidth / (110.f / 159.f);
-//    return CGSizeMake(resizedWidth, resizedHeight);
+    return self.tableItem.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    YTItem *tempItem = self.tableItem[indexPath.row];
     
-    return CGSizeMake(375, 100);
-}
-
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    // Test
-    return 1;
+    cell.thumbnailImage.image = nil;
+    dispatch_async(queueImage, ^{
+        NSData *dataImage = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]]];
+        if (dataImage)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                YTTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                if (updateCell)
+                    updateCell.thumbnailImage.image = [UIImage imageWithData:dataImage];
+            });
+    });
     
-    // returm model.items.count
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 10;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    return CGSizeZero;
-}
-
-- (NSInteger)numberOfItemsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
-    {
-    }
-    return nil;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *identifier = @"CollectionViewCell";
+    cell.titleLabel.text = tempItem.snippet.title;
+    cell.dateLabel.text = tempItem.snippet.publishedAt;
     
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell setBackgroundColor:[UIColor lightGrayColor]];
-    return  cell;
+    return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    YTItem *tempItem = self.tableItem[indexPath.row];
+
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    [controller setVideoID:tempItem.id[@"videoId"]];
+
     [self.navigationController pushViewController:controller animated:YES];
 }
 

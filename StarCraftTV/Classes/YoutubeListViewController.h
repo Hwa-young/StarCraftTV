@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YoutubeListViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDelegate>
+@interface YoutubeListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

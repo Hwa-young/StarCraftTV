@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoutubeListViewController">
             <connections>
-                <outlet property="mCollectionView" destination="fY4-y6-cvo" id="8bC-Uj-lhV"/>
+                <outlet property="tableView" destination="0jQ-Ba-vLp" id="kMr-cy-FXT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,27 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-y6-cvo">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-Ba-vLp">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zky-Qy-97l">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Xub-hb-h1x"/>
-                        <outlet property="delegate" destination="-1" id="xYh-wh-gxt"/>
+                        <outlet property="dataSource" destination="-1" id="1Ng-n0-y4G"/>
+                        <outlet property="delegate" destination="-1" id="rfw-YH-P1I"/>
                     </connections>
-                </collectionView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="fY4-y6-cvo" secondAttribute="bottom" id="FWl-gZ-4r4"/>
-                <constraint firstAttribute="trailing" secondItem="fY4-y6-cvo" secondAttribute="trailing" id="ZyF-xn-lDh"/>
-                <constraint firstItem="fY4-y6-cvo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gkO-kW-zLM"/>
-                <constraint firstItem="fY4-y6-cvo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pcQ-Aa-Ytg"/>
+                <constraint firstAttribute="trailing" secondItem="0jQ-Ba-vLp" secondAttribute="trailing" id="CbZ-3v-uI3"/>
+                <constraint firstAttribute="bottom" secondItem="0jQ-Ba-vLp" secondAttribute="bottom" id="UCt-WI-LNE"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V8a-TX-84c"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ycG-PX-8n6"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>
