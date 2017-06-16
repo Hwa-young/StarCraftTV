@@ -36,6 +36,7 @@
         self.searchItem = [YTSearchItem new];
         self.resultSearchVideo = [NSMutableArray new];
         self.searchChannel = [YTSearchItem new];
+        self.paramaters[@"key"] = kAPI_KEY;
     }
     return self;
 }
@@ -48,30 +49,32 @@
 }
 - (void)settingURL {
     
-    if ([self.accessToken isEqualToString:@""]) {
-        if ([self.paramaters objectForKey:@"key"])
-            self.paramaters[@"key"] = kAPI_KEY;
-        else
-            [self.paramaters setObject:kAPI_KEY forKey:@"key"];
-        
-        if ([self.paramaters objectForKey:@"access_token"])
-            [self.paramaters removeObjectForKey:@"access_token"];
-
-    }
-    else {
-        if ([self.paramaters objectForKey:@"access_token"])
-            self.paramaters[@"access_token"] = self.accessToken;
-        else
-            [self.paramaters setObject:self.accessToken forKey:@"access_token"];
-        
-        if ([self.paramaters objectForKey:@"key"])
-            [self.paramaters removeObjectForKey:@"key"];
-    }
-
-    if ([self.paramaters objectForKey:@"pageToken"])
-        self.paramaters[@"pageToken"] = (self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken);
-    else
-        [self.paramaters setObject:(self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken) forKey:@"pageToken"];
+//    self.paramaters[@"key"] = kAPI_KEY;
+    
+//    if ([self.accessToken isEqualToString:@""]) {
+//        if ([self.paramaters objectForKey:@"key"])
+//            self.paramaters[@"key"] = kAPI_KEY;
+//        else
+//            [self.paramaters setObject:kAPI_KEY forKey:@"key"];
+//        
+//        if ([self.paramaters objectForKey:@"access_token"])
+//            [self.paramaters removeObjectForKey:@"access_token"];
+//
+//    }
+//    else {
+//        if ([self.paramaters objectForKey:@"access_token"])
+//            self.paramaters[@"access_token"] = self.accessToken;
+//        else
+//            [self.paramaters setObject:self.accessToken forKey:@"access_token"];
+//        
+//        if ([self.paramaters objectForKey:@"key"])
+//            [self.paramaters removeObjectForKey:@"key"];
+//    }
+//
+//    if ([self.paramaters objectForKey:@"pageToken"])
+//        self.paramaters[@"pageToken"] = (self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken);
+//    else
+//        [self.paramaters setObject:(self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken) forKey:@"pageToken"];
 
 }
 
@@ -261,30 +264,33 @@
     
     self.url = [NSURL URLWithString:kPlaylistItemURL];
     
-    if ([self.paramaters objectForKey:@"playlistId"])
-        self.paramaters[@"playlistId"] = self.playlistItem.likeId;
-    else
-        [self.paramaters setObject:self.playlistItem.likeId forKey:@"playlistId"];
+//    if ([self.paramaters objectForKey:@"playlistId"])
+//        self.paramaters[@"playlistId"] = self.playlistItem.likeId;
+//    else
+//        [self.paramaters setObject:self.playlistItem.likeId forKey:@"playlistId"];
 
-    switch (type) {
-        case HISTORY:
-            [self.paramaters setValue:self.playlistItem.watchHistoryId forKey:@"playlistId"];
-            break;
-        case LIKED:
-            [self.paramaters setValue:self.playlistItem.likeId forKey:@"playlistId"];
-            break;
-        case MYVIDEO:
-            [self.paramaters setValue:self.playlistItem.uploadsId forKey:@"playlistId"];
-            break;
-        case FAVORITE:
-            [self.paramaters setValue:self.playlistItem.favoritesId forKey:@"playlistId"];
-            break;
-        case WATCHLATER:
-            [self.paramaters setValue:self.playlistItem.watchLaterId forKey:@"playlistId"];
-            break;
-        default:
-            break;
-    }
+//    switch (type) {
+//        case HISTORY:
+//            [self.paramaters setValue:self.playlistItem.watchHistoryId forKey:@"playlistId"];
+//            break;
+//        case LIKED:
+//            [self.paramaters setValue:self.playlistItem.likeId forKey:@"playlistId"];
+//            break;
+//        case MYVIDEO:
+//            [self.paramaters setValue:self.playlistItem.uploadsId forKey:@"playlistId"];
+//            break;
+//        case FAVORITE:
+//            [self.paramaters setValue:self.playlistItem.favoritesId forKey:@"playlistId"];
+//            break;
+//        case WATCHLATER:
+//            [self.paramaters setValue:self.playlistItem.watchLaterId forKey:@"playlistId"];
+//            break;
+//        default:
+//            break;
+//    }
+//    https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&key=AIzaSyAanh-c7aGoFdAEAX9Ie6QQXZBVQjpTrGg&pageToken=,
+//    https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50
+//    https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&maxResults=50&playlistId=%@&key=%@
     
     [self getObjectWith:VIDEO completion:completion];
 }

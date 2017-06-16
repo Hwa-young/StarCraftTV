@@ -10,27 +10,53 @@
 #import "Constants.h"
 #import "HTTPRequestHandler.h"
 #import "VideoListTableViewCell.h"
-#import "Video.h"
 #import "YoutubeViewController.h"
+
+#import "YTItem.h"
+#import "YTTableViewCell.h"
+#import "YouTubeAPIHelper.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 @interface VideoListTableViewController ()
+
+@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 
 @end
 
 @implementation VideoListTableViewController
 
+//dispatch_queue_t queueImage;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"VideoListTableViewCell" bundle:nil] forCellReuseIdentifier:@"VideoListTableViewCell"];
+    [self initDataForTable];
+}
+
+- (void)initDataForTable
+{
+    [self.tableItem removeAllObjects];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
+    self.tableItem = [NSMutableArray array];
+
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    [param setObject:self.playListID forKey:@"playlistId"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.youtubeAPI settingAccessToken:@""];
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+
+    [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
+        if (success) {
+            [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,43 +69,51 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    return _videoArray.count;;
+    return self.tableItem.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    VideoListTableViewCell *cell = (VideoListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VideoListTableViewCell"];
-
-    Video* video=[[Video alloc] init];
-    video=[_videoArray objectAtIndex:indexPath.row];
-    NSURL* url=[NSURL URLWithString:video.videoImg];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    YTItem *tempItem = self.tableItem[indexPath.row];
     
-    cell.videoName.text=video.videoName;
-    cell.videoImage.image=image;
+    cell.thumbnailImage.image = nil;
+    [cell.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(error)
+        {
+        }
+    }];
 
-
+    cell.titleLabel.text = tempItem.snippet.title;
+    cell.dateLabel.text = tempItem.snippet.publishedAt;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Video* video=[[Video alloc] init];
-    video=[_videoArray objectAtIndex:indexPath.row];
+    YTItem *tempItem = self.tableItem[indexPath.row];
     
-    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
-    [vc setVideoID:video.videoID];
-    [vc setVideoThumnailImage:video.videoImg];
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    [controller setVideoID:tempItem.id[@"videoId"]];
     
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
+
+//    Video* video=[[Video alloc] init];
+//    video=[_videoArray objectAtIndex:indexPath.row];
+//    
+//    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+//    [vc setVideoID:video.videoID];
+//    [vc setVideoThumnailImage:video.videoImg];
+//    
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface VideoListTableViewController : UITableViewController
-@property(strong,nonatomic) NSMutableArray* videoArray;
+
+@property (nonatomic, strong) NSMutableArray *tableItem;
+@property (nonatomic, strong) NSString *playListID;
+
 @end

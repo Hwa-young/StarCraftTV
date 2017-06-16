@@ -84,8 +84,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Playlist* playlist = [playListArray objectAtIndex:indexPath.row];
-//    NSLog(@"the items %@",playlist.playListID);
-    [self serviceCallForVideos:playlist.playListID];
+    
+    VideoListTableViewController *vList = [[VideoListTableViewController alloc] init];
+    [vList setPlayListID:playlist.playListID];
+    [self.navigationController pushViewController:vList animated:YES];
+
+    
+//    Playlist* playlist = [playListArray objectAtIndex:indexPath.row];
+//    [self serviceCallForVideos:playlist.playListID];
 }
 
 #pragma mark - API Method
@@ -94,13 +100,15 @@
 {
     NSString* channelID = yCHANNELID;
     NSDictionary* userData = @{};
-    [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=%@&key=%@",channelID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getData:) andTarget:self];
+    [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlists?part=snippet&maxResults=50&channelId=%@&key=%@",channelID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getData:) andTarget:self];
 }
 
 - (void)serviceCallForVideos:(NSString*)playlistID
 {
     NSDictionary* userData = @{};
     [HTTPRequestHandler HTTPGetMethod:[NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&maxResults=50&playlistId=%@&key=%@",playlistID,yYOUTUBEAPI] andParameter:userData andSelector:@selector(getVideoData:) andTarget:self];
+    
+    
 }
 
 - (void)getData:(id)response
@@ -141,10 +149,12 @@
         NSLog(@"the video specific data is %@",vid.showAllVideoData);
     }
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    VideoListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"VideoListTableViewController"];
-    collectionView.videoArray=allVideos;
-    [self.navigationController pushViewController:collectionView animated:TRUE];
+    NSLog(@"%@", allVideos);
+    
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    VideoListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"VideoListTableViewController"];
+//    collectionView.videoArray=allVideos;
+//    [self.navigationController pushViewController:collectionView animated:TRUE];
 }
 
 - (void)requestError:(id)error
