@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="-141"/>
+            <point key="canvasLocation" x="12" y="-142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z7-1I-KKm">
@@ -89,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xP1-gT-2gT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-141"/>
+            <point key="canvasLocation" x="714" y="-143"/>
         </scene>
         <!--Video List Table View Controller-->
         <scene sceneID="cJt-be-Vst">
@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSX-fx-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="-140"/>
+            <point key="canvasLocation" x="1484" y="-143"/>
         </scene>
     </scenes>
     <resources>
