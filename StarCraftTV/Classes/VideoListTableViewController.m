@@ -75,7 +75,6 @@
     Video* video=[[Video alloc] init];
     video=[_videoArray objectAtIndex:indexPath.row];
     
-    
     YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
     [vc setVideoID:video.videoID];
     [vc setVideoThumnailImage:video.videoImg];

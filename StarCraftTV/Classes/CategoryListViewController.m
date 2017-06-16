@@ -55,4 +55,9 @@
     [self.navigationController pushViewController:collectionView animated:TRUE];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75.f;
+}
+
 @end

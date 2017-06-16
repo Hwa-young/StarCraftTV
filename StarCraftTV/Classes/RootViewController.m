@@ -42,15 +42,24 @@
         CategoryListViewController *categoryViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
         YoutubeListViewController *listViewController = [[YoutubeListViewController alloc] initWithNibName:@"YoutubeListViewController" bundle:nil];
         
+        // SetViewController
         self.leftViewController = settingViewController;
         self.rightViewController = categoryViewController;
         self.centerViewController = listViewController;
         
+        // AD Banner
         self.mBannerView = [[GADBannerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER)];
+        self.mBannerView.delegate = self;
+        
+        // Toolbar
         self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
-
         [self.navigationController setToolbarHidden:NO];
         [self.navigationController.toolbar addSubview:self.mBannerView];
+
+        // Title
+        [self.navigationItem setTitle:@"StartCraft TV"];
+        NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:21]};
+        [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
 
         [self loadADdata];
     }
@@ -95,6 +104,49 @@
         [self closeSide:YES];
     else
         [self openSide:IIViewDeckSideLeft animated:YES];
+}
+
+#pragma mark GADBannerViewDelegate
+
+- (void)adViewDidReceiveAd:(GADBannerView *)bannerView
+{
+    NSLog(@"adViewDidReceiveAd");
+    
+//    self.mBannerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
+//    self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
+//    
+//    [self.navigationController setToolbarHidden:NO];
+}
+
+- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    NSLog(@"didFailToReceiveAdWithError");
+    
+//    self.mBannerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, 0);
+//    self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, 0);
+//    
+//    [self.navigationController setToolbarHidden:YES];
+
+}
+
+- (void)adViewWillPresentScreen:(GADBannerView *)bannerView
+{
+    NSLog(@"adViewWillPresentScreen");
+}
+
+- (void)adViewWillDismissScreen:(GADBannerView *)bannerView
+{
+    NSLog(@"adViewWillDismissScreen");
+}
+
+- (void)adViewDidDismissScreen:(GADBannerView *)bannerView
+{
+    NSLog(@"adViewDidDismissScreen");
+}
+
+- (void)adViewWillLeaveApplication:(GADBannerView *)bannerView
+{
+    NSLog(@"adViewWillLeaveApplication");
 }
 
 @end

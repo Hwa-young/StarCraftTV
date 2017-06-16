@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topHeightConstraint;
 
+- (void)setNavigationTitle:(NSString*)titleString;
+
 @end

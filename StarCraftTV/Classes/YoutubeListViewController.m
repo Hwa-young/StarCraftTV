@@ -7,7 +7,6 @@
 //
 
 #import "YoutubeListViewController.h"
-#import "CollectionViewCell.h"
 #import "YoutubeViewController.h"
 
 #import "YTTableViewCell.h"
@@ -87,6 +86,8 @@ dispatch_queue_t queueImage;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
     YTItem *tempItem = self.tableItem[indexPath.row];
     
     cell.thumbnailImage.image = nil;

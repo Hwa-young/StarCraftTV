@@ -23,6 +23,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KVV-Yr-Lxh">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="icons8-settings.png" style="plain" id="4b7-YJ-LoQ">
                             <connections>
                                 <action selector="openSettingViewController:" destination="BYZ-38-t0r" id="aIs-1q-JOf"/>
@@ -38,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-142"/>
+            <point key="canvasLocation" x="12" y="-142.57871064467767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z7-1I-KKm">

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,25 +19,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="342" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-6J-8IS">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-6J-8IS">
                         <rect key="frame" x="11" y="11" width="104" height="78"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="104" id="c2p-zK-V5w"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MO-o3-84M">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Youtube Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MO-o3-84M">
                         <rect key="frame" x="123" y="11" width="219" height="48"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KB-bI-hg4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Youttube Video Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KB-bI-hg4">
                         <rect key="frame" x="123" y="67" width="219" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="RX5-Se-PBZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9MO-o3-84M" secondAttribute="trailing" id="1Ya-Dg-ujZ"/>
+                    <constraint firstItem="1iQ-6J-8IS" firstAttribute="centerY" secondItem="RWL-Sv-xdz" secondAttribute="centerY" id="1cC-LZ-vLg"/>
+                    <constraint firstItem="9MO-o3-84M" firstAttribute="trailing" secondItem="2KB-bI-hg4" secondAttribute="trailing" id="AFe-bS-ZBa"/>
+                    <constraint firstItem="9MO-o3-84M" firstAttribute="leading" secondItem="1iQ-6J-8IS" secondAttribute="trailing" constant="8" symbolic="YES" id="Bwv-zG-0ZX"/>
+                    <constraint firstItem="9MO-o3-84M" firstAttribute="leading" secondItem="2KB-bI-hg4" secondAttribute="leading" id="TIv-or-ysc"/>
+                    <constraint firstItem="1iQ-6J-8IS" firstAttribute="leading" secondItem="RWL-Sv-xdz" secondAttribute="leadingMargin" constant="3" id="dgx-z5-ZuZ"/>
+                    <constraint firstItem="1iQ-6J-8IS" firstAttribute="top" secondItem="9MO-o3-84M" secondAttribute="top" id="lb0-hw-9Li"/>
+                    <constraint firstItem="2KB-bI-hg4" firstAttribute="top" secondItem="9MO-o3-84M" secondAttribute="bottom" constant="8" symbolic="YES" id="oxw-Qq-PSy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="2KB-bI-hg4" secondAttribute="bottom" constant="3.5" id="rEN-Le-qqo"/>
+                    <constraint firstItem="1iQ-6J-8IS" firstAttribute="top" secondItem="RWL-Sv-xdz" secondAttribute="topMargin" constant="3" id="rHY-yg-zD9"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="2KB-bI-hg4" id="nVx-DN-ZhL"/>

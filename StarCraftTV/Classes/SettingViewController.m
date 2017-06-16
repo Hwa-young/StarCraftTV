@@ -10,6 +10,8 @@
 #import "CategoryListViewController.h"
 @interface SettingViewController ()
 
+@property (nonatomic, strong) NSMutableArray *menuArray;
+
 @end
 
 @implementation SettingViewController
@@ -18,6 +20,7 @@
 {
     [super viewDidLoad];
     
+    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"버전",@"오픈소스",@"문의사항", nil];
     [self.menuTableview setScrollsToTop:YES];
 }
 
@@ -29,7 +32,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.menuArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -42,7 +45,7 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setBackgroundColor:[UIColor clearColor]];
         
-        [cell.textLabel setText:[NSString stringWithFormat:@"%ld", (long)indexPath.row]];
+        [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
         [cell.textLabel setTextColor:[UIColor whiteColor]];
     }
     return cell;
@@ -52,6 +55,11 @@
 {
     CategoryListViewController *category = [[CategoryListViewController alloc] init];
     [self.navigationController pushViewController:category animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.f;
 }
 
 @end

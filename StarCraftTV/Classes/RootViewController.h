@@ -17,7 +17,7 @@
 @end
 
 
-@interface RootViewController : IIViewDeckController
+@interface RootViewController : IIViewDeckController <GADBannerViewDelegate>
 
 @property (strong, nonatomic) GADBannerView *mBannerView;
 

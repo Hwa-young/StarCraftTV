@@ -16,6 +16,14 @@
 
 @implementation YoutubeViewController
 
+- (void)setNavigationTitle:(NSString*)titleString
+{
+    [self.navigationItem setTitle:titleString];
+    
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:17]};
+    [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,8 +41,8 @@
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    // Beware, viewWillDisappear: is called when the player view enters full screen on iOS 6+
+
+//     Beware, viewWillDisappear: is called when the player view enters full screen on iOS 6+
     if ([self isMovingFromParentViewController])
         [self.videoPlayerViewController.moviePlayer stop];
 }
