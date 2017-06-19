@@ -15,6 +15,7 @@
 #import "YouTubeAPIHelper.h"
 #import "ActivitiItem.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
 @interface YoutubeListViewController ()
@@ -42,7 +43,7 @@ dispatch_queue_t queueImage;
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
 
     self.tableView.alwaysBounceVertical = YES;
-    self.tableView.backgroundColor = [UIColor redColor];
+//    self.tableView.backgroundColor = [UIColor redColor];
     
     queueImage = dispatch_queue_create("thumbnaisVideo", NULL);
     self.tableItem = [NSMutableArray array];
@@ -69,12 +70,15 @@ dispatch_queue_t queueImage;
 
 - (void)initDataForTable
 {
+    [SVProgressHUD show];
+    
     [self.tableItem removeAllObjects];
 
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI getListVideoByKeySearch:@"" completion:^(BOOL success, NSError *error) {
         [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
         [self.tableView reloadData];
+        [SVProgressHUD dismiss];
     }];
 }
 

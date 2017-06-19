@@ -16,10 +16,12 @@
 #import "YTTableViewCell.h"
 #import "YouTubeAPIHelper.h"
 
+#import "KPDropMenu.h"
+
 #import <SDWebImage/UIImageView+WebCache.h>
 
 
-@interface VideoListTableViewController ()
+@interface VideoListTableViewController () <KPDropMenuDelegate>
 
 @property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 
@@ -57,6 +59,27 @@
             [self.tableView reloadData];
         }
     }];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    KPDropMenu *dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
+    dropNew.delegate = self;
+    dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"조별 예선"];
+    dropNew.backgroundColor = [UIColor whiteColor];
+    dropNew.title = @"토너먼트";
+    dropNew.titleColor = [UIColor redColor];
+    dropNew.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+    dropNew.titleTextAlignment = NSTextAlignmentCenter;
+    dropNew.DirectionDown = YES;
+    [self.view addSubview:dropNew];
+
+    return dropNew;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
 }
 
 - (void)didReceiveMemoryWarning

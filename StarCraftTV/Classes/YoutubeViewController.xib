@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoutubeViewController">
             <connections>
                 <outlet property="heightConstraint" destination="6vX-7z-vkU" id="ZZs-EM-P1j"/>
+                <outlet property="listTableView" destination="Gb5-cW-gIQ" id="olA-yg-MkN"/>
                 <outlet property="playerView" destination="0V3-Av-DFK" id="1WF-O2-VwW"/>
                 <outlet property="topHeightConstraint" destination="cs7-O6-mPV" id="h7i-sC-P6i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -40,26 +41,35 @@
                         <constraint firstItem="SZf-Tp-3a3" firstAttribute="centerX" secondItem="0V3-Av-DFK" secondAttribute="centerX" id="fbl-gv-TRN"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-cW-gIQ">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-cW-gIQ">
                     <rect key="frame" x="0.0" y="275" width="375" height="392"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sBJ-MO-Pnf"/>
+                        <outlet property="delegate" destination="-1" id="ppe-GF-Zhg"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Gb5-cW-gIQ" secondAttribute="bottom" id="1Fj-AN-Uwd"/>
                 <constraint firstAttribute="trailing" secondItem="0V3-Av-DFK" secondAttribute="trailing" id="BNN-Ro-RoQ"/>
+                <constraint firstAttribute="bottom" secondItem="Gb5-cW-gIQ" secondAttribute="bottom" id="C1R-tu-eSC"/>
+                <constraint firstItem="Gb5-cW-gIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FTv-6d-Xy7"/>
                 <constraint firstItem="Gb5-cW-gIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rt0-oh-fpi"/>
                 <constraint firstItem="Gb5-cW-gIQ" firstAttribute="top" secondItem="0V3-Av-DFK" secondAttribute="bottom" id="UOz-aB-AWe"/>
+                <constraint firstAttribute="trailing" secondItem="Gb5-cW-gIQ" secondAttribute="trailing" id="cR6-SR-lHd"/>
                 <constraint firstItem="0V3-Av-DFK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="cs7-O6-mPV"/>
+                <constraint firstItem="Gb5-cW-gIQ" firstAttribute="top" secondItem="0V3-Av-DFK" secondAttribute="bottom" id="gMw-gx-UaY"/>
                 <constraint firstItem="0V3-Av-DFK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hcw-DV-WFW"/>
                 <constraint firstAttribute="trailing" secondItem="Gb5-cW-gIQ" secondAttribute="trailing" id="nV5-GQ-roR"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="icons8-circled_play_filled.png" width="25" height="25"/>
+        <image name="icons8-circled_play_filled.png" width="37" height="37"/>
     </resources>
 </document>

@@ -36,6 +36,7 @@
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
 		2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3F1ED272A2000A9879 /* Assets.xcassets */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
+		2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */; };
 		2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B560FBA1EDD62B000DEE3D9 /* boot.json */; };
 		2B5E97B41EDD3A8F0006DAD8 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97B11EDD3A8F0006DAD8 /* Playlist.m */; };
 		2B5E97B51EDD3A8F0006DAD8 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E97B31EDD3A8F0006DAD8 /* Video.m */; };
@@ -124,6 +125,8 @@
 		2B540C3F1ED272A2000A9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B540C421ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
+		2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		2B560FBA1EDD62B000DEE3D9 /* boot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boot.json; sourceTree = "<group>"; };
 		2B5E97B01EDD3A8F0006DAD8 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		2B5E97B11EDD3A8F0006DAD8 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
@@ -289,6 +292,7 @@
 				2BA20DBF1ED2B41900205FCA /* Addition */,
 				2BA20DF21ED2B41900205FCA /* Core */,
 				2BA20DF51ED2B41900205FCA /* Crypto */,
+				2B5508A11EF66AE500ABB6BC /* Dropdown */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -336,6 +340,15 @@
 				2B540C341ED272A2000A9879 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B5508A11EF66AE500ABB6BC /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */,
+				2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */,
+			);
+			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		2B5E97AF1EDD3A8F0006DAD8 /* Model */ = {
@@ -729,6 +742,7 @@
 				2B35CD2A1EF11BB500584B78 /* VideoListTableViewCell.m in Sources */,
 				2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */,
 				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
+				2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */,
 				2B5E97B51EDD3A8F0006DAD8 /* Video.m in Sources */,
 				2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */,
 				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
