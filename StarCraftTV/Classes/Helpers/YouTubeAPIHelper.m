@@ -237,18 +237,18 @@
     else
         [self.paramaters setObject:idChannel forKey:@"channelId"];
     
-    if (![self.keySearchOld isEqualToString:idChannel]) {
-        if ([self.paramaters objectForKey:@"pageToken"])
-            self.paramaters[@"pageToken"] = @"";
-        else
-            [self.paramaters setObject:@"" forKey:@"pageToken"];
-    }
-    else {
-        if ([self.paramaters objectForKey:@"pageToken"])
-            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-        else
-            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-    }
+//    if (![self.keySearchOld isEqualToString:idChannel]) {
+//        if ([self.paramaters objectForKey:@"pageToken"])
+//            self.paramaters[@"pageToken"] = @"";
+//        else
+//            [self.paramaters setObject:@"" forKey:@"pageToken"];
+//    }
+//    else {
+//        if ([self.paramaters objectForKey:@"pageToken"])
+//            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
+//        else
+//            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
+//    }
     
     [self getObjectWith:PLAYLISTITEM completion:completion];
 }
