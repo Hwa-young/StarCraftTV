@@ -13,13 +13,11 @@
 #import "MJExtension.h"
 #import "YTSearchItem.h"
 #import "YTItem.h"
-#import "YTPlaylistItem.h"
 #import "ActivitiItem.h"
 
 @interface YouTubeAPIHelper()
 
 @property (strong, nonatomic) NSURL *url;
-@property (strong, nonatomic) YTPlaylistItem *playlistItem;
 
 @end
 
@@ -90,15 +88,12 @@
                 case PLAYLISTITEM:
                     [YTPlaylistItem mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
                         return @{
-                                 @"likeId" : @"items[0].contentDetails.relatedPlaylists.likes",
-                                 @"favoritesId": @"items[0].contentDetails.relatedPlaylists.favorites",
-                                 @"uploadsId": @"items[0].contentDetails.relatedPlaylists.uploads",
-                                 @"watchHistoryId": @"items[0].contentDetails.relatedPlaylists.watchHistory",
-                                 @"watchLaterId": @"items[0].contentDetails.relatedPlaylists.watchLater"
+                                 @"items" : @"YTItem"
+//                                 @"playlistId": @"items[0].id.playlistId"
                                  };
                     }];
                     
-                    self.playlistItem = [YTPlaylistItem mj_objectWithKeyValues:responseObject];
+                    self.searchItem = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     NSLog(@" %@", responseObject);
                     break;
                 case VIDEO:
@@ -233,6 +228,32 @@
     [self getObjectWith:VIDEO completion:completion];
 }
 
+- (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion {
+    
+    self.url = [NSURL URLWithString:kSearchPlaylistURL];
+    
+    if ([self.paramaters objectForKey:@"channelId"])
+        self.paramaters[@"channelId"] = idChannel;
+    else
+        [self.paramaters setObject:idChannel forKey:@"channelId"];
+    
+    if (![self.keySearchOld isEqualToString:idChannel]) {
+        if ([self.paramaters objectForKey:@"pageToken"])
+            self.paramaters[@"pageToken"] = @"";
+        else
+            [self.paramaters setObject:@"" forKey:@"pageToken"];
+    }
+    else {
+        if ([self.paramaters objectForKey:@"pageToken"])
+            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
+        else
+            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
+    }
+    
+    [self getObjectWith:PLAYLISTITEM completion:completion];
+}
+
+
 - (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion {
     
     self.url = [NSURL URLWithString:kSearchURL];
@@ -301,11 +322,11 @@
     
     [self getObjectWith:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
         if (success) {
-            NSLog(@"Get playlist history: %@", self.playlistItem.watchHistoryId);
-            NSLog(@"Get playlist like: %@", self.playlistItem.likeId);
-            NSLog(@"Get playlist favorit: %@", self.playlistItem.favoritesId);
-            NSLog(@"Get playlist watch later: %@", self.playlistItem.watchLaterId);
-            NSLog(@"Get playlist uploads video: %@", self.playlistItem.uploadsId);
+//            NSLog(@"Get playlist history: %@", self.playlistItem.watchHistoryId);
+//            NSLog(@"Get playlist like: %@", self.playlistItem.likeId);
+//            NSLog(@"Get playlist favorit: %@", self.playlistItem.favoritesId);
+//            NSLog(@"Get playlist watch later: %@", self.playlistItem.watchLaterId);
+//            NSLog(@"Get playlist uploads video: %@", self.playlistItem.uploadsId);
         }
         else
             NSLog(@"Error : %@", error);

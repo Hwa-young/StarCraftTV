@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 #import "CategoryListViewController.h"
+#import "Constants.h"
+
 @interface SettingViewController ()
 
 @property (nonatomic, strong) NSMutableArray *menuArray;
@@ -28,6 +30,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    CGRect rect = [self.view frame];
+    rect.size.height -= HEIGHT_BANNER;
+    
+    [self.view setFrame:rect];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -59,7 +71,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100.f;
+    return 75.f;
 }
 
 @end

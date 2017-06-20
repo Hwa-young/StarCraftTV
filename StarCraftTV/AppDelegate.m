@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CategoryManager.h"
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
@@ -50,6 +51,7 @@
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
     NSDictionary *dicData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    [CATEGORY_MANAGER saveCategoryDataWithDictionary:dicData];
     
     [[NSUserDefaults standardUserDefaults] setObject:dicData forKey:@"boot"];
     [[NSUserDefaults standardUserDefaults] synchronize];

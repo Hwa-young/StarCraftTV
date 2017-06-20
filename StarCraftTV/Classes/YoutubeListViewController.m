@@ -16,6 +16,7 @@
 #import "ActivitiItem.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
 @interface YoutubeListViewController ()
@@ -49,10 +50,10 @@ dispatch_queue_t queueImage;
     self.tableItem = [NSMutableArray array];
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
-    UISearchBar *searchBar = [UISearchBar new];
-    searchBar.placeholder = @"Enter text search";
-    searchBar.delegate = self;
-    self.navigationItem.titleView = searchBar;
+//    UISearchBar *searchBar = [UISearchBar new];
+//    searchBar.placeholder = @"Enter text search";
+//    searchBar.delegate = self;
+//    self.navigationItem.titleView = searchBar;
 
     [self initDataForTable];
 }
@@ -93,21 +94,17 @@ dispatch_queue_t queueImage;
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     YTItem *tempItem = self.tableItem[indexPath.row];
+
+    [cell.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if(error)
+        {
+        }
+    }];
+    NSString * newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
     
-    cell.thumbnailImage.image = nil;
-    dispatch_async(queueImage, ^{
-        NSData *dataImage = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]]];
-        if (dataImage)
-            dispatch_async(dispatch_get_main_queue(), ^{
-                YTTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-                if (updateCell)
-                    updateCell.thumbnailImage.image = [UIImage imageWithData:dataImage];
-            });
-    });
-    
-    cell.titleLabel.text = tempItem.snippet.title;
+    cell.titleLabel.text = newReplacedString;
     cell.dateLabel.text = tempItem.snippet.publishedAt;
-    
+
     return cell;
 }
 

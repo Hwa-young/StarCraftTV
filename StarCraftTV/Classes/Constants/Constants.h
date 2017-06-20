@@ -25,3 +25,6 @@
 #define yVIDEOID    @"videoId"
 #define yCHANNELID  @"UCX1DpoQkBN4rv5ZfPivA_Wg"
 
+// For CategoryMenu
+#define CATEGORY_LEAGUE     @"category_league"
+#define HEIGHT_BANNER 50

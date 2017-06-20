@@ -11,11 +11,10 @@
 #import "YoutubeListViewController.h"
 #import "SettingViewController.h"
 #import "CategoryListViewController.h"
+#import "Constants.h"
 
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 #import <GoogleMobileAds/GADAdSize.h>
-
-#define HEIGHT_BANNER 50
 
 @implementation CustomToolBar
 
@@ -111,22 +110,11 @@
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView
 {
     NSLog(@"adViewDidReceiveAd");
-    
-//    self.mBannerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
-//    self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
-//    
-//    [self.navigationController setToolbarHidden:NO];
 }
 
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
 {
     NSLog(@"didFailToReceiveAdWithError");
-    
-//    self.mBannerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, 0);
-//    self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, 0);
-//    
-//    [self.navigationController setToolbarHidden:YES];
-
 }
 
 - (void)adViewWillPresentScreen:(GADBannerView *)bannerView
