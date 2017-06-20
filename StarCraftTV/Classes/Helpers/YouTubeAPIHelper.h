@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "YoutubeSearchContants.h"
 #import "YTSearchItem.h"
+#import "YTPlaylistItem.h"
 
 typedef void(^Completion)(BOOL success, NSError *error);
 
@@ -21,11 +22,13 @@ typedef void(^Completion)(BOOL success, NSError *error);
 @property (strong, nonatomic) NSMutableArray *resultSearchVideo;
 @property (strong, nonatomic) YTSearchItem *searchChannel;
 @property (strong, nonatomic) NSString *keySearchOld;
+@property (strong, nonatomic) YTPlaylistItem *playlistItem;
 
 - (id)init;
 - (void)settingAccessToken:(NSString *)accessToken;
 - (void)getListVideoActivitied:(Completion)completion;
 - (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion;
+- (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion;
 - (void)getListVideoByPlayListWithType:(URLType)type completion:(Completion)completion;
 

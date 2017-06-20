@@ -8,12 +8,19 @@
 
 #import "CategoryListViewController.h"
 #import "PlayListTableViewController.h"
+#import "VideoListTableViewController.h"
 #import "CategoryManager.h"
 #import "Constants.h"
+
+#import "YTItem.h"
+#import "YTTableViewCell.h"
+#import "YouTubeAPIHelper.h"
+
 
 @interface CategoryListViewController ()
 
 @property (nonatomic, strong) NSMutableArray *categotyArray;
+@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 
 @end
 
@@ -69,14 +76,55 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    PlayListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"PlayListTableViewController"];
-    [self.navigationController pushViewController:collectionView animated:TRUE];
+    [self callYoutubeSearchApiWithSearchString:[self.categotyArray objectAtIndex:indexPath.row][@"year"] indexPath:indexPath];
+//    Playlist* playlist = [playListArray objectAtIndex:indexPath.row];
+//
+//    VideoListTableViewController *vList = [[VideoListTableViewController alloc] init];
+//    [vList setPlayListID:playlist.playListID];
+//    [self.navigationController pushViewController:vList animated:YES];
+
+    
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    PlayListTableViewController *collectionView =[storyboard instantiateViewControllerWithIdentifier:@"PlayListTableViewController"];
+//    [self.navigationController pushViewController:collectionView animated:TRUE];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.f;
+}
+
+- (void)callYoutubeSearchApiWithSearchString:(NSString*)qString indexPath:(NSIndexPath *)indexPath
+{
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    [param setObject:qString forKey:@"q"];
+    
+    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
+    
+    [self.youtubeAPI settingAccessToken:@""];
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+    
+    [self.youtubeAPI getListPlaylistInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" completion:^(BOOL success, NSError *error) {
+        if (success) {
+
+            if([self.youtubeAPI.searchItem.items count]==0) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 동영상이 존재하지 않습니다." delegate:self
+                                                      cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+                [alert show];
+                return;
+            }
+            
+            YTItem *tempYTItem = (YTItem *)[self.youtubeAPI.searchItem.items objectAtIndex:indexPath.row];
+
+            NSString *playListID = [tempYTItem id][@"playlistId"];
+            if([playListID length]>0)
+            {
+                VideoListTableViewController *vList = [[VideoListTableViewController alloc] init];
+                [vList setPlayListID:playListID];
+                [self.navigationController pushViewController:vList animated:YES];
+            }
+        }
+    }];
 }
 
 @end

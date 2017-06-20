@@ -9,9 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface YTPlaylistItem : NSObject
-@property (copy, nonatomic) NSString *likeId;
-@property (copy, nonatomic) NSString *favoritesId;
-@property (copy, nonatomic) NSString *uploadsId;
-@property (copy, nonatomic) NSString *watchHistoryId;
-@property (copy, nonatomic) NSString *watchLaterId;
+@property (copy, nonatomic) NSArray *items;
 @end
