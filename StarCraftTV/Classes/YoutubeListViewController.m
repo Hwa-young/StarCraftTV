@@ -50,10 +50,10 @@ dispatch_queue_t queueImage;
     self.tableItem = [NSMutableArray array];
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
-    UISearchBar *searchBar = [UISearchBar new];
-    searchBar.placeholder = @"Enter text search";
-    searchBar.delegate = self;
-    self.navigationItem.titleView = searchBar;
+//    UISearchBar *searchBar = [UISearchBar new];
+//    searchBar.placeholder = @"Enter text search";
+//    searchBar.delegate = self;
+//    self.navigationItem.titleView = searchBar;
 
     [self initDataForTable];
 }
