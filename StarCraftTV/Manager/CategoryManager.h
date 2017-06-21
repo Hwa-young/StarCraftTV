@@ -15,7 +15,7 @@
 
 @interface CategoryManager : NSObject
 {
-    NSArray* arrLeagueCategoty;
+    NSMutableArray* arrLeagueCategoty;
     NSArray* arrProgamerList;
 }
 
@@ -28,7 +28,7 @@ AS_SINGLETON(CategoryManager);
 - (void) clearArray;
 
 
-- (NSArray*) getLeagueArray;
+- (NSMutableArray*) getLeagueArray;
 
 // Save Boot API Dictionary to NSDictionary
 - (void) saveCategoryDataWithDictionary:(NSDictionary*)dic;

@@ -68,6 +68,11 @@
 		2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DF91ED2B41900205FCA /* NSData+Base64.m */; };
 		2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */; };
 		2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */; };
+		2BAE29E61EFA64BC0018B0D0 /* expandableImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BAE29DE1EFA64BC0018B0D0 /* expandableImage.png */; };
+		2BAE29E71EFA64BC0018B0D0 /* expandableImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BAE29DF1EFA64BC0018B0D0 /* expandableImage@2x.png */; };
+		2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E11EFA64BC0018B0D0 /* SKSTableView.m */; };
+		2BAE29E91EFA64BC0018B0D0 /* SKSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */; };
+		2BAE29EA1EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */; };
 		2BD4FB7F1EF372F40083143A /* icons8-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */; };
 		2BDF203E1ED558CE0078952D /* YoutubeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */; };
 		2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */; };
@@ -193,6 +198,14 @@
 		2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		2BA20DFC1ED2B41900205FCA /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		2BAE29DE1EFA64BC0018B0D0 /* expandableImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandableImage.png; sourceTree = "<group>"; };
+		2BAE29DF1EFA64BC0018B0D0 /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
+		2BAE29E01EFA64BC0018B0D0 /* SKSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableView.h; sourceTree = "<group>"; };
+		2BAE29E11EFA64BC0018B0D0 /* SKSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableView.m; sourceTree = "<group>"; };
+		2BAE29E21EFA64BC0018B0D0 /* SKSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCell.h; sourceTree = "<group>"; };
+		2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCell.m; sourceTree = "<group>"; };
+		2BAE29E41EFA64BC0018B0D0 /* SKSTableViewCellIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCellIndicator.h; sourceTree = "<group>"; };
+		2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCellIndicator.m; sourceTree = "<group>"; };
 		2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-logo@2x.png"; sourceTree = "<group>"; };
 		2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeListViewController.h; sourceTree = "<group>"; };
 		2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeListViewController.m; sourceTree = "<group>"; };
@@ -295,6 +308,7 @@
 		2B43CEAC1ED2AD4000398AB5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2BAE29DD1EFA64BC0018B0D0 /* SKSTableView */,
 				2BA20DBF1ED2B41900205FCA /* Addition */,
 				2BA20DF21ED2B41900205FCA /* Core */,
 				2BA20DF51ED2B41900205FCA /* Crypto */,
@@ -520,6 +534,21 @@
 			path = Crypto;
 			sourceTree = "<group>";
 		};
+		2BAE29DD1EFA64BC0018B0D0 /* SKSTableView */ = {
+			isa = PBXGroup;
+			children = (
+				2BAE29DE1EFA64BC0018B0D0 /* expandableImage.png */,
+				2BAE29DF1EFA64BC0018B0D0 /* expandableImage@2x.png */,
+				2BAE29E01EFA64BC0018B0D0 /* SKSTableView.h */,
+				2BAE29E11EFA64BC0018B0D0 /* SKSTableView.m */,
+				2BAE29E21EFA64BC0018B0D0 /* SKSTableViewCell.h */,
+				2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */,
+				2BAE29E41EFA64BC0018B0D0 /* SKSTableViewCellIndicator.h */,
+				2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */,
+			);
+			path = SKSTableView;
+			sourceTree = "<group>";
+		};
 		2BE492F51ED287E60063B884 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,9 +675,11 @@
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
+				2BAE29E71EFA64BC0018B0D0 /* expandableImage@2x.png in Resources */,
 				2B0D3BCE1ED53F33008FFC17 /* icons8-settings_filled@2x.png in Resources */,
 				2B23AF661EF24F7B007EF22A /* YTTableViewCell.xib in Resources */,
 				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
+				2BAE29E61EFA64BC0018B0D0 /* expandableImage.png in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
 				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,
@@ -731,6 +762,7 @@
 				2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */,
 				2BA20E111ED2B41900205FCA /* UIAlertView+Additions.m in Sources */,
 				2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */,
+				2BAE29E91EFA64BC0018B0D0 /* SKSTableViewCell.m in Sources */,
 				2BA20E171ED2B41900205FCA /* UIScreen+Additions.m in Sources */,
 				2B540C351ED272A2000A9879 /* main.m in Sources */,
 				2B5E97BB1EDD3BAC0006DAD8 /* HTTPRequestHandler.m in Sources */,
@@ -746,6 +778,7 @@
 				2B5E97C91EDD3C9B0006DAD8 /* PlayListTableViewCell.m in Sources */,
 				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
 				2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */,
+				2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */,
 				2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */,
 				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
 				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
@@ -774,6 +807,7 @@
 				2BA20E0D1ED2B41900205FCA /* NSMutableDictionary+Additions.m in Sources */,
 				2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */,
 				2BDF20431ED562870078952D /* YoutubeViewController.m in Sources */,
+				2BAE29EA1EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m in Sources */,
 				2BA20E121ED2B41900205FCA /* UIApplication+Additions.m in Sources */,
 				2B23AF601EF22A75007EF22A /* YoutubeSearchContants.m in Sources */,
 			);

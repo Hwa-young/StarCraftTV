@@ -25,10 +25,9 @@ DEF_SINGLETON(CategoryManager);
 
 - (void) loadFromUserDefault
 {
-    arrLeagueCategoty = [self arrayFromData:[_userDefaults objectForKey:CATEGORY_LEAGUE]];
+    arrLeagueCategoty = (NSMutableArray*)[self arrayFromData:[_userDefaults objectForKey:CATEGORY_LEAGUE]];
     arrProgamerList = [[NSArray alloc] init];
     arrProgamerList = [PROGAMER_LIST componentsSeparatedByString:@","];
-    
 }
 
 - (void) saveToUserDefault
@@ -62,10 +61,27 @@ DEF_SINGLETON(CategoryManager);
     [self clearArray];
     
     arrLeagueCategoty = [[NSMutableArray alloc] init];
-    arrLeagueCategoty = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
+    
+    NSMutableArray *tMutableArray = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
+    
+//    arrLeagueCategoty = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
     
 //    arrCategoryMainLogin = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"category.main_login"]] copy];
     
+    
+    
+    for(int i=0 ; i<[tMutableArray count] ; i++)
+    {
+        NSMutableArray *tArray = [[NSMutableArray alloc] init];
+        NSDictionary *tDic = [tMutableArray objectAtIndex:i];
+        [tArray addObject:[NSString stringWithString:tDic[@"year"]]];
+        NSArray *cArray = tDic[@"competition"];
+        for(int j=0 ; j < [cArray count] ; j++)
+        {
+            [tArray addObject:[NSString stringWithString:[cArray objectAtIndex:j][@"title"]]];
+        }
+        [arrLeagueCategoty addObject:tArray];
+    }
     [self saveToUserDefault];
 }
 

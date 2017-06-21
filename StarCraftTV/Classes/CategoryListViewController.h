@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SKSTableView.h"
+#import "SKSTableViewCell.h"
 
-@interface CategoryListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CategoryListViewController : UIViewController <SKSTableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *menuTableview;
+@property (weak, nonatomic) IBOutlet SKSTableView *menuTableview;
 
 @end
