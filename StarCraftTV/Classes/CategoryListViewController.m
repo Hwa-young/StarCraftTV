@@ -114,7 +114,7 @@
                 return;
             }
             
-            YTItem *tempYTItem = (YTItem *)[self.youtubeAPI.searchItem.items objectAtIndex:indexPath.row];
+            YTItem *tempYTItem = (YTItem *)[self.youtubeAPI.searchItem.items objectAtIndex:0];
 
             NSString *playListID = [tempYTItem id][@"playlistId"];
             if([playListID length]>0)
