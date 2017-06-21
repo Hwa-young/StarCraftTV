@@ -7,6 +7,7 @@
 //
 
 #import "CategoryManager.h"
+#import "Constants.h"
 
 @implementation CategoryManager
 DEF_SINGLETON(CategoryManager);
@@ -25,6 +26,9 @@ DEF_SINGLETON(CategoryManager);
 - (void) loadFromUserDefault
 {
     arrLeagueCategoty = [self arrayFromData:[_userDefaults objectForKey:CATEGORY_LEAGUE]];
+    arrProgamerList = [[NSArray alloc] init];
+    arrProgamerList = [PROGAMER_LIST componentsSeparatedByString:@","];
+    
 }
 
 - (void) saveToUserDefault

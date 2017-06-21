@@ -16,6 +16,7 @@
 @interface CategoryManager : NSObject
 {
     NSArray* arrLeagueCategoty;
+    NSArray* arrProgamerList;
 }
 
 AS_SINGLETON(CategoryManager);
