@@ -78,6 +78,9 @@
 
 - (void)getObjectWith:(URLType)typeURL completion:(Completion)completion {
     
+    NSLog(@"Call Youtube API URL : %@", self.url.absoluteString);
+    NSLog(@"Call Youtube API Params : %@", self.paramaters);
+    
     AFHTTPSessionManager *managerSession = [AFHTTPSessionManager manager];
     [managerSession GET:self.url.absoluteString
              parameters:self.paramaters
@@ -179,29 +182,6 @@
     
 }
 
-- (void)getListVideoActivitied:(Completion)completion {
-    
-    self.url = [NSURL URLWithString:kActivitiURL];
-    self.urlType = ACTIVITI;
-    
-    if ([self.paramaters objectForKey:@"q"])
-        [self.paramaters removeObjectForKey:@"q"];
-    
-//    if (self.searchItem.nextPageToken == nil) {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = @"";
-//        else
-//            [self.paramaters setObject:@"" forKey:@"pageToken"];
-//    }
-//    else {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-//        else
-//            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-//    }
-    
-    [self getObjectWith:VIDEO completion:completion];
-}
 
 - (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion {
     
@@ -253,6 +233,36 @@
     [self getObjectWith:PLAYLISTITEM completion:completion];
 }
 
+
+- (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion {
+    
+    self.url = [NSURL URLWithString:kSearchPlaylistItemsURL];
+    
+    if ([self.paramaters objectForKey:@"q"])
+        self.paramaters[@"q"] = str;
+    else
+        [self.paramaters setObject:str forKey:@"q"];
+    
+    if ([self.paramaters objectForKey:@"channelId"])
+        self.paramaters[@"channelId"] = idChannel;
+    else
+        [self.paramaters setObject:idChannel forKey:@"channelId"];
+    
+    //    if (![self.keySearchOld isEqualToString:idChannel]) {
+    //        if ([self.paramaters objectForKey:@"pageToken"])
+    //            self.paramaters[@"pageToken"] = @"";
+    //        else
+    //            [self.paramaters setObject:@"" forKey:@"pageToken"];
+    //    }
+    //    else {
+    //        if ([self.paramaters objectForKey:@"pageToken"])
+    //            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
+    //        else
+    //            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
+    //    }
+    
+    [self getObjectWith:VIDEO completion:completion];
+}
 
 - (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion {
     
@@ -316,38 +326,4 @@
     [self getObjectWith:VIDEO completion:completion];
 }
 
-- (void)getMyPlaylistItems {
-    
-    self.url = [NSURL URLWithString:kChannelContentURL];
-    
-    [self getObjectWith:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
-        if (success) {
-//            NSLog(@"Get playlist history: %@", self.playlistItem.watchHistoryId);
-//            NSLog(@"Get playlist like: %@", self.playlistItem.likeId);
-//            NSLog(@"Get playlist favorit: %@", self.playlistItem.favoritesId);
-//            NSLog(@"Get playlist watch later: %@", self.playlistItem.watchLaterId);
-//            NSLog(@"Get playlist uploads video: %@", self.playlistItem.uploadsId);
-        }
-        else
-            NSLog(@"Error : %@", error);
-    }];
-}
-
-- (void)getMySubscriptions:(void(^)(BOOL success, NSError *error))completion {
-    
-    self.url = [NSURL URLWithString:kSubscriptionURL];
-    
-    [self getObjectWith:CHANNEL completion:completion];
-}
-
-- (void)getChannelActivities:(void(^)(BOOL success, NSError *error))completion {
-    
-    self.url = [NSURL URLWithString:kChannelURL];
-    
-    [self getObjectWith:CHANNEL completion:completion];
-}
-
-//- (void)getImageForVideo:(void(^)(BOOL success, NSError *error))completion {
-//   
-//}
 @end

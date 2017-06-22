@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *tableItem;
 @property (nonatomic, strong) NSString *playListID;
+@property (nonatomic, strong) NSString *queryString;
 
 @end

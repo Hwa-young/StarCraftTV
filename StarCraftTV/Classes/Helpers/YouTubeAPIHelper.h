@@ -26,14 +26,10 @@ typedef void(^Completion)(BOOL success, NSError *error);
 
 - (id)init;
 - (void)settingAccessToken:(NSString *)accessToken;
-- (void)getListVideoActivitied:(Completion)completion;
 - (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion;
+- (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion;
 - (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion;
 - (void)getListVideoByPlayListWithType:(URLType)type completion:(Completion)completion;
-
-- (void)getMyPlaylistItems;
-- (void)getMySubscriptions:(void(^)(BOOL success, NSError *error))completion;
-- (void)getChannelActivities:(void(^)(BOOL success, NSError *error))completion;
 
 @end

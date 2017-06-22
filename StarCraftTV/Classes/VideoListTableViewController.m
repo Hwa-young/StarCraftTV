@@ -46,26 +46,43 @@
     
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     self.tableItem = [NSMutableArray array];
-
+    
     NSMutableDictionary *param = [NSMutableDictionary new];
-    [param setObject:self.playListID forKey:@"playlistId"];
+    [param setObject:_queryString forKey:@"q"];
     
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
-
-    [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
-        if (success) {
+    
+    [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:_queryString completion:^(BOOL success, NSError *error) {
+        if (success)
+        {
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
         }
     }];
+
+    
+    
+
+//    NSMutableDictionary *param = [NSMutableDictionary new];
+//    [param setObject:self.playListID forKey:@"playlistId"];
+//    
+//    [self.youtubeAPI settingAccessToken:@""];
+//    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+//
+//    [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
+//        if (success) {
+//            [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+//            [self.tableView reloadData];
+//        }
+//    }];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     KPDropMenu *dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
     dropNew.delegate = self;
-    dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"조별 예선"];
+    dropNew.items = @[@"결승", @"4강", @"8강", @"24강", @"조별 예선"];
     dropNew.backgroundColor = [UIColor whiteColor];
     dropNew.title = @"토너먼트";
     dropNew.titleColor = [UIColor redColor];
@@ -142,6 +159,26 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
+}
+
+-(void)didSelectItem : (KPDropMenu *) dropMenu atIndex : (int) atIndex
+{
+    [self.tableItem removeAllObjects];
+    
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    [param setObject:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] forKey:@"q"];
+    
+    [self.youtubeAPI settingAccessToken:@""];
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+    
+    [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] completion:^(BOOL success, NSError *error) {
+        if (success)
+        {
+            [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+            [self.tableView reloadData];
+        }
+    }];
+    
 }
 
 @end

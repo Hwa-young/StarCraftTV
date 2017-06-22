@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *categotyArray;
 @property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 @property (nonatomic, strong) NSArray *contents;
+@property (nonatomic, strong) NSString *qString;
 
 @end
 
@@ -51,6 +52,16 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)makeQueryString:(NSString*)str
+{
+    _qString = str;
+}
+
+- (void)clearQueryString
+{
+    _qString = @"";
 }
 
 /*
@@ -113,6 +124,7 @@
             {
                 VideoListTableViewController *vList = [[VideoListTableViewController alloc] init];
                 [vList setPlayListID:playListID];
+                [vList setQueryString:qString];
                 [self.navigationController pushViewController:vList animated:YES];
             }
         }
@@ -123,24 +135,10 @@
 {
     if (!_contents)
     {
-        _contents = @[[[CategoryManager sharedInstance] getLeagueArray]];
-        
-//        _contents = @[
-//                      @[
-//                          @[@"Section0_Row0", @"Row0_Subrow1",@"Row0_Subrow2"],
-//                          @[@"Section1_Row0", @"Row0_Subrow1", @"Row0_Subrow2", @"Row0_Subrow3"],
-//                          @[@"Section1_Row1"],
-//                          @[@"Section1_Row2", @"Row2_Subrow1", @"Row2_Subrow2", @"Row2_Subrow3", @"Row2_Subrow4", @"Row2_Subrow5"],
-//                          @[@"Section1_Row3"],
-//                          @[@"Section1_Row4"],
-//                          @[@"Section1_Row5"],
-//                          @[@"Section1_Row6"],
-//                          @[@"Section1_Row7"],
-//                          @[@"Section1_Row8"],
-//                          @[@"Section1_Row9"],
-//                          @[@"Section1_Row10"],
-//                          @[@"Section1_Row11"]]
-//                      ];
+        _contents = @[
+                      [[CategoryManager sharedInstance] getLeagueArray]
+                      // 인물별 추가할것
+                      ];
     }
     
     return _contents;
@@ -165,11 +163,6 @@
 
 - (BOOL)tableView:(SKSTableView *)tableView shouldExpandSubRowsOfCellAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1 && indexPath.row == 0)
-    {
-        return YES;
-    }
-    
     return NO;
 }
 
@@ -183,12 +176,8 @@
         cell = [[SKSTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     cell.textLabel.text = self.contents[indexPath.section][indexPath.row][0];
-    
-    if ((indexPath.section == 0 && (indexPath.row == 1 || indexPath.row == 0)) || (indexPath.section == 1 && (indexPath.row == 0 || indexPath.row == 2)))
-        cell.expandable = YES;
-    else
-        cell.expandable = NO;
-    
+    cell.expandable = YES;
+
     return cell;
 }
 
@@ -215,10 +204,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
+    
+    
 }
 
 - (void)tableView:(SKSTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
+    
+    [self callYoutubeSearchApiWithSearchString:_qString indexPath:indexPath];
+    
     NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
 }
 
@@ -243,9 +238,6 @@
 - (void)reloadTableViewWithData:(NSArray *)array
 {
     self.contents = array;
-    
-    // Refresh data not scrolling
-    //    [self.tableView refreshData];
     
     [self.menuTableview refreshDataWithScrollingToIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }

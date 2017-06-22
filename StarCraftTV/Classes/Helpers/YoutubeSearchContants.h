@@ -18,6 +18,7 @@ static NSString * const kSubscriptionURL            = @"https://www.googleapis.c
 static NSString * const kChannelURL                 = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=50&channelId=UCX1DpoQkBN4rv5ZfPivA_Wg";
 static NSString * const kPlaylistItemChannelURL     = @"https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCX1DpoQkBN4rv5ZfPivA_Wg&key={YOUR_API_KEY}"; // danh sach cac playlist in 1 channel
 static NSString * const kSearchPlaylistURL          = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist";
+static NSString * const kSearchPlaylistItemsURL     = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=relevance&maxResults=50";
 
 static NSString *const DEFAULT_KEYWORD = @"starcraftatvapp";
 

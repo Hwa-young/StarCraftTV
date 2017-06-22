@@ -82,6 +82,7 @@ DEF_SINGLETON(CategoryManager);
         }
         [arrLeagueCategoty addObject:tArray];
     }
+    
     [self saveToUserDefault];
 }
 

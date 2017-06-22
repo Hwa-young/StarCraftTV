@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StarCraftTV/Classes/CategoryListViewController.m"
-            timestampString = "519730033.703183"
+            filePath = "StarCraftTV/Classes/PlayListTableViewController.m"
+            timestampString = "519786649.974424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "-refreshData"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-serviceCallForPlayList"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StarCraftTV/Classes/CategoryListViewController.m"
-            timestampString = "519729830.289155"
+            filePath = "StarCraftTV/Classes/PlayListTableViewController.m"
+            timestampString = "519786650.581871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-contents"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-serviceCallForVideos:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarCraftTV/Classes/PlayListTableViewController.m"
+            timestampString = "519786664.194642"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
