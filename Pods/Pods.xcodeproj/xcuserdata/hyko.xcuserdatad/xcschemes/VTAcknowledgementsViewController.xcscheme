@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BD3AFE6063F5ABEBF1922CD614B903AD'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = '0C0725A16424BDDF585AAB2FD406042F'
+               BlueprintName = 'VTAcknowledgementsViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'VTAcknowledgementsViewController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

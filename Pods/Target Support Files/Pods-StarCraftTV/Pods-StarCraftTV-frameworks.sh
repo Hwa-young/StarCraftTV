@@ -98,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TLYShyNavBar/TLYShyNavBar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/VTAcknowledgementsViewController/VTAcknowledgementsViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ViewDeck/ViewDeck.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XCDYouTubeKit/XCDYouTubeKit.framework"
 fi
@@ -111,6 +112,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TLYShyNavBar/TLYShyNavBar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/VTAcknowledgementsViewController/VTAcknowledgementsViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ViewDeck/ViewDeck.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XCDYouTubeKit/XCDYouTubeKit.framework"
 fi

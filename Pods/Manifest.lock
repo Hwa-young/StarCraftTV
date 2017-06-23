@@ -51,6 +51,7 @@ PODS:
   - SVProgressHUD (2.1.2)
   - TLYShyNavBar (1.1.1)
   - ViewDeck (3.1.0)
+  - VTAcknowledgementsViewController (1.2.1)
   - XCDYouTubeKit (2.5.5)
 
 DEPENDENCIES:
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - TLYShyNavBar
   - ViewDeck
+  - VTAcknowledgementsViewController
   - XCDYouTubeKit
 
 EXTERNAL SOURCES:
@@ -99,8 +101,9 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TLYShyNavBar: d200e598923fbc2bd21a5c5efdfabf4898b11da0
   ViewDeck: 942d90dd23c9f97cc8038be352255378167edcca
+  VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
 
-PODFILE CHECKSUM: 64251c90b54739853f725aa487b015b5fb74e639
+PODFILE CHECKSUM: ba3aa98ae416d5602076f8d3b9fbdc03f57098a7
 
 COCOAPODS: 1.2.1

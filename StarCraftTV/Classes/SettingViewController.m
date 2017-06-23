@@ -10,6 +10,8 @@
 #import "CategoryListViewController.h"
 #import "Constants.h"
 
+#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
+
 @interface SettingViewController ()
 
 @property (nonatomic, strong) NSMutableArray *menuArray;
@@ -65,7 +67,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 3)
+    if(indexPath.row == 2)
+        [self callOpenLibraryLicensseViewController];
+    else if(indexPath.row == 3)
         [self callMailto];
 }
 
@@ -84,6 +88,12 @@
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:email]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
     }
+}
+
+- (void)callOpenLibraryLicensseViewController
+{
+    VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithFileNamed:@"Pods-StarCraftTV-acknowledgements"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -21,5 +21,6 @@ use_frameworks!
 	pod 'Google/Analytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/AdMob'
+    pod 'VTAcknowledgementsViewController'
 
 end
