@@ -547,9 +547,9 @@
 				2B35CD2C1EF120FC00584B78 /* SettingViewController */,
 				2B35CD2D1EF1210D00584B78 /* CategoryViewController */,
 				2B35CD2F1EF1219D00584B78 /* YoutubeViewController(Player) */,
+				2B5F00541EFCACE100CD4CE9 /* TribeCollectionViewController */,
 				2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */,
 				2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */,
-				2B5F00541EFCACE100CD4CE9 /* TribeCollectionViewController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

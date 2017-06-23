@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"버전",@"오픈소스",@"문의사항", nil];
+    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"버전",@"오픈소스",@"문의하기", nil];
     [self.menuTableview setScrollsToTop:YES];
 }
 
@@ -58,20 +58,32 @@
         [cell setBackgroundColor:[UIColor clearColor]];
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
-        [cell.textLabel setTextColor:[UIColor redColor]];
+        [cell.textLabel setTextColor:[UIColor blackColor]];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CategoryListViewController *category = [[CategoryListViewController alloc] init];
-    [self.navigationController pushViewController:category animated:YES];
+    if(indexPath.row == 3)
+        [self callMailto];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75.f;
+}
+
+- (void)callMailto
+{
+    NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject=제목입력!";
+    NSString *body = @"&body=내용";
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:email]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    }
 }
 
 @end
