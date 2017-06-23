@@ -16,7 +16,11 @@
 @interface CategoryManager : NSObject
 {
     NSMutableArray* arrLeagueCategoty;
-    NSArray* arrProgamerList;
+    NSMutableArray* arrProgamerList;
+    
+    NSMutableArray* arrZergProgamerList;       // ZERG_PROGAMER_LIST
+    NSMutableArray* arrProtossProgamerList;    // PROTOSS_PROGAMER_LIST
+    NSMutableArray* arrTerranProgamerList;     // TERRAN_PROGAMER_LIST
 }
 
 AS_SINGLETON(CategoryManager);
@@ -27,8 +31,14 @@ AS_SINGLETON(CategoryManager);
 - (void) saveToUserDefault;
 - (void) clearArray;
 
-
 - (NSMutableArray*) getLeagueArray;
+
+- (NSMutableArray*) getZergProgamerList;        // ZERG_PROGAMER_LIST
+- (NSMutableArray*) getProtossProgamerList;     // PROTOSS_PROGAMER_LIST
+- (NSMutableArray*) getTerranProgamerList;      // TERRAN_PROGAMER_LIST
+
+- (NSMutableArray*) getProgamerList;            // PROGAMER_LIST
+
 
 // Save Boot API Dictionary to NSDictionary
 - (void) saveCategoryDataWithDictionary:(NSDictionary*)dic;

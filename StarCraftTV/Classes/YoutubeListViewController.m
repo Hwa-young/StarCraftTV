@@ -100,8 +100,8 @@ dispatch_queue_t queueImage;
         {
         }
     }];
-    NSString * newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
     
+    NSString * newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
     cell.titleLabel.text = newReplacedString;
     cell.dateLabel.text = tempItem.snippet.publishedAt;
 

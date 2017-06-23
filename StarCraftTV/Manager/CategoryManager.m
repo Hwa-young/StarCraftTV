@@ -26,14 +26,28 @@ DEF_SINGLETON(CategoryManager);
 - (void) loadFromUserDefault
 {
     arrLeagueCategoty = (NSMutableArray*)[self arrayFromData:[_userDefaults objectForKey:CATEGORY_LEAGUE]];
-    arrProgamerList = [[NSArray alloc] init];
-    arrProgamerList = [PROGAMER_LIST componentsSeparatedByString:@","];
+    
+    arrProgamerList = [[NSMutableArray alloc] init];
+    arrProgamerList = [NSMutableArray arrayWithArray:[PROGAMER_LIST componentsSeparatedByString:@","]];
+    
+    arrZergProgamerList = [[NSMutableArray alloc] init];
+    arrZergProgamerList = [NSMutableArray arrayWithArray:[ZERG_PROGAMER_LIST componentsSeparatedByString:@","]];
+
+    arrProtossProgamerList = [[NSMutableArray alloc] init];
+    arrProtossProgamerList = [NSMutableArray arrayWithArray:[PROTOSS_PROGAMER_LIST componentsSeparatedByString:@","]];
+
+    arrTerranProgamerList = [[NSMutableArray alloc] init];
+    arrTerranProgamerList = [NSMutableArray arrayWithArray:[TERRAN_PROGAMER_LIST componentsSeparatedByString:@","]];
 }
 
 - (void) saveToUserDefault
 {
     [_userDefaults setObject:[self dataFromArray:arrLeagueCategoty] forKey:CATEGORY_LEAGUE];
-
+    
+    [_userDefaults setObject:[self dataFromArray:arrZergProgamerList] forKey:CATEGORY_ZERG_PROGAMER];
+    [_userDefaults setObject:[self dataFromArray:arrTerranProgamerList] forKey:CATEGORY_TERRAN_PROGAMER];
+    [_userDefaults setObject:[self dataFromArray:arrProtossProgamerList] forKey:CATEGORY_PROTOSS_PROGAMER];
+    
     [_userDefaults synchronize];
 }
 
@@ -68,7 +82,7 @@ DEF_SINGLETON(CategoryManager);
     
 //    arrCategoryMainLogin = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"category.main_login"]] copy];
     
-    
+    [arrLeagueCategoty addObject:@[@"종족별 인물 검색", @"테란", @"프로토스", @"저그"]];
     
     for(int i=0 ; i<[tMutableArray count] ; i++)
     {
@@ -82,6 +96,9 @@ DEF_SINGLETON(CategoryManager);
         }
         [arrLeagueCategoty addObject:tArray];
     }
+    
+//    [arrLeagueCategoty addObject:@[@"인물", @"Protoss", @"Terran", @"Zerg"]];
+//    [arrLeagueCategoty addObject:@[@"종족 검색", @"프로토스", @"테란", @"저그"]];
     
     [self saveToUserDefault];
 }
@@ -117,7 +134,6 @@ DEF_SINGLETON(CategoryManager);
     }
     return nil;
 }
-
 
 - (NSDictionary*) getSubItemArray:(NSDictionary*) itemDic
 {
@@ -211,9 +227,29 @@ DEF_SINGLETON(CategoryManager);
     return resultArray;
 }
 
-- (NSArray*) getLeagueArray
+- (NSMutableArray*) getLeagueArray
 {
     return arrLeagueCategoty;
+}
+
+- (NSMutableArray*) getZergProgamerList
+{
+    return arrZergProgamerList;
+}
+
+- (NSMutableArray*) getProtossProgamerList
+{
+    return arrProtossProgamerList;
+}
+
+- (NSMutableArray*) getTerranProgamerList
+{
+    return arrTerranProgamerList;
+}
+
+- (NSMutableArray*) getProgamerList
+{
+    return arrProgamerList;
 }
 
 @end

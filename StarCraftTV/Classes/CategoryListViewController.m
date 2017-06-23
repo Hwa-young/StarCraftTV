@@ -7,8 +7,10 @@
 //
 
 #import "CategoryListViewController.h"
-#import "PlayListTableViewController.h"
+
 #import "VideoListTableViewController.h"
+#import "TribeCollectionViewController.h"
+
 #import "CategoryManager.h"
 #import "Constants.h"
 
@@ -122,7 +124,7 @@
             NSString *playListID = [tempYTItem id][@"playlistId"];
             if([playListID length]>0)
             {
-                VideoListTableViewController *vList = [[VideoListTableViewController alloc] init];
+                VideoListTableViewController *vList = [[VideoListTableViewController alloc] initWithFilterHeader:YES];
                 [vList setPlayListID:playListID];
                 [vList setQueryString:qString];
                 [self.navigationController pushViewController:vList animated:YES];
@@ -203,18 +205,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
-    
-    
+//    NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
 }
 
 - (void)tableView:(SKSTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
-    
-    [self callYoutubeSearchApiWithSearchString:_qString indexPath:indexPath];
-    
-    NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
+    if(indexPath.row == 0)
+    {
+        TRIBE_TYPE type; // 테란 프로토스 저그
+        if(indexPath.subRow == 1)
+            type = TAG_TRIBE_TERRAN;
+        else if(indexPath.subRow == 2)
+            type = TAG_TRIBE_PROTOSS;
+        else if(indexPath.subRow == 3)
+            type = TAG_TRIBE_ZERG;
+        else
+            type = TAG_TRIBE_ZERG;
+
+        TribeCollectionViewController *tViewController = [[TribeCollectionViewController alloc] initWithNibName:@"TribeCollectionViewController" bundle:nil type:type];
+        [self.navigationController pushViewController:tViewController animated:YES];
+    }
+    else
+    {
+        [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
+        
+        [self callYoutubeSearchApiWithSearchString:_qString indexPath:indexPath];
+    }
+//    NSLog(@"Section: %ld, Row:%ld, Subrow:%ld", (long)indexPath.section, (long)indexPath.row, (long)indexPath.subRow);
 }
 
 #pragma mark - Actions
@@ -241,6 +258,5 @@
     
     [self.menuTableview refreshDataWithScrollingToIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
 }
-
 
 @end

@@ -8,8 +8,6 @@
 
 #import "VideoListTableViewController.h"
 #import "Constants.h"
-#import "HTTPRequestHandler.h"
-#import "VideoListTableViewCell.h"
 #import "YoutubeViewController.h"
 
 #import "YTItem.h"
@@ -19,17 +17,29 @@
 #import "KPDropMenu.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface VideoListTableViewController () <KPDropMenuDelegate>
 
-@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
+@property (strong, nonatomic) YouTubeAPIHelper  *youtubeAPI;
+@property (strong, nonatomic) KPDropMenu        *dropNew;
+
+@property (assign, nonatomic) BOOL              isWorking;
 
 @end
 
 @implementation VideoListTableViewController
 
-//dispatch_queue_t queueImage;
+- (instancetype)initWithFilterHeader:(BOOL)flag
+{
+    self = [super init];
+    if(self)
+    {
+        _needFilterFlag = flag;
+        _isWorking = NO;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -42,6 +52,8 @@
 
 - (void)initDataForTable
 {
+    [SVProgressHUD show];
+    
     [self.tableItem removeAllObjects];
     
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
@@ -49,6 +61,8 @@
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:_queryString forKey:@"q"];
+    
+    _isWorking = YES;
     
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
@@ -59,50 +73,41 @@
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
         }
+        [SVProgressHUD dismiss];
+        _isWorking = NO;
     }];
-
-    
-    
-
-//    NSMutableDictionary *param = [NSMutableDictionary new];
-//    [param setObject:self.playListID forKey:@"playlistId"];
-//    
-//    [self.youtubeAPI settingAccessToken:@""];
-//    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
-//
-//    [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
-//        if (success) {
-//            [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
-//            [self.tableView reloadData];
-//        }
-//    }];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    KPDropMenu *dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
-    dropNew.delegate = self;
-    dropNew.items = @[@"결승", @"4강", @"8강", @"24강", @"조별 예선"];
-    dropNew.backgroundColor = [UIColor whiteColor];
-    dropNew.title = @"토너먼트";
-    dropNew.titleColor = [UIColor redColor];
-    dropNew.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
-    dropNew.titleTextAlignment = NSTextAlignmentCenter;
-    dropNew.DirectionDown = YES;
-    [self.view addSubview:dropNew];
-
-    return dropNew;
+    if(_needFilterFlag==NO) return nil;
+    if(!self.dropNew)
+    {
+        self.dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
+        self.dropNew.delegate = self;
+        self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"조별 예선"];
+        self.dropNew.backgroundColor = [UIColor whiteColor];
+        self.dropNew.title = @"토너먼트";
+        self.dropNew.titleColor = [UIColor redColor];
+        self.dropNew.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+        self.dropNew.titleTextAlignment = NSTextAlignmentCenter;
+        self.dropNew.DirectionDown = YES;
+        [self.view addSubview:self.dropNew];
+    }
+    return self.dropNew;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    if(_needFilterFlag==YES)
+        return 50.f;
+    else
+        return 0.f;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -131,7 +136,8 @@
         }
     }];
 
-    cell.titleLabel.text = tempItem.snippet.title;
+    NSString * newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
+    cell.titleLabel.text = newReplacedString;
     cell.dateLabel.text = tempItem.snippet.publishedAt;
     
     return cell;
@@ -145,15 +151,6 @@
     [controller setVideoID:tempItem.id[@"videoId"]];
     
     [self.navigationController pushViewController:controller animated:YES];
-
-//    Video* video=[[Video alloc] init];
-//    video=[_videoArray objectAtIndex:indexPath.row];
-//    
-//    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
-//    [vc setVideoID:video.videoID];
-//    [vc setVideoThumnailImage:video.videoImg];
-//    
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -163,10 +160,16 @@
 
 -(void)didSelectItem : (KPDropMenu *) dropMenu atIndex : (int) atIndex
 {
+    if(_isWorking == YES) return;
+    
+    [SVProgressHUD show];
+    _isWorking = YES;
+
     [self.tableItem removeAllObjects];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] forKey:@"q"];
+    
     
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
@@ -177,8 +180,9 @@
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
         }
+        [SVProgressHUD dismiss];
+        _isWorking = NO;
     }];
-    
 }
 
 @end

@@ -10,8 +10,12 @@
 
 @interface VideoListTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *tableItem;
-@property (nonatomic, strong) NSString *playListID;
-@property (nonatomic, strong) NSString *queryString;
+- (instancetype)initWithFilterHeader:(BOOL)flag;
+
+@property (nonatomic, strong) NSMutableArray    *tableItem;
+@property (nonatomic, strong) NSString          *playListID;
+@property (nonatomic, strong) NSString          *queryString;
+
+@property (nonatomic, assign) BOOL              needFilterFlag;
 
 @end

@@ -58,7 +58,7 @@
         [cell setBackgroundColor:[UIColor clearColor]];
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
-        [cell.textLabel setTextColor:[UIColor whiteColor]];
+        [cell.textLabel setTextColor:[UIColor redColor]];
     }
     return cell;
 }

@@ -13,7 +13,7 @@
 #import "CategoryListViewController.h"
 #import "Constants.h"
 
-#import <TLYShyNavBar/TLYShyNavBarManager.h>
+//#import <TLYShyNavBar/TLYShyNavBarManager.h>
 #import <GoogleMobileAds/GADAdSize.h>
 
 @implementation CustomToolBar
