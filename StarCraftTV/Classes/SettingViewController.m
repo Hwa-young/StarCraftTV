@@ -92,7 +92,8 @@
 
 - (void)callOpenLibraryLicensseViewController
 {
-    VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithFileNamed:@"Pods-StarCraftTV-acknowledgements"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-StarCraftTV-acknowledgements" ofType:@"plist"];
+    VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithPath:path];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

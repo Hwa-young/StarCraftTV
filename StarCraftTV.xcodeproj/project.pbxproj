@@ -33,7 +33,6 @@
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
 		2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3F1ED272A2000A9879 /* Assets.xcassets */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
-		2B5410E81EFD1272004F011A /* Pods-StarCraftTV-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B5410E71EFD1272004F011A /* Pods-StarCraftTV-acknowledgements.plist */; };
 		2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */; };
 		2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B560FBA1EDD62B000DEE3D9 /* boot.json */; };
 		2B5F00521EFCACD400CD4CE9 /* TribeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F00501EFCACD400CD4CE9 /* TribeCollectionViewController.m */; };
@@ -80,6 +79,7 @@
 		2BE492FC1ED2882E0063B884 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492FB1ED2882E0063B884 /* BaseViewController.m */; };
 		2BF846BF1EF8C01C00712083 /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846BE1EF8C01C00712083 /* League.m */; };
 		2BF846C21EF8C1BC00712083 /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846C11EF8C1BC00712083 /* CategoryManager.m */; };
+		2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +125,6 @@
 		2B540C3F1ED272A2000A9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B540C421ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B5410E71EFD1272004F011A /* Pods-StarCraftTV-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-StarCraftTV-acknowledgements.plist"; sourceTree = "<group>"; };
 		2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
 		2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		2B560FBA1EDD62B000DEE3D9 /* boot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boot.json; sourceTree = "<group>"; };
@@ -212,6 +211,7 @@
 		2BF846BE1EF8C01C00712083 /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
 		2BF846C01EF8C1BC00712083 /* CategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
 		2BF846C11EF8C1BC00712083 /* CategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
+		2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-StarCraftTV-acknowledgements.plist"; sourceTree = "<group>"; };
 		2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarCraftTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.debug.xcconfig"; sourceTree = "<group>"; };
 		F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -559,7 +559,7 @@
 		2BE492F61ED287F60063B884 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2B5410E71EFD1272004F011A /* Pods-StarCraftTV-acknowledgements.plist */,
+				2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */,
 				2B560FBA1EDD62B000DEE3D9 /* boot.json */,
 				2B0D3BBE1ED53F33008FFC17 /* icons@2x */,
 			);
@@ -655,7 +655,7 @@
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
-				2B5410E81EFD1272004F011A /* Pods-StarCraftTV-acknowledgements.plist in Resources */,
+				2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
