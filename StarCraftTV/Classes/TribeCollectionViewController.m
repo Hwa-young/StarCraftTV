@@ -14,6 +14,8 @@
 #import "CategoryManager.h"
 
 #import "VideoListTableViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+
 
 @interface TribeCollectionViewController ()
 
@@ -46,13 +48,15 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
      self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[TribeCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+//    [self.collectionView registerClass:[TribeCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [self.collectionView registerNib:[UINib nibWithNibName:@"TribeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TribeCollectionViewCell"];
     
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
 
-//    UICollectionViewFlowLayout *flow = (UICollectionViewFlowLayout*)self.collectionViewLayout;
     UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
+    flowLayout.sectionHeadersPinToVisibleBounds = YES;
+    flowLayout.headerReferenceSize = CGSizeMake(self.view.bounds.size.width, 50.f);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumLineSpacing = 5;
     flowLayout.minimumInteritemSpacing = 5;
@@ -82,7 +86,48 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
         _peopleList = [[CategoryManager sharedInstance] getProgamerList];
 }
 
+- (void)didSelectItem:(KPDropMenu *)dropMenu atIndex:(int)atIndex
+{
+    NSLog(@"didSelectItem : %d", atIndex);
+}
+
 #pragma mark <UICollectionViewDataSource>
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        
+        UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        float headerHeight = 50.f;
+        
+        if (reusableview==nil) {
+            reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, headerHeight)];
+        }
+        
+        if(!self.dropMenu)
+        {
+            self.dropMenu = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50.f)];
+            self.dropMenu.delegate = self;
+            self.dropMenu.items = @[@"테란", @"프로토스", @"저그", @"전체"];
+            self.dropMenu.backgroundColor = [UIColor whiteColor];
+            self.dropMenu.title = @"종족";
+            self.dropMenu.titleColor = [UIColor redColor];
+            self.dropMenu.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+            self.dropMenu.titleTextAlignment = NSTextAlignmentCenter;
+            self.dropMenu.DirectionDown = YES;
+            
+            [reusableview addSubview:self.dropMenu];
+        }
+        return reusableview;
+    }
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(0, 50.f);
+}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -118,6 +163,8 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 
 - (void)callYoutubeSearchApiWithSearchString:(NSString*)qString
 {
+    [SVProgressHUD show];
+    
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:qString forKey:@"q"];
     
@@ -128,9 +175,10 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     
     [self.youtubeAPI getListPlaylistInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" completion:^(BOOL success, NSError *error) {
         if (success) {
+            [SVProgressHUD dismiss];
             
             if([self.youtubeAPI.searchItem.items count]==0) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 동영상이 존재하지 않습니다." delegate:self
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 프로게이머 동영상이 존재하지 않습니다." delegate:self
                                                       cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
                 [alert show];
                 return;

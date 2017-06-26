@@ -149,6 +149,8 @@
     
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
     [controller setVideoID:tempItem.id[@"videoId"]];
+    if(self.playListID)
+        [controller setPlaylistId:self.playListID];
     
     [self.navigationController pushViewController:controller animated:YES];
 }

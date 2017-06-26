@@ -61,6 +61,10 @@
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
         [cell.textLabel setTextColor:[UIColor blackColor]];
+        
+        [cell.detailTextLabel setText:@"test"];
+        
+//        버전
     }
     return cell;
 }

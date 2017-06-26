@@ -70,7 +70,10 @@
 
     NSMutableDictionary *param = [NSMutableDictionary new];
     // Test Code
-    [param setObject:@"PLIyPfbjeOk-NBE3EtDhm5pPVG4njU0BCK" forKey:@"playlistId"];
+    if(self.playlistId)
+        [param setObject:self.playlistId forKey:@"playlistId"];
+    else
+        [param setObject:@"PLIyPfbjeOk-NBE3EtDhm5pPVG4njU0BCK" forKey:@"playlistId"];
 
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
@@ -188,16 +191,10 @@
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
     [controller setVideoID:tempItem.id[@"videoId"]];
     
-    [self.navigationController pushViewController:controller animated:YES];
+    if(self.playlistId)
+        [controller setPlaylistId:self.playlistId];
     
-//    Video* video=[[Video alloc] init];
-//    video=[_videoArray objectAtIndex:indexPath.row];
-//
-//    YoutubeViewController *vc= [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
-//    [vc setVideoID:video.videoID];
-//    [vc setVideoThumnailImage:video.videoImg];
-//
-//    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

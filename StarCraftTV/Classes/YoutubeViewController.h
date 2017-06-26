@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString* videoID;
 @property (strong, nonatomic) NSString* videoThumnailImage;
+@property (strong, nonatomic) NSString* playlistId;
 
 @property (weak, nonatomic) IBOutlet UIView             *playerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;

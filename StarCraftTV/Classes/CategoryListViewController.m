@@ -18,6 +18,7 @@
 #import "YTTableViewCell.h"
 #import "YouTubeAPIHelper.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CategoryListViewController ()
 
@@ -101,6 +102,8 @@
 
 - (void)callYoutubeSearchApiWithSearchString:(NSString*)qString indexPath:(NSIndexPath *)indexPath
 {
+    [SVProgressHUD show];
+    
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:qString forKey:@"q"];
     
@@ -112,8 +115,10 @@
     [self.youtubeAPI getListPlaylistInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" completion:^(BOOL success, NSError *error) {
         if (success) {
 
+            [SVProgressHUD dismiss];
+            
             if([self.youtubeAPI.searchItem.items count]==0) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 동영상이 존재하지 않습니다." delegate:self
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 시즌 동영상이 존재하지 않습니다." delegate:self
                                                       cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
                 [alert show];
                 return;

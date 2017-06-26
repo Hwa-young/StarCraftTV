@@ -54,7 +54,6 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Gb5-cW-gIQ" secondAttribute="bottom" id="1Fj-AN-Uwd"/>
                 <constraint firstAttribute="trailing" secondItem="0V3-Av-DFK" secondAttribute="trailing" id="BNN-Ro-RoQ"/>
-                <constraint firstAttribute="bottom" secondItem="Gb5-cW-gIQ" secondAttribute="bottom" id="C1R-tu-eSC"/>
                 <constraint firstItem="Gb5-cW-gIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FTv-6d-Xy7"/>
                 <constraint firstItem="Gb5-cW-gIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rt0-oh-fpi"/>
                 <constraint firstItem="Gb5-cW-gIQ" firstAttribute="top" secondItem="0V3-Av-DFK" secondAttribute="bottom" id="UOz-aB-AWe"/>
@@ -65,7 +64,7 @@
                 <constraint firstAttribute="trailing" secondItem="Gb5-cW-gIQ" secondAttribute="trailing" id="nV5-GQ-roR"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>

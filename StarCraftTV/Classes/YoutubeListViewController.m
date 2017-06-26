@@ -114,6 +114,7 @@ dispatch_queue_t queueImage;
 
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
     [controller setVideoID:tempItem.id[@"videoId"]];
+//    [controller setPlaylistId:];
 
     [self.navigationController pushViewController:controller animated:YES];
 }
