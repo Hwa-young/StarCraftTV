@@ -14,6 +14,7 @@
 #import "YTSearchItem.h"
 #import "YTItem.h"
 #import "ActivitiItem.h"
+#import "YTContentDetailsItem.h"
 
 @interface YouTubeAPIHelper()
 
@@ -23,7 +24,8 @@
 
 @implementation YouTubeAPIHelper
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         self.urlType = SEARCH;
@@ -34,49 +36,20 @@
         self.searchItem = [YTSearchItem new];
         self.resultSearchVideo = [NSMutableArray new];
         self.searchChannel = [YTSearchItem new];
+        self.videoInfoItem = [NSMutableDictionary new];
+        self.videoItem = [YTSearchItem new];
         self.paramaters[@"key"] = kAPI_KEY;
     }
     return self;
 }
 
-- (void)settingAccessToken:(NSString *)accessToken {
-    
+- (void)settingAccessToken:(NSString *)accessToken
+{
     self.accessToken = accessToken;
-    [self settingURL];
-    
-}
-- (void)settingURL {
-    
-//    self.paramaters[@"key"] = kAPI_KEY;
-    
-//    if ([self.accessToken isEqualToString:@""]) {
-//        if ([self.paramaters objectForKey:@"key"])
-//            self.paramaters[@"key"] = kAPI_KEY;
-//        else
-//            [self.paramaters setObject:kAPI_KEY forKey:@"key"];
-//        
-//        if ([self.paramaters objectForKey:@"access_token"])
-//            [self.paramaters removeObjectForKey:@"access_token"];
-//
-//    }
-//    else {
-//        if ([self.paramaters objectForKey:@"access_token"])
-//            self.paramaters[@"access_token"] = self.accessToken;
-//        else
-//            [self.paramaters setObject:self.accessToken forKey:@"access_token"];
-//        
-//        if ([self.paramaters objectForKey:@"key"])
-//            [self.paramaters removeObjectForKey:@"key"];
-//    }
-//
-//    if ([self.paramaters objectForKey:@"pageToken"])
-//        self.paramaters[@"pageToken"] = (self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken);
-//    else
-//        [self.paramaters setObject:(self.searchItem.nextPageToken == nil ? @"" : self.searchItem.nextPageToken) forKey:@"pageToken"];
-
 }
 
-- (void)getObjectWith:(URLType)typeURL completion:(Completion)completion {
+- (void)getObjectWith:(URLType)typeURL completion:(Completion)completion
+{
     
     NSLog(@"Call Youtube API URL : %@", self.url.absoluteString);
     NSLog(@"Call Youtube API Params : %@", self.paramaters);
@@ -92,7 +65,6 @@
                     [YTPlaylistItem mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
                         return @{
                                  @"items" : @"YTItem"
-//                                 @"playlistId": @"items[0].id.playlistId"
                                  };
                     }];
                     
@@ -100,7 +72,7 @@
                     NSLog(@" %@", responseObject);
                     break;
                 case VIDEO:
-                    
+                    NSLog(@" %@", responseObject);
                     [YTItem mj_setupObjectClassInArray: ^NSDictionary *{
                         return @{
                                  @"items.snippet" : @"YTSnippetItem",
@@ -148,6 +120,28 @@
                     NSLog(@" %@", responseObject);
                     self.searchChannel  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     break;
+                    
+                case VIDEOINFO:
+                    
+                    [YTContentDetailsItem mj_setupObjectClassInArray: ^NSDictionary *{
+                        return @{
+                                 @"items.contentDetails" : @"YTContentDetailsItem",
+                                 };
+                    }];
+                    
+                    [YTItem mj_setupObjectClassInArray: ^NSDictionary *{
+                        return @{
+                                 @"items.snippet" : @"YTSnippetItem"
+                                 };
+                    }];
+                    
+                    
+                    NSLog(@" %@", responseObject);
+                    self.videoItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
+                    self.videoInfoItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"contentDetails"];
+                    
+                    
+                    break;
 
                 default:
                     break;
@@ -163,7 +157,8 @@
 
 }
 
-- (void)getDictionnary:(void(^)(id response, NSError * error))completion {
+- (void)getDictionnary:(void(^)(id response, NSError * error))completion
+{
     
     AFHTTPSessionManager *managerSession = [AFHTTPSessionManager manager];
     [managerSession GET:self.url.absoluteString
@@ -182,8 +177,8 @@
     
 }
 
-
-- (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion {
+- (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion
+{
     
     self.url = [NSURL URLWithString:kSearchURL];
     
@@ -208,7 +203,8 @@
     [self getObjectWith:VIDEO completion:completion];
 }
 
-- (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion {
+- (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion
+{
     
     self.url = [NSURL URLWithString:kSearchPlaylistURL];
     
@@ -216,25 +212,12 @@
         self.paramaters[@"channelId"] = idChannel;
     else
         [self.paramaters setObject:idChannel forKey:@"channelId"];
-    
-//    if (![self.keySearchOld isEqualToString:idChannel]) {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = @"";
-//        else
-//            [self.paramaters setObject:@"" forKey:@"pageToken"];
-//    }
-//    else {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-//        else
-//            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-//    }
-    
+
     [self getObjectWith:PLAYLISTITEM completion:completion];
 }
 
-
-- (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion {
+- (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion
+{
     
     self.url = [NSURL URLWithString:kSearchPlaylistItemsURL];
     
@@ -247,25 +230,12 @@
         self.paramaters[@"channelId"] = idChannel;
     else
         [self.paramaters setObject:idChannel forKey:@"channelId"];
-    
-    //    if (![self.keySearchOld isEqualToString:idChannel]) {
-    //        if ([self.paramaters objectForKey:@"pageToken"])
-    //            self.paramaters[@"pageToken"] = @"";
-    //        else
-    //            [self.paramaters setObject:@"" forKey:@"pageToken"];
-    //    }
-    //    else {
-    //        if ([self.paramaters objectForKey:@"pageToken"])
-    //            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-    //        else
-    //            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-    //    }
-    
+
     [self getObjectWith:VIDEO completion:completion];
 }
 
-- (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion {
-    
+- (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion
+{
     self.url = [NSURL URLWithString:kSearchURL];
     self.urlType = SEARCH;
     
@@ -273,57 +243,28 @@
         self.paramaters[@"q"] = key;
     else
         [self.paramaters setObject:key forKey:@"q"];
-    
-//    if (![self.keySearchOld isEqualToString:key]) {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = @"";
-//        else
-//            [self.paramaters setObject:@"" forKey:@"pageToken"];
-//    }
-//    else {
-//        if ([self.paramaters objectForKey:@"pageToken"])
-//            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-//        else
-//            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-//    }
 
     self.keySearchOld = key;
     [self getObjectWith:VIDEO completion:completion];
 }
 
-- (void)getListVideoByPlayListWithType:(URLType)type completion:(Completion)completion {
-    
+- (void)getListVideoByPlayListWithType:(URLType)type completion:(Completion)completion
+{
     self.url = [NSURL URLWithString:kPlaylistItemURL];
-    
-//    if ([self.paramaters objectForKey:@"playlistId"])
-//        self.paramaters[@"playlistId"] = self.playlistItem.likeId;
-//    else
-//        [self.paramaters setObject:self.playlistItem.likeId forKey:@"playlistId"];
 
-//    switch (type) {
-//        case HISTORY:
-//            [self.paramaters setValue:self.playlistItem.watchHistoryId forKey:@"playlistId"];
-//            break;
-//        case LIKED:
-//            [self.paramaters setValue:self.playlistItem.likeId forKey:@"playlistId"];
-//            break;
-//        case MYVIDEO:
-//            [self.paramaters setValue:self.playlistItem.uploadsId forKey:@"playlistId"];
-//            break;
-//        case FAVORITE:
-//            [self.paramaters setValue:self.playlistItem.favoritesId forKey:@"playlistId"];
-//            break;
-//        case WATCHLATER:
-//            [self.paramaters setValue:self.playlistItem.watchLaterId forKey:@"playlistId"];
-//            break;
-//        default:
-//            break;
-//    }
-//    https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&key=AIzaSyAanh-c7aGoFdAEAX9Ie6QQXZBVQjpTrGg&pageToken=,
-//    https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50
-//    https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet,contentDetails,status&maxResults=50&playlistId=%@&key=%@
-    
     [self getObjectWith:VIDEO completion:completion];
+}
+
+- (void)getVideoInfo:(NSString *)videoID completion:(Completion)completion
+{
+    self.url = [NSURL URLWithString:kVideoInfoItemsURL];
+    
+    if ([self.paramaters objectForKey:@"videoId"])
+        self.paramaters[@"id"] = videoID;
+    else
+        [self.paramaters setObject:videoID forKey:@"id"];
+    
+    [self getObjectWith:VIDEOINFO completion:completion];
 }
 
 @end

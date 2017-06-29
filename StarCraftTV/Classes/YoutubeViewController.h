@@ -22,6 +22,4 @@
 
 @property (nonatomic, strong) NSMutableArray *tableItem;
 
-- (void)setNavigationTitle:(NSString*)titleString;
-
 @end

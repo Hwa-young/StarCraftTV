@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     
-    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"버전",@"오픈소스",@"문의하기", nil];
+    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"문의하기",@"오픈소스",@"버전",nil];
     [self.menuTableview setScrollsToTop:YES];
 }
 
@@ -56,16 +56,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setBackgroundColor:[UIColor clearColor]];
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
         [cell.textLabel setTextColor:[UIColor blackColor]];
-        
-        [cell.detailTextLabel setText:@"test"];
-        
-//        버전
+        if([cell.textLabel.text isEqualToString:@"버전"])
+            [cell.detailTextLabel setText:@"1.0.0"];
     }
     return cell;
 }
@@ -74,10 +72,10 @@
 {
     if(indexPath.row == 0)
         [self callNoticeWebviewController];
+    else if(indexPath.row == 1)
+        [self callMailto];
     else if(indexPath.row == 2)
         [self callOpenLibraryLicensseViewController];
-    else if(indexPath.row == 3)
-        [self callMailto];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -28,14 +28,13 @@
 
 @implementation YoutubeViewController
 
-//self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-
-- (void)setNavigationTitle:(NSString*)titleString
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [self.navigationItem setTitle:titleString];
-    
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:17]};
-    [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    }
+    return self;
 }
 
 - (void)viewDidLoad
@@ -45,6 +44,8 @@
     [SVProgressHUD show];
     
     [self.listTableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
+    
+//    [self getVideoInformation];
     
     [self initDataForTable];
 
@@ -62,10 +63,72 @@
     self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
 }
 
+- (NSString *)parseDuration:(NSString *)duration
+{
+    NSInteger hours = 0;
+    NSInteger minutes = 0;
+    NSInteger seconds = 0;
+    
+    NSRange timeRange = [duration rangeOfString:@"T"];
+    duration = [duration substringFromIndex:timeRange.location];
+    
+    while (duration.length > 1) {
+        duration = [duration substringFromIndex:1];
+        
+        NSScanner *scanner = [NSScanner.alloc initWithString:duration];
+        NSString *part = [NSString.alloc init];
+        [scanner scanCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:&part];
+        
+        NSRange partRange = [duration rangeOfString:part];
+        
+        duration = [duration substringFromIndex:partRange.location + partRange.length];
+        
+        NSString *timeUnit = [duration substringToIndex:1];
+        if ([timeUnit isEqualToString:@"H"])
+            hours = [part integerValue];
+        else if ([timeUnit isEqualToString:@"M"])
+            minutes = [part integerValue];
+        else if ([timeUnit isEqualToString:@"S"])
+            seconds = [part integerValue];
+    }
+    
+    return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
+}
+
+- (void)getVideoInformation
+{
+    YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
+    
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    // Test Code
+    if(self.videoID)
+        [param setObject:self.videoID forKey:@"videoID"];
+    
+    [infoAPI.paramaters addEntriesFromDictionary:param];
+    //
+    [infoAPI getVideoInfo:self.videoID completion:^(BOOL success, NSError *error) {
+        if (success) {
+            NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"high"][@"url"];
+            
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self.playerView bounds]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if(error)
+                {
+                }
+                else
+                {
+                    [self.playerView addSubview:imageView];
+                    [imageView setTag:111];
+                }
+            }];
+            
+//            NSLog(@"duration : %@", [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]);
+        }
+    }];
+}
+
 - (void)initDataForTable
 {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
     [self.tableItem removeAllObjects];
 
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
@@ -110,6 +173,8 @@
     MPMoviePlayerController *moviePlayerController = notification.object;
     NSLog(@"Now Playing %@", moviePlayerController.contentURL);
     
+    if([self.playerView viewWithTag:111] != nil)
+        [[self.playerView viewWithTag:111] removeFromSuperview];
     [SVProgressHUD dismiss];
 }
 
