@@ -14,7 +14,12 @@
 #import "Constants.h"
 
 //#import <TLYShyNavBar/TLYShyNavBarManager.h>
-#import <GoogleMobileAds/GADAdSize.h>
+
+@import GoogleMobileAds;
+
+//#import <GoogleMobileAds/GoogleMobileAds.h>
+//#import <GoogleMobileAds/GADAdSize.h>
+//#import <GoogleMobileAds/GADInterstitial.h>
 
 @implementation CustomToolBar
 
@@ -26,7 +31,9 @@
 @end
 
 
-@interface RootViewController ()
+@interface RootViewController () <GADInterstitialDelegate>
+
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
@@ -37,6 +44,12 @@
     self = [super initWithCoder:coder];
     if (self)
     {
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+
+        
+//        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-60, -60) forBarMetrics:UIBarMetricsDefault];
+//        [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor redColor], NSFontAttributeName:[UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:19]}];
+        
         SettingViewController *settingViewController = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
         CategoryListViewController *categoryViewController = [[CategoryListViewController alloc] initWithNibName:@"CategoryListViewController" bundle:nil];
         YoutubeListViewController *listViewController = [[YoutubeListViewController alloc] initWithNibName:@"YoutubeListViewController" bundle:nil];
@@ -56,7 +69,7 @@
         [self.navigationController.toolbar addSubview:self.mBannerView];
 
         // Title
-        [self.navigationItem setTitle:@"StartCraft TV"];
+        [self.navigationItem setTitle:@"StarCraft TV"];
         NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:21]};
         [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
 
@@ -68,6 +81,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.interstitial = [self createAndLoadInterstitial];
+}
+
+- (GADInterstitial *)createAndLoadInterstitial
+{
+    GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-4829113648689267~3448799853"];
+    interstitial.delegate = self;
+    [interstitial loadRequest:[GADRequest request]];
+    return interstitial;
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
+{
+    self.interstitial = [self createAndLoadInterstitial];
 }
 
 - (void)loadADdata

@@ -34,6 +34,9 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        [self.navigationItem setTitle:@"인물 검색"];
+        
         _tType = tribeType;
         [self makeTribeList];
     }

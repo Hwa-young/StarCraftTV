@@ -14,6 +14,7 @@
 #import <Google/Analytics.h>
 #import <SDWebImage/SDWebImageManager.h>
 
+#import "UIView_Custom.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [UIView Start];
+    
     [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
     [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
     

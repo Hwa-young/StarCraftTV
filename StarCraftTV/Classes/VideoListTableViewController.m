@@ -44,6 +44,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", _queryString]];
+    
+    if([_queryString length]==3 && _queryString!=nil)
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 선수 영상 모음", _queryString]];
+    else
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 스타리그", _queryString]];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     

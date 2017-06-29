@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "CategoryListViewController.h"
+#import "CommonWebViewController.h"
 #import "Constants.h"
 
 #import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
@@ -71,7 +72,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 2)
+    if(indexPath.row == 0)
+        [self callNoticeWebviewController];
+    else if(indexPath.row == 2)
         [self callOpenLibraryLicensseViewController];
     else if(indexPath.row == 3)
         [self callMailto];
@@ -82,6 +85,7 @@
     return 75.f;
 }
 
+// 메일 쓰기
 - (void)callMailto
 {
     NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject=제목입력!";
@@ -94,10 +98,18 @@
     }
 }
 
+// 오픈 라이브러리 페이지
 - (void)callOpenLibraryLicensseViewController
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-StarCraftTV-acknowledgements" ofType:@"plist"];
     VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithPath:path];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+// 공지사항(Google Site) 페이지
+- (void)callNoticeWebviewController
+{
+    CommonWebViewController *viewController = [[CommonWebViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

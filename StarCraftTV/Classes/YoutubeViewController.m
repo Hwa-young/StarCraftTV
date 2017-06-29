@@ -28,6 +28,8 @@
 
 @implementation YoutubeViewController
 
+//self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+
 - (void)setNavigationTitle:(NSString*)titleString
 {
     [self.navigationItem setTitle:titleString];
@@ -40,12 +42,11 @@
 {
     [super viewDidLoad];
     
+    [SVProgressHUD show];
+    
     [self.listTableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
     [self initDataForTable];
-
-    
-    [SVProgressHUD show];
 
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(moviePlayerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
@@ -63,8 +64,10 @@
 
 - (void)initDataForTable
 {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     [self.tableItem removeAllObjects];
-//
+
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     self.tableItem = [NSMutableArray array];
 

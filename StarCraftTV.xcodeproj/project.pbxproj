@@ -35,12 +35,15 @@
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
 		2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */; };
 		2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B560FBA1EDD62B000DEE3D9 /* boot.json */; };
+		2B5BF3A41F03A9F400160D7B /* UIView_Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BF3A31F03A9F400160D7B /* UIView_Custom.m */; };
 		2B5F00521EFCACD400CD4CE9 /* TribeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F00501EFCACD400CD4CE9 /* TribeCollectionViewController.m */; };
 		2B5F00531EFCACD400CD4CE9 /* TribeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F00511EFCACD400CD4CE9 /* TribeCollectionViewController.xib */; };
 		2B5F00581EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F00561EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m */; };
 		2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F00571EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib */; };
 		2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
+		2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */; };
+		2B80DD1D1F03433900D45D0A /* CommonWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B80DD1B1F03433900D45D0A /* CommonWebViewController.xib */; };
 		2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DBD1ED2B3AB00205FCA /* GAManager.m */; };
 		2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */; };
 		2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */; };
@@ -128,6 +131,8 @@
 		2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
 		2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		2B560FBA1EDD62B000DEE3D9 /* boot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boot.json; sourceTree = "<group>"; };
+		2B5BF3A21F03A9F400160D7B /* UIView_Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_Custom.h; sourceTree = "<group>"; };
+		2B5BF3A31F03A9F400160D7B /* UIView_Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_Custom.m; sourceTree = "<group>"; };
 		2B5E97B71EDD3B320006DAD8 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2B5F004F1EFCACD400CD4CE9 /* TribeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TribeCollectionViewController.h; sourceTree = "<group>"; };
 		2B5F00501EFCACD400CD4CE9 /* TribeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TribeCollectionViewController.m; sourceTree = "<group>"; };
@@ -138,6 +143,9 @@
 		2B660E1B1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
 		2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2B80DD191F03433900D45D0A /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
+		2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
+		2B80DD1B1F03433900D45D0A /* CommonWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonWebViewController.xib; sourceTree = "<group>"; };
 		2BA20DBC1ED2B3AB00205FCA /* GAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAManager.h; sourceTree = "<group>"; };
 		2BA20DBD1ED2B3AB00205FCA /* GAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAManager.m; sourceTree = "<group>"; };
 		2BA20DC11ED2B41900205FCA /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
@@ -299,8 +307,10 @@
 			isa = PBXGroup;
 			children = (
 				2BA20DBF1ED2B41900205FCA /* Addition */,
+				2B80DD101F03427700D45D0A /* CommonWebViewController */,
 				2BA20DF21ED2B41900205FCA /* Core */,
 				2BA20DF51ED2B41900205FCA /* Crypto */,
+				2B5BF3A11F03A9F400160D7B /* DebugLayer */,
 				2B5508A11EF66AE500ABB6BC /* Dropdown */,
 				2BAE29DD1EFA64BC0018B0D0 /* SKSTableView */,
 			);
@@ -359,6 +369,15 @@
 				2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */,
 			);
 			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		2B5BF3A11F03A9F400160D7B /* DebugLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2B5BF3A21F03A9F400160D7B /* UIView_Custom.h */,
+				2B5BF3A31F03A9F400160D7B /* UIView_Custom.m */,
+			);
+			path = DebugLayer;
 			sourceTree = "<group>";
 		};
 		2B5E97AF1EDD3A8F0006DAD8 /* Model */ = {
@@ -421,6 +440,16 @@
 			);
 			name = "MP+BackgroundPlayback";
 			path = "Model/MPMoviePlayerController+BackgroundPlayback";
+			sourceTree = "<group>";
+		};
+		2B80DD101F03427700D45D0A /* CommonWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B80DD191F03433900D45D0A /* CommonWebViewController.h */,
+				2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */,
+				2B80DD1B1F03433900D45D0A /* CommonWebViewController.xib */,
+			);
+			path = CommonWebViewController;
 			sourceTree = "<group>";
 		};
 		2BA20DBB1ED2B3AB00205FCA /* Manager */ = {
@@ -618,7 +647,7 @@
 				TargetAttributes = {
 					2B540C2F1ED272A2000A9879 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = T8T47CW9W7;
+						DevelopmentTeam = W8X5QUVR2D;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -664,6 +693,7 @@
 				2B23AF661EF24F7B007EF22A /* YTTableViewCell.xib in Resources */,
 				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
 				2BAE29E61EFA64BC0018B0D0 /* expandableImage.png in Resources */,
+				2B80DD1D1F03433900D45D0A /* CommonWebViewController.xib in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
 				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,
@@ -761,6 +791,7 @@
 				2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */,
 				2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */,
 				2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */,
+				2B5BF3A41F03A9F400160D7B /* UIView_Custom.m in Sources */,
 				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
 				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
 				2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */,
@@ -769,6 +800,7 @@
 				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
 				2B5F00581EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m in Sources */,
 				2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */,
+				2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */,
 				2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */,
 				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
 				2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */,
@@ -837,9 +869,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y5B74CC6Z6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -859,6 +892,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a5f78896-9249-48a4-b313-77007a056663";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -886,9 +920,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y5B74CC6Z6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -901,6 +936,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "a5f78896-9249-48a4-b313-77007a056663";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -912,16 +948,19 @@
 			baseConfigurationReference = 3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = T8T47CW9W7;
+				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StarCraftTV/Library/GoogleAnalytics",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.porjectx.StarCraftTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -930,15 +969,18 @@
 			baseConfigurationReference = F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = T8T47CW9W7;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StarCraftTV/Library/GoogleAnalytics",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.porjectx.StarCraftTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
