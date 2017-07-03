@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoutubeListViewController">
             <connections>
+                <outlet property="NoticeLabel" destination="zU7-tY-hnl" id="HET-RF-6Ss"/>
                 <outlet property="tableView" destination="0jQ-Ba-vLp" id="kMr-cy-FXT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,6 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 조건에 맞는 동영상이 존재하지 않습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU7-tY-hnl">
+                    <rect key="frame" x="0.0" y="323" width="375" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="HpO-4r-82G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-Ba-vLp">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,10 +41,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="0jQ-Ba-vLp" secondAttribute="trailing" id="CbZ-3v-uI3"/>
-                <constraint firstAttribute="bottom" secondItem="0jQ-Ba-vLp" secondAttribute="bottom" id="UCt-WI-LNE"/>
-                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V8a-TX-84c"/>
-                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ycG-PX-8n6"/>
+                <constraint firstAttribute="trailing" secondItem="0jQ-Ba-vLp" secondAttribute="trailing" id="04s-Aa-9wy"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2K0-Ay-uRY"/>
+                <constraint firstAttribute="bottom" secondItem="0jQ-Ba-vLp" secondAttribute="bottom" id="E70-E8-C9e"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="leading" secondItem="zU7-tY-hnl" secondAttribute="leading" id="YOg-rL-ouF"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="trailing" secondItem="zU7-tY-hnl" secondAttribute="trailing" id="gWo-Y8-cWd"/>
+                <constraint firstItem="zU7-tY-hnl" firstAttribute="centerY" secondItem="0jQ-Ba-vLp" secondAttribute="centerY" id="rEX-j5-goU"/>
+                <constraint firstItem="0jQ-Ba-vLp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sgP-7h-T7f"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <nil key="simulatedTopBarMetrics"/>

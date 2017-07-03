@@ -11,5 +11,6 @@
 @interface YoutubeListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *NoticeLabel;
 
 @end

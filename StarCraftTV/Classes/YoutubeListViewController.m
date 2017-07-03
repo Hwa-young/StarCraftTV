@@ -32,8 +32,6 @@
 
 @implementation YoutubeListViewController
 
-dispatch_queue_t queueImage;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,11 +40,14 @@ dispatch_queue_t queueImage;
     self.shyNavBarManager.scrollView.scrollsToTop = YES;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh1:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 
     self.tableView.alwaysBounceVertical = YES;
 //    self.tableView.backgroundColor = [UIColor redColor];
     
-    queueImage = dispatch_queue_create("thumbnaisVideo", NULL);
     self.tableItem = [NSMutableArray array];
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
@@ -56,6 +57,12 @@ dispatch_queue_t queueImage;
 //    self.navigationItem.titleView = searchBar;
 
     [self initDataForTable];
+}
+
+- (void)refresh1:(UIRefreshControl *)refreshControl
+{
+    NSLog(@"refresh1");
+    [refreshControl endRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,8 +84,20 @@ dispatch_queue_t queueImage;
 
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
-        [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
-        [self.tableView reloadData];
+        
+        if([self.tableItem count]>0)
+        {
+            [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+            [self.tableView reloadData];
+            
+            [self.NoticeLabel setHidden:YES];
+        }
+        else
+        {
+            [self.NoticeLabel setHidden:NO];
+            [self.tableView setHidden:YES];
+        }
+            
         [SVProgressHUD dismiss];
     }];
 }
