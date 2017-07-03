@@ -84,6 +84,7 @@
 		2BF846BF1EF8C01C00712083 /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846BE1EF8C01C00712083 /* League.m */; };
 		2BF846C21EF8C1BC00712083 /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846C11EF8C1BC00712083 /* CategoryManager.m */; };
 		2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */; };
+		2BFDDF341F09D6DA007880F4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFDDF331F09D6DA007880F4 /* AdSupport.framework */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +224,7 @@
 		2BF846C01EF8C1BC00712083 /* CategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
 		2BF846C11EF8C1BC00712083 /* CategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-StarCraftTV-acknowledgements.plist"; sourceTree = "<group>"; };
+		2BFDDF331F09D6DA007880F4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarCraftTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.debug.xcconfig"; sourceTree = "<group>"; };
 		F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarCraftTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarCraftTV/Pods-StarCraftTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFDDF341F09D6DA007880F4 /* AdSupport.framework in Frameworks */,
 				D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +606,7 @@
 		822E1593D4E8929BDA1703C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BFDDF331F09D6DA007880F4 /* AdSupport.framework */,
 				2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */,
 			);
 			name = Frameworks;

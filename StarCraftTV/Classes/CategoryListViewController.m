@@ -112,7 +112,29 @@
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
-    [self.youtubeAPI getListPlaylistInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" completion:^(BOOL success, NSError *error) {
+//    static NSString * const kChannelID1 = @"UCX1DpoQkBN4rv5ZfPivA_Wg";  // 일반
+//    static NSString * const kChannelID2 = @"UCi0IFv8X6tJ6gS5eDqlYqcg";  // 06~07
+//    static NSString * const kChannelID3 = @"UCCM3BAZzpl_3rkHhMhOLrFg";  // 04~05
+//    static NSString * const kChannelID4 = @"UCTIIyJUVWVRNc0TyG7gqoAQ";  // 02~03
+
+//    if()
+    
+    NSString *string = qString;
+    NSString *channelIdString = @"";
+    if ([string rangeOfString:@"2002"].location != NSNotFound || [string rangeOfString:@"2003"].location != NSNotFound) {
+        channelIdString = kChannelID4;
+    }
+    else if ([string rangeOfString:@"2004"].location != NSNotFound || [string rangeOfString:@"2005"].location != NSNotFound) {
+        channelIdString = kChannelID3;
+    }
+    else if ([string rangeOfString:@"2006"].location != NSNotFound || [string rangeOfString:@"2007"].location != NSNotFound) {
+        channelIdString = kChannelID2;
+    }
+    else {
+        channelIdString = kChannelID1;
+    }
+    
+    [self.youtubeAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
         if (success) {
 
             [SVProgressHUD dismiss];

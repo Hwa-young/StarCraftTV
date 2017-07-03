@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "CategoryManager.h"
 
-#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
 #import <Google/Analytics.h>
 #import <SDWebImage/SDWebImageManager.h>
 
@@ -22,10 +22,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [UIView Start];
+//    [UIView Start];
     
     [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
     [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정

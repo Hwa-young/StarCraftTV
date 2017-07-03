@@ -205,7 +205,6 @@
 
 - (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion
 {
-    
     self.url = [NSURL URLWithString:kSearchPlaylistURL];
     
     if ([self.paramaters objectForKey:@"channelId"])
@@ -217,8 +216,7 @@
 }
 
 - (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion
-{
-    
+{    
     self.url = [NSURL URLWithString:kSearchPlaylistItemsURL];
     
     if ([self.paramaters objectForKey:@"q"])

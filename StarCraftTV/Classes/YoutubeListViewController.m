@@ -76,7 +76,7 @@ dispatch_queue_t queueImage;
     [self.tableItem removeAllObjects];
 
     [self.youtubeAPI settingAccessToken:@""];
-    [self.youtubeAPI getListVideoByKeySearch:@"" completion:^(BOOL success, NSError *error) {
+    [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
         [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
         [self.tableView reloadData];
         [SVProgressHUD dismiss];
