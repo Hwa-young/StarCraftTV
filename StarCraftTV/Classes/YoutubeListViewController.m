@@ -15,6 +15,8 @@
 #import "YouTubeAPIHelper.h"
 #import "ActivitiItem.h"
 
+#import "Constants.h"
+
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
@@ -25,6 +27,7 @@
 @property (strong, atomic) NSMutableArray *tableItem;
 @property (strong, atomic) NSMutableDictionary *parameters;
 @property (copy, nonatomic) NSString *keySearchOld;
+@property (nonatomic, assign)BOOL isLoading;
 
 @property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
 
@@ -35,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.isLoading = NO;
 
     self.shyNavBarManager.scrollView = self.tableView;
     self.shyNavBarManager.scrollView.scrollsToTop = YES;
@@ -65,6 +70,16 @@
     [refreshControl endRefreshing];
 }
 
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    CGRect rect = [self.view frame];
+    rect.size.height -= HEIGHT_BANNER;
+    
+    [self.view setFrame:rect];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     self.tableView.scrollsToTop = YES;
@@ -76,16 +91,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)CallMainListApi
+{
+    
+}
+
 - (void)initDataForTable
 {
     [SVProgressHUD show];
+    self.isLoading = YES;
     
     [self.tableItem removeAllObjects];
 
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
         
-        if([self.tableItem count]>0)
+        if([self.youtubeAPI.searchItem.items count]>0)
         {
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
@@ -97,7 +118,8 @@
             [self.NoticeLabel setHidden:NO];
             [self.tableView setHidden:YES];
         }
-            
+        
+        self.isLoading = NO;
         [SVProgressHUD dismiss];
     }];
 }
@@ -137,5 +159,57 @@
 
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+-(void)scrollViewDidScroll: (UIScrollView*)scrollView
+{
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset == 0)
+    {
+        // then we are at the top
+    }
+    else if (scrollOffset + scrollViewHeight > scrollContentSizeHeight-100 && scrollOffset > 0  && scrollOffset > 0)
+    {
+        if(self.isLoading == YES) return;
+        if(self.youtubeAPI.searchItem.nextPageToken == nil || [self.youtubeAPI.searchItem.nextPageToken length]==0) return;
+        
+        [SVProgressHUD show];
+        self.isLoading = YES;
+        
+        NSMutableDictionary *dic = self.youtubeAPI.paramaters;
+        if([dic objectForKey:@"pageToken"])
+            [self.youtubeAPI.paramaters addEntriesFromDictionary:@{@"pageToken" : [NSString stringWithFormat:@"%@", self.youtubeAPI.searchItem.nextPageToken]}];
+        [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
+            
+            if([self.youtubeAPI.searchItem.items count]>0)
+            {
+                [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+                [self.tableView reloadData];
+                
+                [self.NoticeLabel setHidden:YES];
+            }
+            else
+            {
+                [self.NoticeLabel setHidden:NO];
+                [self.tableView setHidden:YES];
+            }
+            self.isLoading = NO;
+            [SVProgressHUD dismiss];
+        }];
+
+        
+//        if (isLoading == NO)
+//        {
+//            isLoading = YES;
+//            [self loadItemsIsMore:YES];
+//        }
+    }
+}
+
 
 @end

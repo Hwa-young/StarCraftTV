@@ -12,7 +12,7 @@ static NSString * const kAPI_KEY                    = @"AIzaSyAanh-c7aGoFdAEAX9I
 
 //static NSString * const kSearchURL                  = @"https://www.googleapis.com/youtube/v3/search?part=snippet,id&maxResults=50&type=video&videoType=any&regionCode=KR&channelId=UCX1DpoQkBN4rv5ZfPivA_Wg,UCi0IFv8X6tJ6gS5eDqlYqcg,UCCM3BAZzpl_3rkHhMhOLrFg,UCTIIyJUVWVRNc0TyG7gqoAQ&order=date";
 
-static NSString * const kSearchURL                  = @"https://www.googleapis.com/youtube/v3/search?part=snippet,id&maxResults=50&type=video&videoType=any&regionCode=KR&q=starcrafttvapp&order=date";
+static NSString * const kSearchURL                  = @"https://www.googleapis.com/youtube/v3/search?part=snippet,id&maxResults=50&type=video&videoType=any&regionCode=KR&q=starcrafttvapp&order=relevance";
 
 static NSString * const kPlaylistItemURL            = @"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50";
 static NSString * const kChannelURL                 = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=50&channelId=UCX1DpoQkBN4rv5ZfPivA_Wg";

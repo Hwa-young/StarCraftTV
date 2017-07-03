@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarCraftTV/Classes/Helpers/YouTubeAPIHelper.m"
+            timestampString = "520765662.12528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-getObjectWith:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarCraftTV/Classes/Helpers/YouTubeAPIHelper.m"
+            timestampString = "520764621.943687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-getObjectWith:completion:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[YouTubeAPIHelper getObjectWith:completion:]_block_invoke"
+                  moduleName = "StarCraftTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyko/Desktop/HYKo/StarCraftTV/StarCraftTV/Classes/Helpers/YouTubeAPIHelper.m"
+                  timestampString = "520765489.776007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "2560">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[YouTubeAPIHelper getObjectWith:completion:]_block_invoke_7"
+                  moduleName = "StarCraftTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyko/Desktop/HYKo/StarCraftTV/StarCraftTV/Classes/Helpers/YouTubeAPIHelper.m"
+                  timestampString = "520765489.77854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

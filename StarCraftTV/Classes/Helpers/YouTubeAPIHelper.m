@@ -88,21 +88,6 @@
                     NSLog(@" %@", responseObject);
                     self.searchItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     
-                    //neu la activity
-                    if (self.urlType == ACTIVITI) {
-                    for(YTItem *info in self.searchItem.items) {
-                        if ([info.snippet.type isEqualToString:@"upload"]) {
-                            YTItem *temp = info;
-                            temp.snippet.videoId = info.contentDetails[@"upload"][@"videoId"];
-                            [self.resultSearchVideo addObject:temp];
-                        } else if ([info.snippet.type isEqualToString:@"like"]) {
-                            YTItem *temp = info;
-                            temp.snippet.videoId = info.contentDetails[@"like"][@"resourceId"][@"videoId"];
-                            [self.resultSearchVideo addObject:temp];
-                        }
-                    }
-                    }
-                    
                     break;
                 case CHANNEL:
                     [YTItem mj_setupObjectClassInArray: ^NSDictionary *{
@@ -241,6 +226,11 @@
         self.paramaters[@"q"] = key;
     else
         [self.paramaters setObject:key forKey:@"q"];
+    
+    if ([self.paramaters objectForKey:@"pageToken"])
+        self.paramaters[@"pageToken"] = @"";
+    else
+        [self.paramaters setObject:@"" forKey:@"pageToken"];
 
     self.keySearchOld = key;
     [self getObjectWith:VIDEO completion:completion];
