@@ -226,11 +226,6 @@
         self.paramaters[@"q"] = key;
     else
         [self.paramaters setObject:key forKey:@"q"];
-    
-    if ([self.paramaters objectForKey:@"pageToken"])
-        self.paramaters[@"pageToken"] = @"";
-    else
-        [self.paramaters setObject:@"" forKey:@"pageToken"];
 
     self.keySearchOld = key;
     [self getObjectWith:VIDEO completion:completion];

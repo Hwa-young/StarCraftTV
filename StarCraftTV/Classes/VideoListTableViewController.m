@@ -24,8 +24,7 @@
 @property (strong, nonatomic) YouTubeAPIHelper  *youtubeAPI;
 @property (strong, nonatomic) KPDropMenu        *dropNew;
 
-@property (assign, nonatomic) BOOL              isWorking;
-
+@property (nonatomic, assign)BOOL               isLoading;
 @end
 
 @implementation VideoListTableViewController
@@ -36,7 +35,7 @@
     if(self)
     {
         _needFilterFlag = flag;
-        _isWorking = NO;
+        self.isLoading = NO;
     }
     return self;
 }
@@ -69,7 +68,7 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:_queryString forKey:@"q"];
     
-    _isWorking = YES;
+    self.isLoading = YES;
     
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
@@ -81,7 +80,7 @@
             [self.tableView reloadData];
         }
         [SVProgressHUD dismiss];
-        _isWorking = NO;
+        self.isLoading = NO;
     }];
 }
 
@@ -169,10 +168,10 @@
 
 -(void)didSelectItem : (KPDropMenu *) dropMenu atIndex : (int) atIndex
 {
-    if(_isWorking == YES) return;
+    if(self.isLoading == YES) return;
     
     [SVProgressHUD show];
-    _isWorking = YES;
+    self.isLoading = YES;
 
     [self.tableItem removeAllObjects];
     
@@ -190,8 +189,46 @@
             [self.tableView reloadData];
         }
         [SVProgressHUD dismiss];
-        _isWorking = NO;
+        self.isLoading = NO;
     }];
 }
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+-(void)scrollViewDidScroll: (UIScrollView*)scrollView
+{
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset == 0)
+    {
+        // then we are at the top
+    }
+    else if (scrollOffset + scrollViewHeight > scrollContentSizeHeight-100 && scrollOffset > 0  && scrollOffset > 0)
+    {
+        if(self.isLoading == YES) return;
+        if(self.youtubeAPI.searchItem.nextPageToken == nil || [self.youtubeAPI.searchItem.nextPageToken length]==0) return;
+        
+        [SVProgressHUD show];
+        self.isLoading = YES;
+        
+        NSMutableDictionary *param = [NSMutableDictionary new];
+        [param setObject:self.youtubeAPI.searchItem.nextPageToken forKey:@"pageToken"];
+        [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+        
+        [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:_queryString completion:^(BOOL success, NSError *error) {
+            if (success)
+            {
+                [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
+                [self.tableView reloadData];
+            }
+            [SVProgressHUD dismiss];
+            self.isLoading = NO;
+        }];
+    }
+}
+
 
 @end

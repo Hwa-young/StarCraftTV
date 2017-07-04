@@ -47,11 +47,10 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refresh1:) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(reloadData:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
 
     self.tableView.alwaysBounceVertical = YES;
-//    self.tableView.backgroundColor = [UIColor redColor];
     
     self.tableItem = [NSMutableArray array];
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
@@ -64,9 +63,8 @@
     [self initDataForTable];
 }
 
-- (void)refresh1:(UIRefreshControl *)refreshControl
+- (void)reloadData:(UIRefreshControl *)refreshControl
 {
-    NSLog(@"refresh1");
     [refreshControl endRefreshing];
 }
 
@@ -76,7 +74,7 @@
     
     CGRect rect = [self.view frame];
     rect.size.height -= HEIGHT_BANNER;
-    
+
     [self.view setFrame:rect];
 }
 
@@ -89,11 +87,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)CallMainListApi
-{
-    
 }
 
 - (void)initDataForTable
@@ -155,7 +148,6 @@
 
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
     [controller setVideoID:tempItem.id[@"videoId"]];
-//    [controller setPlaylistId:];
 
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -180,12 +172,12 @@
         
         [SVProgressHUD show];
         self.isLoading = YES;
-        
-        NSMutableDictionary *dic = self.youtubeAPI.paramaters;
-        if([dic objectForKey:@"pageToken"])
-            [self.youtubeAPI.paramaters addEntriesFromDictionary:@{@"pageToken" : [NSString stringWithFormat:@"%@", self.youtubeAPI.searchItem.nextPageToken]}];
+
+        NSMutableDictionary *param = [NSMutableDictionary new];
+        [param setObject:self.youtubeAPI.searchItem.nextPageToken forKey:@"pageToken"];
+        [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+
         [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
-            
             if([self.youtubeAPI.searchItem.items count]>0)
             {
                 [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
@@ -201,15 +193,7 @@
             self.isLoading = NO;
             [SVProgressHUD dismiss];
         }];
-
-        
-//        if (isLoading == NO)
-//        {
-//            isLoading = YES;
-//            [self loadItemsIsMore:YES];
-//        }
     }
 }
-
 
 @end
