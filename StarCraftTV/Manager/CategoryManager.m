@@ -12,7 +12,6 @@
 @implementation CategoryManager
 DEF_SINGLETON(CategoryManager);
 
-
 - (id)init
 {
 	self = [super init];
@@ -77,13 +76,8 @@ DEF_SINGLETON(CategoryManager);
     arrLeagueCategoty = [[NSMutableArray alloc] init];
     
     NSMutableArray *tMutableArray = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
-    
-//    arrLeagueCategoty = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
-    
-//    arrCategoryMainLogin = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"category.main_login"]] copy];
-    
     [arrLeagueCategoty addObject:@[@"종족별 인물 검색", @"테란", @"프로토스", @"저그"]];
-    
+
     for(int i=0 ; i<[tMutableArray count] ; i++)
     {
         NSMutableArray *tArray = [[NSMutableArray alloc] init];
@@ -96,10 +90,6 @@ DEF_SINGLETON(CategoryManager);
         }
         [arrLeagueCategoty addObject:tArray];
     }
-    
-//    [arrLeagueCategoty addObject:@[@"인물", @"Protoss", @"Terran", @"Zerg"]];
-//    [arrLeagueCategoty addObject:@[@"종족 검색", @"프로토스", @"테란", @"저그"]];
-    
     [self saveToUserDefault];
 }
 
