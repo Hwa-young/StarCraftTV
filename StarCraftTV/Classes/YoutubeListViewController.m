@@ -42,7 +42,7 @@
     self.isLoading = NO;
 
     self.shyNavBarManager.scrollView = self.tableView;
-    self.shyNavBarManager.scrollView.scrollsToTop = YES;
+    self.shyNavBarManager.scrollView.scrollsToTop = NO;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
@@ -187,8 +187,8 @@
             }
             else
             {
-                [self.NoticeLabel setHidden:NO];
-                [self.tableView setHidden:YES];
+//                [self.NoticeLabel setHidden:NO];
+//                [self.tableView setHidden:YES];
             }
             self.isLoading = NO;
             [SVProgressHUD dismiss];

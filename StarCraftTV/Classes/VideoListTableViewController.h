@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray    *tableItem;
 @property (nonatomic, strong) NSString          *playListID;
 @property (nonatomic, strong) NSString          *queryString;
+@property (nonatomic, strong) NSString          *channelID;
 
 @property (nonatomic, assign) BOOL              needFilterFlag;
 

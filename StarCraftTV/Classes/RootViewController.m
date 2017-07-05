@@ -33,7 +33,8 @@
 
 @interface RootViewController () <GADInterstitialDelegate>
 
-@property(nonatomic, strong) GADInterstitial *interstitial;
+@property(nonatomic, strong) GADInterstitial    *interstitial;
+@property(nonatomic, assign) BOOL               isAnimate;
 
 @end
 
@@ -70,6 +71,8 @@
         [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
 
         [self loadADdata];
+        
+        self.isAnimate = NO;
     }
     return self;
 }
@@ -115,18 +118,41 @@
 
 - (IBAction)openCategoryViewController:(id)sender
 {
+    if(self.isAnimate == YES) return;
     if(self.openSide == IIViewDeckSideRight || self.openSide == IIViewDeckSideLeft)
+    {
+        self.isAnimate = YES;
         [self closeSide:YES];
+        [self performSelector:@selector(changeAnimateFlagValue) withObject:self afterDelay:0.5f];
+    }
     else
+    {
+        self.isAnimate = YES;
         [self openSide:IIViewDeckSideRight animated:YES];
+        [self performSelector:@selector(changeAnimateFlagValue) withObject:self afterDelay:0.5f];
+    }
 }
 
 - (IBAction)openSettingViewController:(id)sender
 {
+    if(self.isAnimate == YES) return;
     if(self.openSide == IIViewDeckSideRight || self.openSide == IIViewDeckSideLeft)
+    {
+        self.isAnimate = YES;
         [self closeSide:YES];
+        [self performSelector:@selector(changeAnimateFlagValue) withObject:self afterDelay:0.5f];
+    }
     else
+    {
+        self.isAnimate = YES;
         [self openSide:IIViewDeckSideLeft animated:YES];
+        [self performSelector:@selector(changeAnimateFlagValue) withObject:self afterDelay:0.5f];
+    }
+}
+
+- (void)changeAnimateFlagValue
+{
+    self.isAnimate = NO;
 }
 
 #pragma mark GADBannerViewDelegate

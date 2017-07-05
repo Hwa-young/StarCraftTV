@@ -73,7 +73,7 @@
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
-    [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:_queryString completion:^(BOOL success, NSError *error) {
+    [self.youtubeAPI getListPlaylistItemsInChannel:self.channelID atQueryString:_queryString completion:^(BOOL success, NSError *error) {
         if (success)
         {
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
@@ -182,9 +182,11 @@
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
-    [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] completion:^(BOOL success, NSError *error) {
+    [self.youtubeAPI getListPlaylistItemsInChannel:self.channelID atQueryString:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] completion:^(BOOL success, NSError *error) {
         if (success)
         {
+            [self.tableItem removeAllObjects];
+            
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
         }
@@ -218,7 +220,7 @@
         [param setObject:self.youtubeAPI.searchItem.nextPageToken forKey:@"pageToken"];
         [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
         
-        [self.youtubeAPI getListPlaylistItemsInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" atQueryString:_queryString completion:^(BOOL success, NSError *error) {
+        [self.youtubeAPI getListPlaylistItemsInChannel:self.channelID atQueryString:_queryString completion:^(BOOL success, NSError *error) {
             if (success)
             {
                 [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];

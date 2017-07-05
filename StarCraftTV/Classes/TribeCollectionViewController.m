@@ -56,6 +56,11 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     [self.collectionView registerNib:[UINib nibWithNibName:@"TribeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TribeCollectionViewCell"];
     
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    
+//    CGRect f = [self.collectionView frame];
+//    f.size.height -= 50;
+////    f.origin.y += 50;
+//    [self.collectionView setFrame:f];
 
     UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
     flowLayout.sectionHeadersPinToVisibleBounds = YES;
@@ -67,6 +72,19 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     flowLayout.itemSize = CGSizeMake(100, 50);
     
     self.collectionView.collectionViewLayout = flowLayout;
+    
+    self.dropMenu = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50.f)];
+    self.dropMenu.delegate = self;
+    self.dropMenu.items = @[@"테란", @"프로토스", @"저그", @"전체"];
+    self.dropMenu.backgroundColor = [UIColor whiteColor];
+    self.dropMenu.title = @"종족";
+    self.dropMenu.titleColor = [UIColor redColor];
+    self.dropMenu.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+    self.dropMenu.titleTextAlignment = NSTextAlignmentCenter;
+    self.dropMenu.DirectionDown = YES;
+    
+    [self.collectionView addSubview:self.dropMenu];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,11 +109,26 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 
 - (void)didSelectItem:(KPDropMenu *)dropMenu atIndex:(int)atIndex
 {
-    NSLog(@"didSelectItem : %d", atIndex);
+    [SVProgressHUD show];
+    
+    if(atIndex == 0)
+        _peopleList = [[CategoryManager sharedInstance] getTerranProgamerList];
+    else if(atIndex == 1)
+        _peopleList = [[CategoryManager sharedInstance] getProtossProgamerList];
+    else if(atIndex == 2)
+        _peopleList = [[CategoryManager sharedInstance] getZergProgamerList];
+    else if(atIndex == 3)
+        _peopleList = [[CategoryManager sharedInstance] getProgamerList];
+
+    [self.collectionView reloadData];
+    [SVProgressHUD dismiss];
+    
+//    NSLog(@"didSelectItem : %d", atIndex);
 }
 
 #pragma mark <UICollectionViewDataSource>
 
+/*
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
@@ -126,11 +159,14 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     }
     return nil;
 }
+*/
 
+/*
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     return CGSizeMake(0, 50.f);
 }
+ */
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -189,6 +225,7 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
             
             VideoListTableViewController *vList = [[VideoListTableViewController alloc] initWithFilterHeader:NO];
             [vList setQueryString:qString];
+            [vList setChannelID:@"UCX1DpoQkBN4rv5ZfPivA_Wg"];
             [self.navigationController pushViewController:vList animated:YES];
         }
     }];

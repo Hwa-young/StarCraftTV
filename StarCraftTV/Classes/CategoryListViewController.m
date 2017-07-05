@@ -67,39 +67,6 @@
     _qString = @"";
 }
 
-/*
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.categotyArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell_%ld_%ld",(long) indexPath.section, (long)indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        [cell setBackgroundColor:[UIColor clearColor]];
-
-        [cell.textLabel setTextColor:[UIColor whiteColor]];
-        [cell.textLabel setText:[self.categotyArray objectAtIndex:indexPath.row][@"year"]];
-    }
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self callYoutubeSearchApiWithSearchString:[self.categotyArray objectAtIndex:indexPath.row][@"year"] indexPath:indexPath];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 75.f;
-}
-*/
-
 - (void)callYoutubeSearchApiWithSearchString:(NSString*)qString indexPath:(NSIndexPath *)indexPath
 {
     [SVProgressHUD show];
@@ -112,28 +79,27 @@
     [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
-//    static NSString * const kChannelID1 = @"UCX1DpoQkBN4rv5ZfPivA_Wg";  // 일반
-//    static NSString * const kChannelID2 = @"UCi0IFv8X6tJ6gS5eDqlYqcg";  // 06~07
-//    static NSString * const kChannelID3 = @"UCCM3BAZzpl_3rkHhMhOLrFg";  // 04~05
-//    static NSString * const kChannelID4 = @"UCTIIyJUVWVRNc0TyG7gqoAQ";  // 02~03
-
-//    if()
-    
     NSString *string = qString;
     NSString *channelIdString = @"";
-    if ([string rangeOfString:@"2002"].location != NSNotFound || [string rangeOfString:@"2003"].location != NSNotFound) {
-        channelIdString = kChannelID4;
-    }
-    else if ([string rangeOfString:@"2004"].location != NSNotFound || [string rangeOfString:@"2005"].location != NSNotFound) {
-        channelIdString = kChannelID3;
+    if ([string rangeOfString:@"2012"].location != NSNotFound || [string rangeOfString:@"2011"].location != NSNotFound || [string rangeOfString:@"2010"].location != NSNotFound || [string rangeOfString:@"2009"].location != NSNotFound || [string rangeOfString:@"2008"].location != NSNotFound) {
+        channelIdString = kChannelID1;
     }
     else if ([string rangeOfString:@"2006"].location != NSNotFound || [string rangeOfString:@"2007"].location != NSNotFound) {
         channelIdString = kChannelID2;
     }
-    else {
-        channelIdString = kChannelID1;
+    else if ([string rangeOfString:@"2004"].location != NSNotFound || [string rangeOfString:@"2005"].location != NSNotFound) {
+        channelIdString = kChannelID3;
     }
-    
+    else if ([string rangeOfString:@"2002"].location != NSNotFound || [string rangeOfString:@"2003"].location != NSNotFound) {
+        channelIdString = kChannelID4;
+    }
+    else if ([string rangeOfString:@"ASL"].location != NSNotFound) {
+        channelIdString = @"UCK5eBtuoj_HkdXKHNmBLAXg";
+    }
+    else if ([string rangeOfString:@"MSL"].location != NSNotFound) {
+        channelIdString = @"UCJXFHGH_oW9gwBHqeJGJ6wA";
+    }
+
     [self.youtubeAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
         if (success) {
 
@@ -149,9 +115,12 @@
             YTItem *tempYTItem = (YTItem *)[self.youtubeAPI.searchItem.items objectAtIndex:0];
 
             NSString *playListID = [tempYTItem id][@"playlistId"];
+            NSString *channelID = [[tempYTItem snippet] channelId];
+            
             if([playListID length]>0)
             {
                 VideoListTableViewController *vList = [[VideoListTableViewController alloc] initWithFilterHeader:YES];
+                [vList setChannelID:channelID];
                 [vList setPlayListID:playListID];
                 [vList setQueryString:qString];
                 [self.navigationController pushViewController:vList animated:YES];
@@ -254,7 +223,10 @@
     }
     else
     {
+        if(![[[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:@"ASL"])
         [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
+        else
+            _qString = [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow];
         
         [self callYoutubeSearchApiWithSearchString:_qString indexPath:indexPath];
     }
