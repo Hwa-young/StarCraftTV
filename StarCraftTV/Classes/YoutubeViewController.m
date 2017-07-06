@@ -35,7 +35,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self.navigationItem setTitle:titleString];
-//        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
         self.titleStr = titleString;
@@ -48,9 +47,6 @@
 {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar.topItem setTitle:self.titleStr];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:17], NSFontAttributeName, nil]];
-
     [GAManager trackWithView:NSStringFromClass(self.class)];
     
     [SVProgressHUD show];

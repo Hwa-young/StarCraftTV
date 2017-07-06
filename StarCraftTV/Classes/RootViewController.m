@@ -64,11 +64,10 @@
         self.navigationController.toolbar.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, HEIGHT_BANNER);
         [self.navigationController setToolbarHidden:NO];
         [self.navigationController.toolbar addSubview:self.mBannerView];
-
+        
         // Title
         [self.navigationItem setTitle:@"StarCraft TV"];
-        NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:21]};
-        [[self.navigationController navigationBar] setTitleTextAttributes:attributes];
+        [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:21], NSFontAttributeName, nil]];
 
         [self loadADdata];
         
