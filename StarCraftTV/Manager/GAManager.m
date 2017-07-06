@@ -49,7 +49,7 @@ DEF_SINGLETON(GAManager)
     id tracker = [[GAI sharedInstance] defaultTracker];
     
     [[GAI sharedInstance] trackerWithTrackingId:kTrackingId];
-    [GAI sharedInstance].trackUncaughtExceptions = NO;
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
     [GAI sharedInstance].dispatchInterval = 20;
     
     [tracker send:[[[GAIDictionaryBuilder createEventWithCategory:@"application_events"

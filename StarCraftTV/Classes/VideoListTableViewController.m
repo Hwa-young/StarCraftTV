@@ -15,6 +15,7 @@
 #import "YouTubeAPIHelper.h"
 
 #import "KPDropMenu.h"
+#import "GAManager.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SVProgressHUD/SVProgressHUD.h>
@@ -44,6 +45,7 @@
 {
     [super viewDidLoad];
     
+    [GAManager trackWithView:NSStringFromClass(self.class)];
 //    [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", _queryString]];
     
     if([_queryString length]==3 && _queryString!=nil)

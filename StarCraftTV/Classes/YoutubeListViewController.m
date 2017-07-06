@@ -21,6 +21,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <TLYShyNavBar/TLYShyNavBarManager.h>
 
+#import "GAManager.h"
+
 @interface YoutubeListViewController ()
 
 @property (strong, atomic) YTSearchItem *searchItem;
@@ -38,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [GAManager trackWithView:NSStringFromClass(self.class)];
     
     self.isLoading = NO;
 

@@ -8,6 +8,8 @@
 
 #import "CommonWebViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "GAManager.h"
+
 
 #define noticeURL @"https://sites.google.com/view/starcrafttv/홈/공지사항"
 
@@ -20,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [GAManager trackWithView:NSStringFromClass(self.class)];
     
     _mWebView.delegate = self;
     

@@ -14,6 +14,9 @@
 #import "CategoryManager.h"
 #import "Constants.h"
 
+#import "GAManager.h"
+
+
 #import "YTItem.h"
 #import "YTTableViewCell.h"
 #import "YouTubeAPIHelper.h"
@@ -34,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [GAManager trackWithView:NSStringFromClass(self.class)];
 
     self.categotyArray = [[NSMutableArray alloc] initWithArray:[CATEGORY_MANAGER getLeagueArray]];
     

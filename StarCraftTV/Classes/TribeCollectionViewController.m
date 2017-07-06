@@ -12,6 +12,8 @@
 #import "YouTubeAPIHelper.h"
 
 #import "CategoryManager.h"
+#import "GAManager.h"
+
 
 #import "VideoListTableViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
@@ -46,6 +48,7 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [GAManager trackWithView:NSStringFromClass(self.class)];
     
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;

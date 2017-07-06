@@ -12,6 +12,7 @@
 #import "YTItem.h"
 #import "YTTableViewCell.h"
 #import "YouTubeAPIHelper.h"
+#import "GAManager.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -40,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [GAManager trackWithView:NSStringFromClass(self.class)];
     
     [SVProgressHUD show];
     

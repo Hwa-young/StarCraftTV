@@ -10,6 +10,7 @@
 #import "CategoryListViewController.h"
 #import "CommonWebViewController.h"
 #import "Constants.h"
+#import "GAManager.h"
 
 #import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 
@@ -24,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [GAManager trackWithView:NSStringFromClass(self.class)];
     
     self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"문의하기",@"오픈소스",@"버전",nil];
     [self.menuTableview setScrollsToTop:YES];
@@ -86,13 +89,14 @@
 // 메일 쓰기
 - (void)callMailto
 {
-    NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject=제목입력!";
-    NSString *body = @"&body=내용";
+    NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject='StarCraftTV'에 건의합니다.";
+    NSString *body = @"&body=건의내용";
     NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
     email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:email]]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+        [GAManager trackWithView:@"Mail to Administrator"];
     }
 }
 
@@ -102,6 +106,8 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-StarCraftTV-acknowledgements" ofType:@"plist"];
     VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithPath:path];
     [self.navigationController pushViewController:viewController animated:YES];
+
+    [GAManager trackWithView:@"VTAcknowledgementsViewController"];
 }
 
 // 공지사항(Google Site) 페이지

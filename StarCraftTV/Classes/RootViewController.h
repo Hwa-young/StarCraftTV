@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <ViewDeck/IIViewDeckController.h>
-#import "BaseViewController.h"
 
 @import GoogleMobileAds;
 
