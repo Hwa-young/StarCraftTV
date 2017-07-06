@@ -106,7 +106,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-StarCraftTV-acknowledgements" ofType:@"plist"];
     VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithPath:path];
     [self.navigationController pushViewController:viewController animated:YES];
-
+    
     [GAManager trackWithView:@"VTAcknowledgementsViewController"];
 }
 

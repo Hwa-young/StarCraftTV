@@ -23,6 +23,8 @@
 {
     [super viewDidLoad];
     
+    [self setTitle:@"공지사항"];
+    
     [GAManager trackWithView:NSStringFromClass(self.class)];
     
     _mWebView.delegate = self;

@@ -91,7 +91,7 @@
     {
         self.dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
         self.dropNew.delegate = self;
-        self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"조별 예선"];
+        self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"24강"];
         self.dropNew.backgroundColor = [UIColor whiteColor];
         self.dropNew.title = @"토너먼트";
         self.dropNew.titleColor = [UIColor redColor];
