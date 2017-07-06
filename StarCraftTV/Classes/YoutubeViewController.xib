@@ -14,6 +14,7 @@
                 <outlet property="heightConstraint" destination="6vX-7z-vkU" id="ZZs-EM-P1j"/>
                 <outlet property="listTableView" destination="Gb5-cW-gIQ" id="olA-yg-MkN"/>
                 <outlet property="playerView" destination="0V3-Av-DFK" id="1WF-O2-VwW"/>
+                <outlet property="thumnailImageView" destination="ft5-aB-9J5" id="eeL-dv-Q7N"/>
                 <outlet property="topHeightConstraint" destination="cs7-O6-mPV" id="h7i-sC-P6i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,12 +34,20 @@
                                 <constraint firstAttribute="height" constant="50" id="FeB-kJ-8ZM"/>
                             </constraints>
                         </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-aB-9J5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="211" id="6vX-7z-vkU"/>
                         <constraint firstItem="SZf-Tp-3a3" firstAttribute="centerY" secondItem="0V3-Av-DFK" secondAttribute="centerY" id="89F-bD-CJQ"/>
+                        <constraint firstAttribute="bottom" secondItem="ft5-aB-9J5" secondAttribute="bottom" id="FQn-zr-F21"/>
+                        <constraint firstItem="ft5-aB-9J5" firstAttribute="top" secondItem="0V3-Av-DFK" secondAttribute="top" id="ddP-GS-q6z"/>
                         <constraint firstItem="SZf-Tp-3a3" firstAttribute="centerX" secondItem="0V3-Av-DFK" secondAttribute="centerX" id="fbl-gv-TRN"/>
+                        <constraint firstAttribute="trailing" secondItem="ft5-aB-9J5" secondAttribute="trailing" id="iUX-lU-d81"/>
+                        <constraint firstItem="ft5-aB-9J5" firstAttribute="leading" secondItem="0V3-Av-DFK" secondAttribute="leading" id="wtV-xt-dRL"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-cW-gIQ">

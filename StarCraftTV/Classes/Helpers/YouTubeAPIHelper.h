@@ -16,7 +16,6 @@ typedef void(^Completion)(BOOL success, NSError *error);
 
 @interface YouTubeAPIHelper : NSObject
 
-@property (strong, nonatomic) NSString *accessToken;
 @property (nonatomic) URLType urlType;
 @property (strong, nonatomic) NSMutableDictionary *paramaters;
 @property (strong, nonatomic) YTSearchItem *searchItem;
@@ -28,7 +27,6 @@ typedef void(^Completion)(BOOL success, NSError *error);
 @property (strong, nonatomic) NSDictionary *videoInfoItem;
 
 - (id)init;
-- (void)settingAccessToken:(NSString *)accessToken;
 - (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion;

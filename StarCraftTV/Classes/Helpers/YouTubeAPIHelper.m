@@ -13,7 +13,6 @@
 #import "MJExtension.h"
 #import "YTSearchItem.h"
 #import "YTItem.h"
-#import "ActivitiItem.h"
 #import "YTContentDetailsItem.h"
 
 @interface YouTubeAPIHelper()
@@ -30,7 +29,6 @@
     if (self) {
         self.urlType = SEARCH;
         self.paramaters = [NSMutableDictionary new];
-        self.accessToken = @"";
         self.keySearchOld = @"";
         self.url = [NSURL URLWithString:kSearchURL];
         self.searchItem = [YTSearchItem new];
@@ -41,11 +39,6 @@
         self.paramaters[@"key"] = kAPI_KEY;
     }
     return self;
-}
-
-- (void)settingAccessToken:(NSString *)accessToken
-{
-    self.accessToken = accessToken;
 }
 
 - (void)getObjectWith:(URLType)typeURL completion:(Completion)completion

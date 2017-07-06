@@ -81,7 +81,6 @@
     
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
     NSString *string = qString;

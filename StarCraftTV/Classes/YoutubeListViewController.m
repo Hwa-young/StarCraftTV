@@ -100,7 +100,6 @@
     
     [self.tableItem removeAllObjects];
 
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI getListVideoByKeySearch:@"starcrafttvapp" completion:^(BOOL success, NSError *error) {
         
         if([self.youtubeAPI.searchItem.items count]>0)
@@ -150,7 +149,7 @@
 {
     YTItem *tempItem = self.tableItem[indexPath.row];
 
-    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:tempItem.snippet.title];
     [controller setVideoID:tempItem.id[@"videoId"]];
 
     [self.navigationController pushViewController:controller animated:YES];

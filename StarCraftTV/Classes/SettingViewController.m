@@ -83,7 +83,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75.f;
+    return 60.0f;
 }
 
 // 메일 쓰기

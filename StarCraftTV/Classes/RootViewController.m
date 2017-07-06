@@ -159,32 +159,32 @@
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewDidReceiveAd");
+//    NSLog(@"adViewDidReceiveAd");
 }
 
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
 {
-    NSLog(@"didFailToReceiveAdWithError");
+//    NSLog(@"didFailToReceiveAdWithError");
 }
 
 - (void)adViewWillPresentScreen:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewWillPresentScreen");
+//    NSLog(@"adViewWillPresentScreen");
 }
 
 - (void)adViewWillDismissScreen:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewWillDismissScreen");
+//    NSLog(@"adViewWillDismissScreen");
 }
 
 - (void)adViewDidDismissScreen:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewDidDismissScreen");
+//    NSLog(@"adViewDidDismissScreen");
 }
 
 - (void)adViewWillLeaveApplication:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewWillLeaveApplication");
+//    NSLog(@"adViewWillLeaveApplication");
 }
 
 @end

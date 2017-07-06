@@ -212,7 +212,6 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
     [self.youtubeAPI getListPlaylistInChannel:@"UCX1DpoQkBN4rv5ZfPivA_Wg" completion:^(BOOL success, NSError *error) {

@@ -37,6 +37,8 @@
     {
         _needFilterFlag = flag;
         self.isLoading = NO;
+        
+        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-60, -60) forBarMetrics:UIBarMetricsDefault];
     }
     return self;
 }
@@ -61,6 +63,7 @@
 - (void)initDataForTable
 {
     [SVProgressHUD show];
+    self.isLoading = YES;
     
     [self.tableItem removeAllObjects];
     
@@ -69,12 +72,7 @@
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:_queryString forKey:@"q"];
-    
-    self.isLoading = YES;
-    
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
-    
     [self.youtubeAPI getListPlaylistItemsInChannel:self.channelID atQueryString:_queryString completion:^(BOOL success, NSError *error) {
         if (success)
         {
@@ -155,7 +153,7 @@
 {
     YTItem *tempItem = self.tableItem[indexPath.row];
     
-    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:tempItem.snippet.title];
     [controller setVideoID:tempItem.id[@"videoId"]];
     if(self.playListID)
         [controller setPlaylistId:self.playListID];
@@ -180,8 +178,6 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] forKey:@"q"];
     
-    
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     
     [self.youtubeAPI getListPlaylistItemsInChannel:self.channelID atQueryString:[NSString stringWithFormat:@"%@ %@", _queryString, [dropMenu.items objectAtIndex:atIndex]] completion:^(BOOL success, NSError *error) {

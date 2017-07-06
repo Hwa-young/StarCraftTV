@@ -24,16 +24,22 @@
 
 @property (nonatomic, strong) XCDYouTubeVideoPlayerViewController *videoPlayerViewController;
 @property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
+@property (strong, nonatomic) NSString *titleStr;
 
 @end
 
 @implementation YoutubeViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil title:(NSString *)titleString
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+        [self.navigationItem setTitle:titleString];
+//        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+        self.titleStr = titleString;
+        [self.thumnailImageView setHidden:NO];
     }
     return self;
 }
@@ -42,13 +48,16 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar.topItem setTitle:self.titleStr];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:17], NSFontAttributeName, nil]];
+
     [GAManager trackWithView:NSStringFromClass(self.class)];
     
     [SVProgressHUD show];
     
     [self.listTableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
-//    [self getVideoInformation];
+    [self getVideoInformation];
     
     [self initDataForTable];
 
@@ -64,6 +73,8 @@
 
     [self.videoPlayerViewController.moviePlayer prepareToPlay];
     self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
+    
+    [self.playerView bringSubviewToFront:self.thumnailImageView];
 }
 
 - (NSString *)parseDuration:(NSString *)duration
@@ -100,6 +111,8 @@
 
 - (void)getVideoInformation
 {
+    if(!self.videoID) return;
+    
     YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
@@ -113,18 +126,16 @@
         if (success) {
             NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"high"][@"url"];
             
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self.playerView bounds]];
-            [imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [self.thumnailImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if(error)
                 {
+                    [self.thumnailImageView setHidden:YES];
                 }
                 else
                 {
-                    [self.playerView addSubview:imageView];
-                    [imageView setTag:111];
+
                 }
             }];
-            
 //            NSLog(@"duration : %@", [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]);
         }
     }];
@@ -144,7 +155,6 @@
     else
         [param setObject:@"PLIyPfbjeOk-NBE3EtDhm5pPVG4njU0BCK" forKey:@"playlistId"];
 
-    [self.youtubeAPI settingAccessToken:@""];
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
 //
     [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
@@ -176,8 +186,7 @@
     MPMoviePlayerController *moviePlayerController = notification.object;
     NSLog(@"Now Playing %@", moviePlayerController.contentURL);
     
-    if([self.playerView viewWithTag:111] != nil)
-        [[self.playerView viewWithTag:111] removeFromSuperview];
+    [self.thumnailImageView setHidden:YES];
     [SVProgressHUD dismiss];
 }
 
@@ -259,7 +268,7 @@
 {
     YTItem *tempItem = self.tableItem[indexPath.row];
     
-    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil];
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:tempItem.snippet.title];
     [controller setVideoID:tempItem.id[@"videoId"]];
     
     if(self.playlistId)
