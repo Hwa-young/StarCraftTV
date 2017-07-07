@@ -36,9 +36,7 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         [self.navigationItem setTitle:@"인물 검색"];
-        
         _tType = tribeType;
         [self makeTribeList];
     }
@@ -54,17 +52,9 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
      self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
-//    [self.collectionView registerClass:[TribeCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [self.collectionView registerNib:[UINib nibWithNibName:@"TribeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TribeCollectionViewCell"];
-    
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
     
-//    CGRect f = [self.collectionView frame];
-//    f.size.height -= 50;
-////    f.origin.y += 50;
-//    [self.collectionView setFrame:f];
-
     UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
     flowLayout.sectionHeadersPinToVisibleBounds = YES;
     flowLayout.headerReferenceSize = CGSizeMake(self.view.bounds.size.width, 50.f);
@@ -87,7 +77,6 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     self.dropMenu.DirectionDown = YES;
     
     [self.collectionView addSubview:self.dropMenu];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -125,51 +114,9 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
 
     [self.collectionView reloadData];
     [SVProgressHUD dismiss];
-    
-//    NSLog(@"didSelectItem : %d", atIndex);
 }
 
 #pragma mark <UICollectionViewDataSource>
-
-/*
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        
-        UICollectionReusableView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        
-        float headerHeight = 50.f;
-        
-        if (reusableview==nil) {
-            reusableview=[[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, headerHeight)];
-        }
-        
-        if(!self.dropMenu)
-        {
-            self.dropMenu = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50.f)];
-            self.dropMenu.delegate = self;
-            self.dropMenu.items = @[@"테란", @"프로토스", @"저그", @"전체"];
-            self.dropMenu.backgroundColor = [UIColor whiteColor];
-            self.dropMenu.title = @"종족";
-            self.dropMenu.titleColor = [UIColor redColor];
-            self.dropMenu.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
-            self.dropMenu.titleTextAlignment = NSTextAlignmentCenter;
-            self.dropMenu.DirectionDown = YES;
-            
-            [reusableview addSubview:self.dropMenu];
-        }
-        return reusableview;
-    }
-    return nil;
-}
-*/
-
-/*
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    return CGSizeMake(0, 50.f);
-}
- */
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {

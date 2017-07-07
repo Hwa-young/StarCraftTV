@@ -35,6 +35,7 @@
         self.resultSearchVideo = [NSMutableArray new];
         self.searchChannel = [YTSearchItem new];
         self.videoInfoItem = [NSMutableDictionary new];
+        self.statisticsItem = [NSMutableDictionary new];
         self.videoItem = [YTSearchItem new];
         self.paramaters[@"key"] = kAPI_KEY;
     }
@@ -117,8 +118,8 @@
                     NSLog(@" %@", responseObject);
                     self.videoItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     self.videoInfoItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"contentDetails"];
-                    
-                    
+                    self.statisticsItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"statistics"];
+
                     break;
 
                 default:

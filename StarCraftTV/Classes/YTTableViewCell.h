@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTItem.h"
 
 @interface YTTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (void)setTabelviewCell:(YTItem*)item;
+
 @end

@@ -25,6 +25,8 @@ typedef void(^Completion)(BOOL success, NSError *error);
 @property (strong, nonatomic) NSString *keySearchOld;
 @property (strong, nonatomic) YTPlaylistItem *playlistItem;
 @property (strong, nonatomic) NSDictionary *videoInfoItem;
+@property (strong, nonatomic) NSDictionary *statisticsItem;
+
 
 - (id)init;
 - (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion;

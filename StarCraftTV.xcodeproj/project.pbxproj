@@ -26,6 +26,7 @@
 		2B23AF601EF22A75007EF22A /* YoutubeSearchContants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF5C1EF22A75007EF22A /* YoutubeSearchContants.m */; };
 		2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF631EF24106007EF22A /* YTTableViewCell.m */; };
 		2B23AF661EF24F7B007EF22A /* YTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */; };
+		2B2702A51F0F831E000AF6B6 /* boot_mod.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B2702A41F0F831E000AF6B6 /* boot_mod.json */; };
 		2B35CD261EF11AF700584B78 /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */; };
 		2B3D291F1EF3912A00368116 /* icons8-navigation-Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3D291E1EF3912A00368116 /* icons8-navigation-Logo@2x.png */; };
 		2B4BFAC41F0DC9E2001A9AE2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4BFAC31F0DC9E2001A9AE2 /* iAd.framework */; };
@@ -118,6 +119,7 @@
 		2B23AF621EF24106007EF22A /* YTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTableViewCell.h; sourceTree = "<group>"; };
 		2B23AF631EF24106007EF22A /* YTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTableViewCell.m; sourceTree = "<group>"; };
 		2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTTableViewCell.xib; sourceTree = "<group>"; };
+		2B2702A41F0F831E000AF6B6 /* boot_mod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boot_mod.json; sourceTree = "<group>"; };
 		2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
 		2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
 		2B3D291E1EF3912A00368116 /* icons8-navigation-Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-navigation-Logo@2x.png"; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			children = (
 				2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */,
 				2B560FBA1EDD62B000DEE3D9 /* boot.json */,
+				2B2702A41F0F831E000AF6B6 /* boot_mod.json */,
 				2B0D3BBE1ED53F33008FFC17 /* icons@2x */,
 			);
 			path = Resource;
@@ -702,6 +705,7 @@
 				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
 				2BAE29E61EFA64BC0018B0D0 /* expandableImage.png in Resources */,
 				2B80DD1D1F03433900D45D0A /* CommonWebViewController.xib in Resources */,
+				2B2702A51F0F831E000AF6B6 /* boot_mod.json in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
 				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,

@@ -227,10 +227,12 @@
     }
     else
     {
-        if(![[[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:@"ASL"])
-        [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
-        else
+        if([[[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:@"ASL"] ||
+           [[[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:@"OSL"]
+           )
             _qString = [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow];
+        else
+            [self makeQueryString:[NSString stringWithFormat:@"%@ %@", [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0], [[[_contents objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:indexPath.subRow]]];
         
         [self callYoutubeSearchApiWithSearchString:_qString indexPath:indexPath];
     }

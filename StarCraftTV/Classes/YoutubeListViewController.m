@@ -127,21 +127,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
     YTItem *tempItem = self.tableItem[indexPath.row];
-
-    [cell.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if(error)
-        {
-        }
-    }];
-    
-    NSString * newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
-    cell.titleLabel.text = newReplacedString;
-    cell.dateLabel.text = tempItem.snippet.publishedAt;
-
+    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
 }
 

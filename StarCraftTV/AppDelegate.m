@@ -50,7 +50,9 @@
 
 - (void)loadBootData
 {
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"boot" ofType:@"json"];
+//    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"boot" ofType:@"json"];
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"boot_mod" ofType:@"json"];
+    
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
     NSError *error = nil;
     NSDictionary *dicData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];

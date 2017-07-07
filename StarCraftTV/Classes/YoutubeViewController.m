@@ -51,7 +51,7 @@
     
     [SVProgressHUD show];
     
-    [self.listTableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
+//    [self.listTableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
     [self getVideoInformation];
     
@@ -241,7 +241,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTTableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    YTTableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
+    if(cell == nil)
+        cell = [[YTTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"YTTableViewCell"];
+    
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     YTItem *tempItem = self.tableItem[indexPath.row];

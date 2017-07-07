@@ -18,7 +18,7 @@ static NSString * const kPlaylistItemURL            = @"https://www.googleapis.c
 static NSString * const kChannelURL                 = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=50&channelId=UCX1DpoQkBN4rv5ZfPivA_Wg";
 static NSString * const kSearchPlaylistURL          = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=playlist&maxResults=50";
 static NSString * const kSearchPlaylistItemsURL     = @"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=relevance&maxResults=50";
-static NSString * const kVideoInfoItemsURL          = @"https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet";
+static NSString * const kVideoInfoItemsURL          = @"https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics";
 
 static NSString * const kUser1 = @"";
 static NSString * const kUser2 = @"";
