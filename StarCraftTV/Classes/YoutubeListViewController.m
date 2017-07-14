@@ -129,6 +129,8 @@
 {
     YTItem *tempItem = self.tableItem[indexPath.row];
     YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
     [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
 }

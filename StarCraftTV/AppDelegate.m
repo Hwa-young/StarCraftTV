@@ -15,6 +15,7 @@
 #import <SDWebImage/SDWebImageManager.h>
 
 #import "UIView_Custom.h"
+#import "YoutubeViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,8 +29,8 @@
     
     [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
     [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
-    
-    [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267/4925533053"];
+
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267~3448799853"];
     
     [FIRApp configure];
     
@@ -88,6 +89,46 @@
 {
     [GAManager endTrackingSession];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if([[self topViewController] isKindOfClass:[YoutubeViewController class]])
+    {
+        return UIInterfaceOrientationMaskAll;
+    }
+    else
+    {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+}
+
+- (UIViewController*)topViewController
+{
+    return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)rootViewController
+{
+    if ([rootViewController isKindOfClass:[UITabBarController class]])
+    {
+        UITabBarController* tabBarController = (UITabBarController*)rootViewController;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    }
+    else if ([rootViewController isKindOfClass:[UINavigationController class]])
+    {
+        UINavigationController* navigationController = (UINavigationController*)rootViewController;
+        return [self topViewControllerWithRootViewController:navigationController.visibleViewController];
+    }
+    else if (rootViewController.presentedViewController)
+    {
+        UIViewController* presentedViewController = rootViewController.presentedViewController;
+        return [self topViewControllerWithRootViewController:presentedViewController];
+    }
+    else
+    {
+        return rootViewController;
+    }
 }
 
 @end

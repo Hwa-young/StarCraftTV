@@ -17,10 +17,6 @@
 
 @import GoogleMobileAds;
 
-//#import <GoogleMobileAds/GoogleMobileAds.h>
-//#import <GoogleMobileAds/GADAdSize.h>
-//#import <GoogleMobileAds/GADInterstitial.h>
-
 @implementation CustomToolBar
 
 - (CGSize)sizeThatFits:(CGSize)size
@@ -81,11 +77,17 @@
     [super viewDidLoad];
     
     self.interstitial = [self createAndLoadInterstitial];
+    
+//    [self callMainAD];
+    
+    
+    
+    [self performSelector:@selector(callMainAD) withObject:nil afterDelay:0.5f];
 }
 
 - (GADInterstitial *)createAndLoadInterstitial
 {
-    GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-4829113648689267~3448799853"];
+    GADInterstitial *interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-4829113648689267/4656017850"];
     interstitial.delegate = self;
     [interstitial loadRequest:[GADRequest request]];
     return interstitial;
@@ -96,17 +98,23 @@
     self.interstitial = [self createAndLoadInterstitial];
 }
 
+- (void)callMainAD
+{
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    } else {
+        NSLog(@"Ad wasn't ready");
+    }
+}
+
 - (void)loadADdata
 {
     self.mBannerView.adUnitID = @"ca-app-pub-4829113648689267/4925533053";
     self.mBannerView.rootViewController = self;
-//    [self.bannerView loadRequest:[GADRequest request]];
+
     
     GADRequest *request = [GADRequest request];
-    // Requests test ads on devices you specify. Your test device ID is printed to the console when
-    // an ad request is made. GADBannerView automatically returns test ads when running on a
-    // simulator.
-    request.testDevices = @[kGADSimulatorID];
+//    request.testDevices = @[kGADSimulatorID];
     [self.mBannerView loadRequest:request];
 }
 
