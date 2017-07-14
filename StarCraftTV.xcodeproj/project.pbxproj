@@ -75,6 +75,7 @@
 		2BAE29E91EFA64BC0018B0D0 /* SKSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */; };
 		2BAE29EA1EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */; };
 		2BBEC3871F04967E0006F738 /* YTContentDetailsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC3861F04967E0006F738 /* YTContentDetailsItem.m */; };
+		2BD0C0241F18B82600666174 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C0221F18B82600666174 /* Localizable.strings */; };
 		2BD4FB7F1EF372F40083143A /* icons8-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */; };
 		2BDF203E1ED558CE0078952D /* YoutubeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */; };
 		2BDF203F1ED558CE0078952D /* YoutubeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF203D1ED558CE0078952D /* YoutubeListViewController.xib */; };
@@ -210,6 +211,11 @@
 		2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCellIndicator.m; sourceTree = "<group>"; };
 		2BBEC3851F04967E0006F738 /* YTContentDetailsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTContentDetailsItem.h; sourceTree = "<group>"; };
 		2BBEC3861F04967E0006F738 /* YTContentDetailsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTContentDetailsItem.m; sourceTree = "<group>"; };
+		2BD0C0201F18B80000666174 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		2BD0C0211F18B80000666174 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2BD0C0231F18B82600666174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2BD0C0251F18B83200666174 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2BD0C0261F18B83300666174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-logo@2x.png"; sourceTree = "<group>"; };
 		2BDF203B1ED558CE0078952D /* YoutubeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeListViewController.h; sourceTree = "<group>"; };
 		2BDF203C1ED558CE0078952D /* YoutubeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeListViewController.m; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 				2B540C441ED272A2000A9879 /* Info.plist */,
 				2BE492F61ED287F60063B884 /* Resource */,
 				2B540C331ED272A2000A9879 /* Supporting Files */,
+				2BD0C0221F18B82600666174 /* Localizable.strings */,
 			);
 			path = StarCraftTV;
 			sourceTree = "<group>";
@@ -670,6 +677,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 2B540C271ED272A2000A9879;
 			productRefGroup = 2B540C311ED272A2000A9879 /* Products */;
@@ -695,6 +703,7 @@
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
+				2BD0C0241F18B82600666174 /* Localizable.strings in Resources */,
 				2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
@@ -844,6 +853,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B540C3D1ED272A2000A9879 /* Base */,
+				2BD0C0201F18B80000666174 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -852,8 +862,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B540C421ED272A2000A9879 /* Base */,
+				2BD0C0211F18B80000666174 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2BD0C0221F18B82600666174 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BD0C0231F18B82600666174 /* Base */,
+				2BD0C0251F18B83200666174 /* ko */,
+				2BD0C0261F18B83300666174 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -863,6 +884,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -914,6 +936,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

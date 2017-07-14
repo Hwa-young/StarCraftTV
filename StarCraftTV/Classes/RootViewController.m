@@ -82,7 +82,7 @@
     
     
     
-    [self performSelector:@selector(callMainAD) withObject:nil afterDelay:0.5f];
+    [self performSelector:@selector(callMainAD) withObject:nil afterDelay:1.5f];
 }
 
 - (GADInterstitial *)createAndLoadInterstitial

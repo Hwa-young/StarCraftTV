@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  StarCraftTV
+
+  Created by 고화영 on 2017. 7. 14..
+  Copyright © 2017년 HYKo. All rights reserved.
+*/
+
+"SEARCH" = "종족별 인물 검색";
+"TERRAN" = "테란";
+"PROTOSS" = "프로토스";
+"ZERG" = "저그";
+"NOTICE" = "공지사항";
+"CONTACTUS" = "문의하기";
+"OPENSOURCE" = "오픈소스";
+"VERSION" = "버전";

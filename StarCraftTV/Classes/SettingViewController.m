@@ -27,8 +27,13 @@
     [super viewDidLoad];
     
     [GAManager trackWithView:NSStringFromClass(self.class)];
-    
-    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"공지사항",@"문의하기",@"오픈소스",@"버전",nil];
+
+    self.menuArray = [[NSMutableArray alloc] initWithObjects:
+                      NSLocalizedString(@"NOTICE", @"NOTICE"),
+                      NSLocalizedString(@"CONTACTUS", @"CONTACTUS"),
+                      NSLocalizedString(@"OPENSOURCE", @"OPENSOURCE"),
+                      NSLocalizedString(@"VERSION", @"VERSION"),
+                      nil];
     [self.menuTableview setScrollsToTop:YES];
 }
 
@@ -65,7 +70,7 @@
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
         [cell.textLabel setTextColor:[UIColor blackColor]];
-        if([cell.textLabel.text isEqualToString:@"버전"])
+        if([cell.textLabel.text isEqualToString:NSLocalizedString(@"VERSION", @"VERSION")])
             [cell.detailTextLabel setText:@"1.0.0"];
     }
     return cell;

@@ -76,7 +76,9 @@ DEF_SINGLETON(CategoryManager);
     arrLeagueCategoty = [[NSMutableArray alloc] init];
     
     NSMutableArray *tMutableArray = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
-    [arrLeagueCategoty addObject:@[@"종족별 인물 검색", @"테란", @"프로토스", @"저그"]];
+    
+    
+    [arrLeagueCategoty addObject:@[NSLocalizedString(@"SEARCH", @"SEARCH"), NSLocalizedString(@"TERRAN", @"TERRAN"), NSLocalizedString(@"PROTOSS", @"PROTOSS"), NSLocalizedString(@"ZERG", @"ZERG")]];
 
     for(int i=0 ; i<[tMutableArray count] ; i++)
     {
