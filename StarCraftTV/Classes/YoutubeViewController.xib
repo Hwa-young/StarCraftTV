@@ -72,6 +72,7 @@
                 <constraint firstItem="0V3-Av-DFK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hcw-DV-WFW"/>
                 <constraint firstAttribute="trailing" secondItem="Gb5-cW-gIQ" secondAttribute="trailing" id="nV5-GQ-roR"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>

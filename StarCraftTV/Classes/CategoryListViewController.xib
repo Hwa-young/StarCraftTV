@@ -32,7 +32,7 @@
                 <constraint firstItem="oHc-8t-JN6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lwj-g3-ZHB"/>
                 <constraint firstItem="oHc-8t-JN6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Sxa-T9-II1"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
             <point key="canvasLocation" x="35" y="53"/>

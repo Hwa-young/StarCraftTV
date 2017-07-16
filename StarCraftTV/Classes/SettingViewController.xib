@@ -36,7 +36,7 @@
                 <constraint firstItem="QMD-o4-QUK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JiH-0l-JzC"/>
                 <constraint firstAttribute="trailing" secondItem="QMD-o4-QUK" secondAttribute="trailing" id="VvZ-g5-iKR"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="59" y="-154"/>
         </view>

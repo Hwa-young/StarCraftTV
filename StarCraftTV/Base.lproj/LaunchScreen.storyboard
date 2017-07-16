@@ -21,31 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StarCraft TV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-qN-Co5">
-                                <rect key="frame" x="78" y="436" width="219" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="mwQ-5y-ytL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-Jh-G6w">
-                                <rect key="frame" x="162" y="378" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="IC5-HU-OT3"/>
-                                    <constraint firstAttribute="width" constant="50" id="Jrf-ww-T0E"/>
-                                    <constraint firstAttribute="height" constant="50" id="ZgG-dQ-46r"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" highlightedImage="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-aM-nFS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0Rh-qN-Co5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CDp-sZ-Udr"/>
-                            <constraint firstItem="cdv-Jh-G6w" firstAttribute="centerX" secondItem="0Rh-qN-Co5" secondAttribute="centerX" id="UNP-Ck-gnM"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="0Rh-qN-Co5" secondAttribute="bottom" constant="188" id="jXu-yU-xgo"/>
-                            <constraint firstItem="0Rh-qN-Co5" firstAttribute="top" secondItem="cdv-Jh-G6w" secondAttribute="bottom" constant="8" symbolic="YES" id="mBv-gk-csI"/>
-                            <constraint firstItem="cdv-Jh-G6w" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="358" id="yWN-yv-nFz"/>
+                            <constraint firstItem="xEM-aM-nFS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="TCn-3f-SdX"/>
+                            <constraint firstAttribute="trailing" secondItem="xEM-aM-nFS" secondAttribute="trailing" id="drY-oB-cyG"/>
+                            <constraint firstItem="xEM-aM-nFS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="pBP-wo-wRt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xEM-aM-nFS" secondAttribute="bottom" id="zWS-dK-8lD"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -56,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-logo.png" width="50" height="50"/>
+        <image name="LaunchImage" width="16" height="16"/>
     </resources>
 </document>
