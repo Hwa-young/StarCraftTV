@@ -77,24 +77,40 @@
     [SVProgressHUD show];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    [param setObject:qString forKey:@"q"];
+    
     
     self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
-    
-    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
-    
+
     NSString *string = qString;
     NSString *channelIdString = @"";
-    if ([string rangeOfString:@"2012"].location != NSNotFound || [string rangeOfString:@"2011"].location != NSNotFound || [string rangeOfString:@"2010"].location != NSNotFound || [string rangeOfString:@"2009"].location != NSNotFound || [string rangeOfString:@"2008"].location != NSNotFound) {
+    if(
+       ([string rangeOfString:@"MSL"].location == NSNotFound)&&
+       ([string rangeOfString:@"2012"].location != NSNotFound ||
+        [string rangeOfString:@"2011"].location != NSNotFound ||
+        [string rangeOfString:@"2010"].location != NSNotFound ||
+        [string rangeOfString:@"2009"].location != NSNotFound ||
+        [string rangeOfString:@"2008"].location != NSNotFound)
+        ) {
         channelIdString = kChannelID1;
     }
-    else if ([string rangeOfString:@"2006"].location != NSNotFound || [string rangeOfString:@"2007"].location != NSNotFound) {
+    else if (
+             ([string rangeOfString:@"MSL"].location == NSNotFound)&&
+             ([string rangeOfString:@"2006"].location != NSNotFound ||
+             [string rangeOfString:@"2007"].location != NSNotFound)
+             ) {
         channelIdString = kChannelID2;
     }
-    else if ([string rangeOfString:@"2004"].location != NSNotFound || [string rangeOfString:@"2005"].location != NSNotFound) {
+    else if (([string rangeOfString:@"MSL"].location == NSNotFound)&&
+             ([string rangeOfString:@"2004"].location != NSNotFound ||
+             [string rangeOfString:@"2005"].location != NSNotFound)
+             ) {
         channelIdString = kChannelID3;
     }
-    else if ([string rangeOfString:@"2002"].location != NSNotFound || [string rangeOfString:@"2003"].location != NSNotFound) {
+    else if (
+             ([string rangeOfString:@"MSL"].location == NSNotFound)&&
+             ([string rangeOfString:@"2002"].location != NSNotFound ||
+             [string rangeOfString:@"2003"].location != NSNotFound)
+             ) {
         channelIdString = kChannelID4;
     }
     else if ([string rangeOfString:@"ASL"].location != NSNotFound) {
@@ -102,13 +118,15 @@
     }
     else if ([string rangeOfString:@"MSL"].location != NSNotFound) {
         channelIdString = @"UCJXFHGH_oW9gwBHqeJGJ6wA";
+        
+        qString = [string substringFromIndex:9];
     }
     else if ([string rangeOfString:@"SSL"].location != NSNotFound) {
         channelIdString = @"UCAI86CUHDIkKXGA6YpVBhYg";
     }
     
-//    @"UCAI86CUHDIkKXGA6YpVBhYg" // SPOTV GAMES KR
-//    @"UC9Bh8GeuDVfjMRet_KAwA0A" // SPOTV GAMES EN
+    [param setObject:qString forKey:@"q"];
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
 
     [self.youtubeAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
         if (success) {

@@ -18,7 +18,7 @@
 
 #import <XCDYouTubeKit/XCDYouTubeKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-
+#import <MarqueeLabel/MarqueeLabel.h>
 
 @interface YoutubeViewController ()
 
@@ -36,9 +36,13 @@
     if (self) {
         [self.navigationItem setTitle:titleString];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
         self.titleStr = titleString;
         [self.thumnailImageView setHidden:NO];
+        
+//        MarqueeLabel *lengthyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100) duration:8.0 andFadeLength:10.0f];
+//        [lengthyLabel setText:titleString];
+//        [self.navigationItem.titleView addSubview:lengthyLabel];
     }
     return self;
 }
