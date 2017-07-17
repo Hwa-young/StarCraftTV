@@ -42,6 +42,9 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - JSONKit (1.6)
+  - MarqueeLabel (3.1.1):
+    - MarqueeLabel/ObjC (= 3.1.1)
+  - MarqueeLabel/ObjC (3.1.1)
   - MJExtension (3.0.13)
   - Reachability (3.2)
   - SAMKeychain (1.5.2)
@@ -62,6 +65,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Google/Analytics
   - JSONKit (from `https://gist.github.com/marcdown/5282955/raw/2a52cfd92f112f2a52669420c82c1bb1efd15d2a/JSONKit.podspec`)
+  - MarqueeLabel
   - MJExtension (~> 3.0)
   - Reachability
   - SAMKeychain
@@ -94,6 +98,7 @@ SPEC CHECKSUMS:
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   JSONKit: 7e5866e48126a798d2c23e221c107aae0983192f
+  MarqueeLabel: 17c5148b6f7144498eff5e0d286bd2e7e866f972
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
@@ -104,6 +109,6 @@ SPEC CHECKSUMS:
   VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
   XCDYouTubeKit: 86f4e7a9c2baa7b7adf6abfc28ac3ab34927be2d
 
-PODFILE CHECKSUM: ba3aa98ae416d5602076f8d3b9fbdc03f57098a7
+PODFILE CHECKSUM: d831ff80428c50c33cb4d8ab4b6fb23a86a6f396
 
 COCOAPODS: 1.2.1

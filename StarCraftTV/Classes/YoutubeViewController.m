@@ -259,6 +259,8 @@
     }
     
     NSString * newReplacedString = @"";
+    newReplacedString = tempItem.snippet.title;
+    /*
     if(tempItem.snippet.title)
     {
         if ([tempItem.snippet.title rangeOfString:@"재경기"].location != NSNotFound)
@@ -270,7 +272,7 @@
             newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
         }
     }
-    
+    */
     cell.titleLabel.text = newReplacedString;
     cell.dateLabel.text = tempItem.snippet.publishedAt;
     

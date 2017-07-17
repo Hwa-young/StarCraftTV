@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MarqueeLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-StarCraftTV.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C0725A16424BDDF585AAB2FD406042F</key>
+		<key>13AF8332AA2A2BAD7557630523685306</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57063B50418A3A433F116798C85DDDB5</key>
+		<key>401DA085C60F068135CF28A7213953B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58ADE76E4E51423CF67B0F974432B609</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DDF966CF90219AC14425FD5B1B70667</key>
+		<key>63C86F7AD370509317B18182BC871F45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99FA8CD370B46ADE6FF1B87CAD5B08F3</key>
+		<key>658CCCF1EE1720E55C11E4C17B4504BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92C237F0ED3102F598B334936FA7D0F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD3AFE6063F5ABEBF1922CD614B903AD</key>
+		<key>B9C8368E4732AF7E06384CBEE76BAEF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CADDDB3721AB3DDB2745EF7C62AC6425</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D89CD22FB9ADF70407D29FEC81D3E315</key>
+		<key>EABA0D5581D0D31FFD47A4494DE51D47</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA0D003C2D47BF3E9387DAAA84FB27DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E9806F627A97C1802739BA1D9A06FC7C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EAE16C7FED1FA3E621F3846A85D34C65</key>
+		<key>F9C07FBF7E74DB79D2FD312CECCDE5BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

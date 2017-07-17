@@ -103,6 +103,12 @@
     else if ([string rangeOfString:@"MSL"].location != NSNotFound) {
         channelIdString = @"UCJXFHGH_oW9gwBHqeJGJ6wA";
     }
+    else if ([string rangeOfString:@"SSL"].location != NSNotFound) {
+        channelIdString = @"UCAI86CUHDIkKXGA6YpVBhYg";
+    }
+    
+//    @"UCAI86CUHDIkKXGA6YpVBhYg" // SPOTV GAMES KR
+//    @"UC9Bh8GeuDVfjMRet_KAwA0A" // SPOTV GAMES EN
 
     [self.youtubeAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
         if (success) {
@@ -212,7 +218,7 @@
 {
     if(indexPath.row == 0)
     {
-        TRIBE_TYPE type; // 테란 프로토스 저그
+        TRIBE_TYPE type;
         if(indexPath.subRow == 1)
             type = TAG_TRIBE_TERRAN;
         else if(indexPath.subRow == 2)

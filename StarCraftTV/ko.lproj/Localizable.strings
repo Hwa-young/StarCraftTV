@@ -10,7 +10,9 @@
 "TERRAN" = "테란";
 "PROTOSS" = "프로토스";
 "ZERG" = "저그";
+"ALL" = "전체";
 "NOTICE" = "공지사항";
 "CONTACTUS" = "문의하기";
 "OPENSOURCE" = "오픈소스";
 "VERSION" = "버전";
+"TRIBES" = "종족";

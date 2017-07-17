@@ -34,6 +34,8 @@
     [self getVideoInformation:item cell:self];
     
     NSString * newReplacedString = @"";
+    newReplacedString = item.snippet.title;
+    /*
     if(item.snippet.title)
     {
         if ([item.snippet.title rangeOfString:@"재경기"].location != NSNotFound)
@@ -45,7 +47,7 @@
             newReplacedString = [item.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
         }
     }
-    
+    */
     self.titleLabel.text = newReplacedString;
 }
 

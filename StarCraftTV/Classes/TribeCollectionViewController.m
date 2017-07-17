@@ -68,14 +68,15 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     
     self.dropMenu = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50.f)];
     self.dropMenu.delegate = self;
-    self.dropMenu.items = @[@"테란", @"프로토스", @"저그", @"전체"];
+    self.dropMenu.items = @[NSLocalizedString(@"TERRAN", @"TERRAN"), NSLocalizedString(@"PROTOSS", @"PROTOSS"), NSLocalizedString(@"ZERG", @"ZERG"), NSLocalizedString(@"ALL", @"ALL")];
     self.dropMenu.backgroundColor = [UIColor whiteColor];
-    self.dropMenu.title = @"종족";
+    self.dropMenu.title = NSLocalizedString(@"TRIBES", @"TRIBES");
+    self.dropMenu.titleFontSize = 15.f;
     self.dropMenu.titleColor = [UIColor redColor];
-    self.dropMenu.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+    self.dropMenu.itemsFont = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:14.0];
     self.dropMenu.titleTextAlignment = NSTextAlignmentCenter;
     self.dropMenu.DirectionDown = YES;
-    
+
     [self.collectionView addSubview:self.dropMenu];
 }
 

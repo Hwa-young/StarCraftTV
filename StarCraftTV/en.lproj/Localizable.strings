@@ -10,7 +10,9 @@
 "TERRAN" = "TERRAN";
 "PROTOSS" = "PROTOSS";
 "ZERG" = "ZERG";
+"ALL" = "ALL";
 "NOTICE" = "Notice";
 "CONTACTUS" = "Contact US";
 "OPENSOURCE" = "Open Source";
 "VERSION" = "Version";
+"TRIBES" = "TRIBES";
