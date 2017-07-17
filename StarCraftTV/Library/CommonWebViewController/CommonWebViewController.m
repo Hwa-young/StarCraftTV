@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    [self setTitle:@"공지사항"];
+    [self setTitle:NSLocalizedString(@"NOTICE", @"NOTICE")];
     
     [GAManager trackWithView:NSStringFromClass(self.class)];
     

@@ -27,6 +27,8 @@
 {
 //    [UIView Start];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [[[SDWebImageManager sharedManager] imageCache] cleanDisk];
     [[[SDWebImageManager sharedManager] imageCache] setMaxCacheAge:60 * 60 * 24] ; // 하루만 캐쉬하도록 수정
 

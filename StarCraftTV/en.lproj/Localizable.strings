@@ -6,7 +6,7 @@
   Copyright © 2017년 HYKo. All rights reserved.
 */
 
-"SEARCH" = "Search by species name";
+"SEARCH" = "Search by name";
 "TERRAN" = "TERRAN";
 "PROTOSS" = "PROTOSS";
 "ZERG" = "ZERG";
