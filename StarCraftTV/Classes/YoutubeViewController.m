@@ -61,16 +61,36 @@
     [defaultCenter addObserver:self selector:@selector(moviePlayerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
     [defaultCenter addObserver:self selector:@selector(moviePlayerNowPlayingMovieDidChange:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil];
 
+    [self.playerView bringSubviewToFront:self.thumnailImageView];
+}
+
+- (void)playYoutubeVideo
+{
+    if(!_videoID) return;
+    
     NSString *videoId =_videoID;
     NSString *videoIdentifier = videoId;
-    self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];    
-    self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"PlayVideoInBackground"];
-    [self.videoPlayerViewController presentInView:self.playerView];
-
-    [self.videoPlayerViewController.moviePlayer prepareToPlay];
-    self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
     
-    [self.playerView bringSubviewToFront:self.thumnailImageView];
+    if(!self.videoPlayerViewController)
+    {
+        self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];
+        self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"PlayVideoInBackground"];
+        [self.videoPlayerViewController presentInView:self.playerView];
+        
+        [self.videoPlayerViewController.moviePlayer prepareToPlay];
+        self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
+    }
+    else
+    {
+        [self.videoPlayerViewController.moviePlayer play];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self playYoutubeVideo];
 }
 
 - (NSString *)parseDuration:(NSString *)duration
@@ -190,7 +210,7 @@
     [super viewWillDisappear:animated];
 
     if ([self isMovingFromParentViewController])
-        [self.videoPlayerViewController.moviePlayer stop];
+        [self.videoPlayerViewController.moviePlayer pause];
     
     [SVProgressHUD dismiss];
 }

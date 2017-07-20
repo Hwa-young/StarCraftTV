@@ -33,7 +33,6 @@
 		2B540C351ED272A2000A9879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C341ED272A2000A9879 /* main.m */; };
 		2B540C381ED272A2000A9879 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B540C371ED272A2000A9879 /* AppDelegate.m */; };
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
-		2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3F1ED272A2000A9879 /* Assets.xcassets */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
 		2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */; };
 		2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B560FBA1EDD62B000DEE3D9 /* boot.json */; };
@@ -46,6 +45,7 @@
 		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
 		2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */; };
 		2B80DD1D1F03433900D45D0A /* CommonWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B80DD1B1F03433900D45D0A /* CommonWebViewController.xib */; };
+		2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8416BD1F206DB800474029 /* Assets.xcassets */; };
 		2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DBD1ED2B3AB00205FCA /* GAManager.m */; };
 		2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC21ED2B41900205FCA /* NSArray+Additions.m */; };
 		2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA20DC41ED2B41900205FCA /* NSDate+Additions.m */; };
@@ -131,7 +131,6 @@
 		2B540C361ED272A2000A9879 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B540C371ED272A2000A9879 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2B540C3D1ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2B540C3F1ED272A2000A9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B540C421ED272A2000A9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		2B80DD191F03433900D45D0A /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebViewController.h; sourceTree = "<group>"; };
 		2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonWebViewController.m; sourceTree = "<group>"; };
 		2B80DD1B1F03433900D45D0A /* CommonWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonWebViewController.xib; sourceTree = "<group>"; };
+		2B8416BD1F206DB800474029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA20DBC1ED2B3AB00205FCA /* GAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAManager.h; sourceTree = "<group>"; };
 		2BA20DBD1ED2B3AB00205FCA /* GAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAManager.m; sourceTree = "<group>"; };
 		2BA20DC11ED2B41900205FCA /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
@@ -356,8 +356,8 @@
 				2B43CEAC1ED2AD4000398AB5 /* Library */,
 				2B540C361ED272A2000A9879 /* AppDelegate.h */,
 				2B540C371ED272A2000A9879 /* AppDelegate.m */,
+				2B8416BD1F206DB800474029 /* Assets.xcassets */,
 				2B540C3C1ED272A2000A9879 /* Main.storyboard */,
-				2B540C3F1ED272A2000A9879 /* Assets.xcassets */,
 				2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */,
 				2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */,
 				2B540C441ED272A2000A9879 /* Info.plist */,
@@ -700,6 +700,7 @@
 				2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */,
 				2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */,
 				2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */,
+				2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */,
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
@@ -717,7 +718,6 @@
 				2B2702A51F0F831E000AF6B6 /* boot_mod.json in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
-				2B540C401ED272A2000A9879 /* Assets.xcassets in Resources */,
 				2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */,
 				2BD4FB7F1EF372F40083143A /* icons8-logo@2x.png in Resources */,
 			);
@@ -983,7 +983,7 @@
 			baseConfigurationReference = 3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1005,7 +1005,7 @@
 			baseConfigurationReference = F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
