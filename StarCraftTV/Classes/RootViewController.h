@@ -20,7 +20,11 @@
 
 @property (strong, nonatomic) GADBannerView *mBannerView;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *categotyBarButton;
+
 - (IBAction)openCategoryViewController:(id)sender;
 - (IBAction)openSettingViewController:(id)sender;
+
+- (UIBarButtonItem*)getCategoryItem;
 
 @end

@@ -194,4 +194,9 @@
 //    NSLog(@"adViewWillLeaveApplication");
 }
 
+- (UIBarButtonItem*)getCategoryItem
+{
+    return self.categotyBarButton;
+}
+
 @end

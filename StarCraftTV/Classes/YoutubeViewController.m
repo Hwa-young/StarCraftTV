@@ -36,13 +36,9 @@
     if (self) {
         [self.navigationItem setTitle:titleString];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
-//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
         self.titleStr = titleString;
         [self.thumnailImageView setHidden:NO];
-        
-//        MarqueeLabel *lengthyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100) duration:8.0 andFadeLength:10.0f];
-//        [lengthyLabel setText:titleString];
-//        [self.navigationItem.titleView addSubview:lengthyLabel];
     }
     return self;
 }
@@ -136,7 +132,6 @@
 
                 }
             }];
-//            NSLog(@"duration : %@", [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]);
         }
     }];
 }
@@ -156,7 +151,7 @@
         [param setObject:@"PLIyPfbjeOk-NBE3EtDhm5pPVG4njU0BCK" forKey:@"playlistId"];
 
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
-//
+
     [self.youtubeAPI getListVideoByPlayListWithType:PLAYLISTITEM completion:^(BOOL success, NSError *error) {
         if (success) {
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
@@ -203,7 +198,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
@@ -288,7 +282,7 @@
     YTItem *tempItem = self.tableItem[indexPath.row];
     
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:tempItem.snippet.title];
-    [controller setVideoID:tempItem.id[@"videoId"]];
+    [controller setVideoID:[tempItem.snippet.resourceId objectForKey:@"videoId"]];
     
     if(self.playlistId)
         [controller setPlaylistId:self.playlistId];

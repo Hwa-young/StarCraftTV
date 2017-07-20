@@ -17,6 +17,8 @@
 #import "UIView_Custom.h"
 #import "YoutubeViewController.h"
 
+#import <MediaPlayer/MediaPlayer.h>
+
 @interface AppDelegate ()
 
 @end
@@ -95,7 +97,11 @@
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    if([[self topViewController] isKindOfClass:[YoutubeViewController class]])
+    if([[self topViewController] isKindOfClass:[YoutubeViewController class]] ||
+       [[self topViewController] isKindOfClass:NSClassFromString(@"MPInlineVideoFullscreenViewController")] ||
+       [[self topViewController] isKindOfClass:NSClassFromString(@"AVFullScreenViewController")] ||
+       [[self topViewController] isKindOfClass:NSClassFromString(@"MPFullScreenTransitionViewController")] ||
+       [[self topViewController] isKindOfClass:NSClassFromString(@"MPMoviePlayerViewController")] )
     {
         return UIInterfaceOrientationMaskAll;
     }

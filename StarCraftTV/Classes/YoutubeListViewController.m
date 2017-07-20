@@ -69,7 +69,8 @@
 
 - (void)reloadData:(UIRefreshControl *)refreshControl
 {
-    [refreshControl endRefreshing];
+    [refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1.0f];
+//    [refreshControl endRefreshing];
 }
 
 -(void)viewWillLayoutSubviews
