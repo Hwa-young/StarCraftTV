@@ -39,6 +39,8 @@
         self.isLoading = NO;
         
         [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-60, -60) forBarMetrics:UIBarMetricsDefault];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
     }
     return self;
 }
@@ -48,12 +50,12 @@
     [super viewDidLoad];
     
     [GAManager trackWithView:NSStringFromClass(self.class)];
-//    [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", _queryString]];
     
     if([_queryString length]==3 && _queryString!=nil)
         [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 선수 영상 모음", _queryString]];
     else
-        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 스타리그", _queryString]];
+        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", _queryString]];
+//        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 스타리그", _queryString]];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
@@ -130,36 +132,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell"];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
     YTItem *tempItem = self.tableItem[indexPath.row];
     
-    cell.thumbnailImage.image = nil;
-    [cell.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if(error)
-        {
-        }
-    }];
-
-    NSString * newReplacedString = @"";
-    newReplacedString = tempItem.snippet.title;
-    /*
-    if(tempItem.snippet.title)
-    {
-        if ([tempItem.snippet.title rangeOfString:@"재경기"].location != NSNotFound)
-        {
-            newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"재경기 " withString:@"재경기\n"];
-        }
-        else
-        {
-            newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
-        }
-    }
-    */
-    cell.titleLabel.text = newReplacedString;
-    cell.dateLabel.text = tempItem.snippet.publishedAt;
+    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
+    [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
 }
 

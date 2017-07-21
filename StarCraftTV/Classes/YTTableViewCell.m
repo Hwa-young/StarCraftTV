@@ -13,11 +13,17 @@
 
 @implementation YTTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
+    
     [self.titleLabel sizeToFit];
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.numberOfLines = 0;
+    
+    [self.dateLabel sizeToFit];
+    self.dateLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.dateLabel.numberOfLines = 0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -27,28 +33,16 @@
 - (void)setTabelviewCell:(YTItem*)item
 {
     if(!item) return;
-    if([self.titleLabel.text length]>0) return;
+//    if([self.titleLabel.text length]>0) return;
     
-    [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails[@"high"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     
     [self getVideoInformation:item cell:self];
     
     NSString * newReplacedString = @"";
     newReplacedString = item.snippet.title;
-    /*
-    if(item.snippet.title)
-    {
-        if ([item.snippet.title rangeOfString:@"재경기"].location != NSNotFound)
-        {
-            newReplacedString = [item.snippet.title stringByReplacingOccurrencesOfString:@"재경기 " withString:@"재경기\n"];
-        }
-        else
-        {
-            newReplacedString = [item.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
-        }
-    }
-    */
+    
     self.titleLabel.text = newReplacedString;
 }
 
@@ -66,13 +60,19 @@
     [infoAPI.paramaters addEntriesFromDictionary:param];
     [infoAPI getVideoInfo:item.id[@"videoId"] completion:^(BOOL success, NSError *error) {
         if (success) {
-            [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [infoAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
+            
+            if(infoAPI.statisticsItem)
+            {
+                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [infoAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
+            }
         }
     }];
 }
 
 - (NSString *)parseDuration:(NSString *)duration
 {
+    if(!duration) return @"";
+    
     NSInteger hours = 0;
     NSInteger minutes = 0;
     NSInteger seconds = 0;

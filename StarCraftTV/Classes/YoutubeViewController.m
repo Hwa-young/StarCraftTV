@@ -258,42 +258,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTTableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
-    if(cell == nil)
-        cell = [[YTTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"YTTableViewCell"];
-    
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
     YTItem *tempItem = self.tableItem[indexPath.row];
     
-    if(tempItem.snippet.thumbnails)
-    {
-        cell.thumbnailImage.image = nil;
-        [cell.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:tempItem.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            if(error)
-            {
-            }
-        }];
-    }
+    YTTableViewCell *cell = [self.listTableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    NSString * newReplacedString = @"";
-    newReplacedString = tempItem.snippet.title;
-    /*
-    if(tempItem.snippet.title)
-    {
-        if ([tempItem.snippet.title rangeOfString:@"재경기"].location != NSNotFound)
-        {
-            newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"재경기 " withString:@"재경기\n"];
-        }
-        else
-        {
-            newReplacedString = [tempItem.snippet.title stringByReplacingOccurrencesOfString:@"경기 " withString:@"경기\n"];
-        }
-    }
-    */
-    cell.titleLabel.text = newReplacedString;
-    cell.dateLabel.text = tempItem.snippet.publishedAt;
-    
+    [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
 }
 
