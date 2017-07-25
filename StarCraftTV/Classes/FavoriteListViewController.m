@@ -40,6 +40,11 @@
 {
     [self setTitle:NSLocalizedString(@"FAVORITES", @"FAVORITES")];
     
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-60, -60) forBarMetrics:UIBarMetricsDefault];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+
+    
     [super viewDidLoad];
         
     [GAManager trackWithView:NSStringFromClass(self.class)];
@@ -124,6 +129,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FavoriteTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FavoriteTableViewCell" forIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
     YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
@@ -187,7 +194,10 @@
 {
     NSString *tempItem = self.tableItem[indexPath.row];
 
-    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:@""];
+    FavoriteTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:
+                                         cell.titleLabel.text];
     [controller setVideoID:tempItem];
 
     [self.navigationController pushViewController:controller animated:YES];
