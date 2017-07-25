@@ -41,6 +41,11 @@
 		2B5F00531EFCACD400CD4CE9 /* TribeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F00511EFCACD400CD4CE9 /* TribeCollectionViewController.xib */; };
 		2B5F00581EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F00561EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m */; };
 		2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F00571EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib */; };
+		2B6534171F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6534161F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png */; };
+		2B65341C1F2722AE00B725A4 /* FavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65341A1F2722AE00B725A4 /* FavoriteListViewController.m */; };
+		2B65341D1F2722AE00B725A4 /* FavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B65341B1F2722AE00B725A4 /* FavoriteListViewController.xib */; };
+		2B6534211F272E3E00B725A4 /* FavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */; };
+		2B6534221F272E3E00B725A4 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */; };
 		2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
 		2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */; };
@@ -145,6 +150,13 @@
 		2B5F00551EFCAD4F00CD4CE9 /* TribeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TribeCollectionViewCell.h; sourceTree = "<group>"; };
 		2B5F00561EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TribeCollectionViewCell.m; sourceTree = "<group>"; };
 		2B5F00571EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TribeCollectionViewCell.xib; sourceTree = "<group>"; };
+		2B6534161F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-bookmark_ribbon_filled@2x.png"; sourceTree = "<group>"; };
+		2B6534191F2722AE00B725A4 /* FavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteListViewController.h; sourceTree = "<group>"; };
+		2B65341A1F2722AE00B725A4 /* FavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteListViewController.m; sourceTree = "<group>"; };
+		2B65341B1F2722AE00B725A4 /* FavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListViewController.xib; sourceTree = "<group>"; };
+		2B65341E1F272E3E00B725A4 /* FavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteTableViewCell.h; path = "../../../../무제 폴더/FavoriteTableViewCell.h"; sourceTree = "<group>"; };
+		2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewCell.m; path = "../../../../무제 폴더/FavoriteTableViewCell.m"; sourceTree = "<group>"; };
+		2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteTableViewCell.xib; path = "../../../../무제 폴더/FavoriteTableViewCell.xib"; sourceTree = "<group>"; };
 		2B660E1B1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
 		2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -253,6 +265,7 @@
 		2B0D3BBE1ED53F33008FFC17 /* icons@2x */ = {
 			isa = PBXGroup;
 			children = (
+				2B6534161F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png */,
 				2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */,
 				2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */,
 				2B0D3BBF1ED53F33008FFC17 /* icons8-info@2x.png */,
@@ -444,8 +457,21 @@
 				2B23AF621EF24106007EF22A /* YTTableViewCell.h */,
 				2B23AF631EF24106007EF22A /* YTTableViewCell.m */,
 				2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */,
+				2B65341E1F272E3E00B725A4 /* FavoriteTableViewCell.h */,
+				2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */,
+				2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2B6534181F27200700B725A4 /* FavoriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B6534191F2722AE00B725A4 /* FavoriteListViewController.h */,
+				2B65341A1F2722AE00B725A4 /* FavoriteListViewController.m */,
+				2B65341B1F2722AE00B725A4 /* FavoriteListViewController.xib */,
+			);
+			name = FavoriteViewController;
 			sourceTree = "<group>";
 		};
 		2B660E1A1EDFA8DF000FC747 /* MP+BackgroundPlayback */ = {
@@ -593,6 +619,7 @@
 				2B35CD2D1EF1210D00584B78 /* CategoryViewController */,
 				2B35CD2F1EF1219D00584B78 /* YoutubeViewController(Player) */,
 				2B5F00541EFCACE100CD4CE9 /* TribeCollectionViewController */,
+				2B6534181F27200700B725A4 /* FavoriteViewController */,
 				2B35CD241EF11AF700584B78 /* VideoListTableViewController.h */,
 				2B35CD251EF11AF700584B78 /* VideoListTableViewController.m */,
 			);
@@ -700,6 +727,8 @@
 				2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */,
 				2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */,
 				2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */,
+				2B6534221F272E3E00B725A4 /* FavoriteTableViewCell.xib in Resources */,
+				2B65341D1F2722AE00B725A4 /* FavoriteListViewController.xib in Resources */,
 				2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */,
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
@@ -707,6 +736,7 @@
 				2BD0C0241F18B82600666174 /* Localizable.strings in Resources */,
 				2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
+				2B6534171F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png in Resources */,
 				2B0D3BCD1ED53F33008FFC17 /* icons8-settings@2x.png in Resources */,
 				2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */,
 				2BAE29E71EFA64BC0018B0D0 /* expandableImage@2x.png in Resources */,
@@ -811,6 +841,7 @@
 				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
 				2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */,
 				2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */,
+				2B65341C1F2722AE00B725A4 /* FavoriteListViewController.m in Sources */,
 				2BA20E221ED2B41900205FCA /* NSData+CommonCrypto.m in Sources */,
 				2B5BF3A41F03A9F400160D7B /* UIView_Custom.m in Sources */,
 				2BA20E191ED2B41900205FCA /* UIView+Additions.m in Sources */,
@@ -823,6 +854,7 @@
 				2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */,
 				2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */,
 				2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */,
+				2B6534211F272E3E00B725A4 /* FavoriteTableViewCell.m in Sources */,
 				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
 				2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */,
 				2BA20E181ED2B41900205FCA /* UIScrollView+Additions.m in Sources */,

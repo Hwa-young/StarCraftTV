@@ -95,7 +95,7 @@
         self.dropNew.delegate = self;
         self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"24강"];
         self.dropNew.backgroundColor = [UIColor whiteColor];
-        self.dropNew.title = @"토너먼트";
+        self.dropNew.title = @"토너먼트 ▼";
         self.dropNew.titleColor = [UIColor redColor];
         self.dropNew.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
         self.dropNew.titleTextAlignment = NSTextAlignmentCenter;

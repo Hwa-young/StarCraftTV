@@ -36,11 +36,61 @@
     if (self) {
         [self.navigationItem setTitle:titleString];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
+        
+        self.navigationItem.rightBarButtonItem = [self makeBookmarkButton];
+        
         self.titleStr = titleString;
         [self.thumnailImageView setHidden:NO];
     }
     return self;
+}
+
+- (UIBarButtonItem*) makeBookmarkButton
+{
+    UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnRight setFrame:CGRectMake(0, 0, 44, 44)];
+    [btnRight setImage:[UIImage imageNamed:@"icons8-bookmark_ribbon_filled"] forState:UIControlStateNormal];
+    [btnRight addTarget:self action:@selector(saveVideoInfo) forControlEvents:UIControlEventTouchUpInside];
+    btnRight.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
+    UIBarButtonItem *barBtnRight = [[UIBarButtonItem alloc] initWithCustomView:btnRight];
+    [barBtnRight setTintColor:[UIColor clearColor]];
+    
+    return barBtnRight;
+}
+
+- (void)saveVideoInfo
+{
+    if(_videoID)
+    {
+        NSString *noticeString;
+        
+        NSMutableArray *array;
+        if([[NSUserDefaults standardUserDefaults] objectForKey:@"MYVIDEOS"])
+            array = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"MYVIDEOS"]];
+        else
+            array = [NSMutableArray array];
+        
+        if (![array containsObject: _videoID]) // YES
+        {
+            [array addObject:_videoID];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"MYVIDEOS"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            noticeString = [NSString stringWithFormat:@"%@ %@ %@",
+                            NSLocalizedString(@"FAVORITES", @"FAVORITES"), NSLocalizedString(@"REGISTER", @"REGISTER"), NSLocalizedString(@"SUCCESS", @"SUCCESS")];
+            
+            [SVProgressHUD showSuccessWithStatus:noticeString];
+        }
+        else
+        {
+            noticeString = [NSString stringWithFormat:@"%@ %@ %@",
+                            NSLocalizedString(@"FAVORITES", @"FAVORITES"), NSLocalizedString(@"REGISTER", @"REGISTER"), NSLocalizedString(@"FAIL", @"FAIL")];
+            
+            [SVProgressHUD showSuccessWithStatus:noticeString];
+        }
+    }
 }
 
 - (void)viewDidLoad
@@ -140,7 +190,7 @@
     //
     [infoAPI getVideoInfo:self.videoID completion:^(BOOL success, NSError *error) {
         if (success) {
-            NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"high"][@"url"];
+            NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"default"][@"url"];
             
             [self.thumnailImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if(error)

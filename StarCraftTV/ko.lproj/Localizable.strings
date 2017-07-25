@@ -16,3 +16,7 @@
 "OPENSOURCE" = "오픈소스";
 "VERSION" = "버전";
 "TRIBES" = "종족";
+"FAVORITES" = "즐겨찾기";
+"REGISTER" = "등록";
+"SUCCESS" = "성공";
+"FAIL" = "실패";

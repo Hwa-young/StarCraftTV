@@ -13,7 +13,7 @@
 #import "CategoryListViewController.h"
 #import "Constants.h"
 
-//#import <TLYShyNavBar/TLYShyNavBarManager.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @import GoogleMobileAds;
 
@@ -76,13 +76,16 @@
 {
     [super viewDidLoad];
     
+    [self setConfigueHUD];
+    
     self.interstitial = [self createAndLoadInterstitial];
-    
-//    [self callMainAD];
-    
-    
-    
     [self performSelector:@selector(callMainAD) withObject:nil afterDelay:1.5f];
+}
+
+- (void)setConfigueHUD
+{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMaximumDismissTimeInterval:1.f];
 }
 
 - (GADInterstitial *)createAndLoadInterstitial

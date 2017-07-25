@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "FavoriteListViewController.h"
 #import "CategoryListViewController.h"
 #import "CommonWebViewController.h"
 #import "Constants.h"
@@ -29,6 +30,7 @@
     [GAManager trackWithView:NSStringFromClass(self.class)];
 
     self.menuArray = [[NSMutableArray alloc] initWithObjects:
+                      NSLocalizedString(@"FAVORITES", @"FAVORITES"),
                       NSLocalizedString(@"NOTICE", @"NOTICE"),
                       NSLocalizedString(@"CONTACTUS", @"CONTACTUS"),
                       NSLocalizedString(@"OPENSOURCE", @"OPENSOURCE"),
@@ -79,10 +81,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
+        [self callFavoritesViewController];
+    if(indexPath.row == 1)
         [self callNoticeWebviewController];
-    else if(indexPath.row == 1)
-        [self callMailto];
     else if(indexPath.row == 2)
+        [self callMailto];
+    else if(indexPath.row == 3)
         [self callOpenLibraryLicensseViewController];
 }
 
@@ -119,6 +123,13 @@
 - (void)callNoticeWebviewController
 {
     CommonWebViewController *viewController = [[CommonWebViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+// 즐겨찾기 페이지
+- (void)callFavoritesViewController
+{
+    FavoriteListViewController *viewController = [[FavoriteListViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

@@ -35,7 +35,7 @@
     if(!item) return;
 //    if([self.titleLabel.text length]>0) return;
     
-    [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails[@"high"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     
     [self getVideoInformation:item cell:self];
