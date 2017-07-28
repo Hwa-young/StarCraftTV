@@ -44,8 +44,6 @@
 		2B6534171F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6534161F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png */; };
 		2B65341C1F2722AE00B725A4 /* FavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65341A1F2722AE00B725A4 /* FavoriteListViewController.m */; };
 		2B65341D1F2722AE00B725A4 /* FavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B65341B1F2722AE00B725A4 /* FavoriteListViewController.xib */; };
-		2B6534211F272E3E00B725A4 /* FavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */; };
-		2B6534221F272E3E00B725A4 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */; };
 		2B660E1D1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */; };
 		2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */; };
 		2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B80DD1A1F03433900D45D0A /* CommonWebViewController.m */; };
@@ -154,9 +152,6 @@
 		2B6534191F2722AE00B725A4 /* FavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteListViewController.h; sourceTree = "<group>"; };
 		2B65341A1F2722AE00B725A4 /* FavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteListViewController.m; sourceTree = "<group>"; };
 		2B65341B1F2722AE00B725A4 /* FavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteListViewController.xib; sourceTree = "<group>"; };
-		2B65341E1F272E3E00B725A4 /* FavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteTableViewCell.h; path = "../../../../무제 폴더/FavoriteTableViewCell.h"; sourceTree = "<group>"; };
-		2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewCell.m; path = "../../../../무제 폴더/FavoriteTableViewCell.m"; sourceTree = "<group>"; };
-		2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteTableViewCell.xib; path = "../../../../무제 폴더/FavoriteTableViewCell.xib"; sourceTree = "<group>"; };
 		2B660E1B1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+BackgroundPlayback.h"; sourceTree = "<group>"; };
 		2B660E1C1EDFA8DF000FC747 /* MPMoviePlayerController+BackgroundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+BackgroundPlayback.m"; sourceTree = "<group>"; };
 		2B7BB3B51ED3D7CE00913D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -457,9 +452,6 @@
 				2B23AF621EF24106007EF22A /* YTTableViewCell.h */,
 				2B23AF631EF24106007EF22A /* YTTableViewCell.m */,
 				2B23AF651EF24F7B007EF22A /* YTTableViewCell.xib */,
-				2B65341E1F272E3E00B725A4 /* FavoriteTableViewCell.h */,
-				2B65341F1F272E3E00B725A4 /* FavoriteTableViewCell.m */,
-				2B6534201F272E3E00B725A4 /* FavoriteTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -727,7 +719,6 @@
 				2B0D3BCC1ED53F33008FFC17 /* icons8-search@2x.png in Resources */,
 				2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */,
 				2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */,
-				2B6534221F272E3E00B725A4 /* FavoriteTableViewCell.xib in Resources */,
 				2B65341D1F2722AE00B725A4 /* FavoriteListViewController.xib in Resources */,
 				2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */,
 				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
@@ -854,7 +845,6 @@
 				2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */,
 				2B80DD1C1F03433900D45D0A /* CommonWebViewController.m in Sources */,
 				2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */,
-				2B6534211F272E3E00B725A4 /* FavoriteTableViewCell.m in Sources */,
 				2BA20E231ED2B41900205FCA /* NSString+Base64.m in Sources */,
 				2BA20E141ED2B41900205FCA /* UIButton+Additions.m in Sources */,
 				2BA20E181ED2B41900205FCA /* UIScrollView+Additions.m in Sources */,

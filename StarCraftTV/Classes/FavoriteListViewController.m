@@ -14,7 +14,7 @@
 #import "YTItem.h"
 #import "YouTubeAPIHelper.h"
 #import "ActivitiItem.h"
-#import "FavoriteTableViewCell.h"
+//#import "FavoriteTableViewCell.h"
 
 #import "Constants.h"
 
@@ -54,7 +54,7 @@
     self.shyNavBarManager.scrollView = self.tableView;
     self.shyNavBarManager.scrollView.scrollsToTop = NO;
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"FavoriteTableViewCell" bundle:nil] forCellReuseIdentifier:@"FavoriteTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(reloadData:) forControlEvents:UIControlEventValueChanged];
@@ -128,7 +128,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FavoriteTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FavoriteTableViewCell" forIndexPath:indexPath];
+    YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
@@ -194,7 +194,7 @@
 {
     NSString *tempItem = self.tableItem[indexPath.row];
 
-    FavoriteTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    YTTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:
                                          cell.titleLabel.text];
