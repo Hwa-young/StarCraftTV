@@ -31,13 +31,7 @@ static NSString *const DEFAULT_KEYWORD = @"starcraftatvapp";
 
 typedef enum {
     SEARCH,
-    ACTIVITI,
-    HISTORY,
     CHANNEL,
-    FAVORITE,
-    WATCHLATER,
-    LIKED,
-    MYVIDEO,
     PLAYLISTITEM,
     VIDEO,
     VIDEOINFO

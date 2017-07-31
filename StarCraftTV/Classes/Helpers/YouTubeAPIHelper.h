@@ -24,8 +24,8 @@ typedef void(^Completion)(BOOL success, NSError *error);
 @property (strong, nonatomic) YTSearchItem *searchChannel;
 @property (strong, nonatomic) NSString *keySearchOld;
 @property (strong, nonatomic) YTPlaylistItem *playlistItem;
-@property (strong, nonatomic) NSDictionary *videoInfoItem;
-@property (strong, nonatomic) NSDictionary *statisticsItem;
+@property (strong, nonatomic) NSMutableDictionary *videoInfoItem;
+@property (strong, nonatomic) NSMutableDictionary *statisticsItem;
 
 
 - (id)init;

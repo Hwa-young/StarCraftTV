@@ -113,9 +113,9 @@
                                  @"items.snippet" : @"YTSnippetItem"
                                  };
                     }];
-                    
-                    
-                    NSLog(@" %@", responseObject);
+//
+//                    
+//                    NSLog(@" %@", responseObject);
                     self.videoItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     self.videoInfoItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"contentDetails"];
                     self.statisticsItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"statistics"];

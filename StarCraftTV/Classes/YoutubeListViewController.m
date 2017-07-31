@@ -128,13 +128,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTItem *tempItem = self.tableItem[indexPath.row];
-    
     YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YTItem *tempItem = self.tableItem[indexPath.row];
+    [(YTTableViewCell*)cell setTabelviewCell:tempItem];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

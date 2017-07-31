@@ -11,6 +11,7 @@
 @interface YTSearchItem : NSObject
 
 @property (copy, nonatomic) NSArray *items;
+@property (copy, nonatomic) NSDictionary *id;
 @property (copy, nonatomic) NSString *etag;
 @property (copy, nonatomic) NSString *kind;
 @property (copy, nonatomic) NSString *nextPageToken;

@@ -58,6 +58,9 @@
 //        [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ 스타리그", _queryString]];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"YTTableViewCell" bundle:nil] forCellReuseIdentifier:@"YTTableViewCell"];
+
+    self.tableItem = [NSMutableArray array];
+    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
     [self initDataForTable];
 }
@@ -68,9 +71,6 @@
     self.isLoading = YES;
     
     [self.tableItem removeAllObjects];
-    
-    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
-    self.tableItem = [NSMutableArray array];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
     [param setObject:_queryString forKey:@"q"];
@@ -132,13 +132,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTItem *tempItem = self.tableItem[indexPath.row];
-    
     YTTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"YTTableViewCell" forIndexPath:indexPath];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    [cell performSelectorOnMainThread:@selector(setTabelviewCell:) withObject:tempItem waitUntilDone:NO];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YTItem *tempItem = self.tableItem[indexPath.row];
+    [(YTTableViewCell*)cell setTabelviewCell:tempItem];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

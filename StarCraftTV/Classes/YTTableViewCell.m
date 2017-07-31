@@ -11,6 +11,12 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
+@interface YTTableViewCell ()
+
+@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
+
+@end
+
 @implementation YTTableViewCell
 
 - (void)awakeFromNib
@@ -33,7 +39,8 @@
 - (void)setTabelviewCell:(YTItem*)item
 {
     if(!item) return;
-//    if([self.titleLabel.text length]>0) return;
+    if(!self.youtubeAPI)
+        self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
     
     [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.snippet.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
@@ -50,20 +57,18 @@
 {
     if(!item.id[@"videoId"]) return;
     
-    YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
-    
     NSMutableDictionary *param = [NSMutableDictionary new];
     // Test Code
     if(item.id[@"videoId"])
         [param setObject:item.id[@"videoId"] forKey:@"videoID"];
     
-    [infoAPI.paramaters addEntriesFromDictionary:param];
-    [infoAPI getVideoInfo:item.id[@"videoId"] completion:^(BOOL success, NSError *error) {
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+    [self.youtubeAPI getVideoInfo:item.id[@"videoId"] completion:^(BOOL success, NSError *error) {
         if (success) {
             
-            if(infoAPI.statisticsItem)
+            if(self.youtubeAPI.statisticsItem)
             {
-                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [infoAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
+                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [self.youtubeAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
             }
         }
     }];
