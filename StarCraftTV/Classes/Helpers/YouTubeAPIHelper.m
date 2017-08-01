@@ -101,9 +101,14 @@
                     break;
                     
                 case VIDEOINFO:
+                    
                     self.videoItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     self.videoInfoItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"contentDetails"];
                     self.statisticsItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"statistics"];
+                    
+                    NSLog(@"%@", self.videoItem);
+                    NSLog(@"%@", self.videoInfoItem);
+                    NSLog(@"%@", self.statisticsItem);
 
                     break;
 

@@ -26,7 +26,7 @@
 @interface CategoryListViewController ()
 
 @property (nonatomic, strong) NSMutableArray *categotyArray;
-@property (strong, nonatomic) YouTubeAPIHelper *youtubeAPI;
+@property (strong, nonatomic) YouTubeAPIHelper *yAPI;
 @property (nonatomic, strong) NSArray *contents;
 @property (nonatomic, strong) NSString *qString;
 
@@ -56,6 +56,8 @@
     [self.menuTableview setScrollsToTop:YES];
     
     self.menuTableview.SKSTableViewDelegate = self;
+    
+    self.yAPI = [[YouTubeAPIHelper alloc] init];
 }
 
 -(void)viewWillLayoutSubviews
@@ -88,9 +90,6 @@
     [SVProgressHUD show];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    
-    
-    self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
 
     NSString *string = qString;
     NSString *channelIdString = @"";
@@ -137,21 +136,21 @@
     }
     
     [param setObject:qString forKey:@"q"];
-    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+    [self.yAPI.paramaters addEntriesFromDictionary:param];
 
-    [self.youtubeAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
+    [self.yAPI getListPlaylistInChannel:channelIdString completion:^(BOOL success, NSError *error) {
         if (success) {
 
             [SVProgressHUD dismiss];
             
-            if([self.youtubeAPI.searchItem.items count]==0) {
+            if([self.yAPI.searchItem.items count]==0) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:@"검색조건에 맞는 시즌 동영상이 존재하지 않습니다." delegate:self
                                                       cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
                 [alert show];
                 return;
             }
             
-            YTItem *tempYTItem = (YTItem *)[self.youtubeAPI.searchItem.items objectAtIndex:0];
+            YTItem *tempYTItem = (YTItem *)[self.yAPI.searchItem.items objectAtIndex:0];
 
             NSString *playListID = [tempYTItem id][@"playlistId"];
             NSString *channelID = [[tempYTItem snippet] channelId];
