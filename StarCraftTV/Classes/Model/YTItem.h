@@ -13,7 +13,6 @@
 
 @property (copy, nonatomic) NSString *etag;
 @property (copy, nonatomic) NSDictionary *id;
-@property (copy, nonatomic) NSDictionary *contentDetails;
 @property (copy, nonatomic) NSString *kind;
 
 @property (strong, nonatomic) YTSnippetItem *snippet;

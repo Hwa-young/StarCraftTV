@@ -134,7 +134,7 @@
     YouTubeAPIHelper *infoAPI = [[YouTubeAPIHelper alloc] init];
     
     NSMutableDictionary *param = [NSMutableDictionary new];
-    [param setObject:[self.tableItem objectAtIndex:indexPath.row] forKey:@"videoID"];
+    [param setObject:[self.tableItem objectAtIndex:indexPath.row] forKey:@"videoId"];
     
     [infoAPI.paramaters addEntriesFromDictionary:param];
     [infoAPI getVideoInfo:[self.tableItem objectAtIndex:indexPath.row] completion:^(BOOL success, NSError *error) {

@@ -11,7 +11,7 @@
 @interface YTSnippetItem : NSObject
 
 @property (copy, nonatomic) NSString *channelId;
-@property (copy, nonatomic) NSString *description;
+//@property (copy, nonatomic) NSString *description;
 @property (copy, nonatomic) NSString *publishedAt;
 @property (copy, nonatomic) NSDictionary *thumbnails;
 @property (copy, nonatomic) NSDictionary *resourceId; // get channel id

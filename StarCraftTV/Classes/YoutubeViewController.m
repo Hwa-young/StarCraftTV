@@ -200,7 +200,7 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     // Test Code
     if(self.videoID)
-        [param setObject:self.videoID forKey:@"videoID"];
+        [param setObject:self.videoID forKey:@"videoId"];
     
     [infoAPI.paramaters addEntriesFromDictionary:param];
     //

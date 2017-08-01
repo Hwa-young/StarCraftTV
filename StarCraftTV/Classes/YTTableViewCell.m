@@ -60,7 +60,7 @@
     NSMutableDictionary *param = [NSMutableDictionary new];
     // Test Code
     if(item.id[@"videoId"])
-        [param setObject:item.id[@"videoId"] forKey:@"videoID"];
+        [param setObject:item.id[@"videoId"] forKey:@"videoId"];
     
     [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
     [self.youtubeAPI getVideoInfo:item.id[@"videoId"] completion:^(BOOL success, NSError *error) {
@@ -70,6 +70,7 @@
             {
                 [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [self.youtubeAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
             }
+//            else if(self.youtubeAPI.statisticsItem)
         }
     }];
 }
