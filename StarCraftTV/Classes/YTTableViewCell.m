@@ -53,6 +53,23 @@
     self.titleLabel.text = newReplacedString;
 }
 
+- (void)setTableviewWithSnippet:(YTSnippetItem*)item
+{
+    if(!item) return;
+    if(!self.youtubeAPI)
+        self.youtubeAPI = [[YouTubeAPIHelper alloc] init];
+    
+    [self.thumbnailImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnails[@"default"][@"url"]] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }];
+    
+    [self getVideoInformationWithItem:item cell:self];
+    
+    NSString * newReplacedString = @"";
+    newReplacedString = item.title;
+    
+    self.titleLabel.text = newReplacedString;
+}
+
 - (void)getVideoInformation:(YTItem*)item cell:(YTTableViewCell*)tCell
 {
     if(!item.id[@"videoId"]) return;
@@ -68,16 +85,45 @@
             
             if(self.youtubeAPI.statisticsItem)
             {
-                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [self.youtubeAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                NSNumber  *viewCount = [NSNumber numberWithInteger: [[self.youtubeAPI.statisticsItem objectForKey:@"viewCount"] integerValue]];
+                
+                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
+                                          [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                          [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
             }
-//            else if(self.youtubeAPI.statisticsItem)
         }
     }];
 }
 
+- (void)getVideoInformationWithItem:(YTSnippetItem*)item cell:(YTTableViewCell*)tCell
+{
+    if(!item.resourceId[@"videoId"]) return;
+    
+    NSMutableDictionary *param = [NSMutableDictionary new];
+    // Test Code
+    if(item.resourceId[@"videoId"])
+        [param setObject:item.resourceId[@"videoId"] forKey:@"videoId"];
+    
+    [self.youtubeAPI.paramaters addEntriesFromDictionary:param];
+    [self.youtubeAPI getVideoInfo:item.resourceId[@"videoId"] completion:^(BOOL success, NSError *error) {
+        if (success) {
+            
+            if(self.youtubeAPI.statisticsItem)
+            {
+                NSNumber  *viewCount = [NSNumber numberWithInteger: [[self.youtubeAPI.statisticsItem objectForKey:@"viewCount"] integerValue]];
+                
+                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
+                                          [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                          [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+            }
+        }
+    }];
+}
+
+
 - (NSString *)parseDuration:(NSString *)duration
 {
-    if(!duration) return @"";
+    if(!duration) return @"-";
     
     NSInteger hours = 0;
     NSInteger minutes = 0;

@@ -56,11 +56,11 @@
         if (responseObject) {
             switch (typeURL) {
                 case PLAYLISTITEM:
-                    [YTPlaylistItem mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
-                        return @{
-                                 @"items" : @"YTItem"
-                                 };
-                    }];
+//                    [YTPlaylistItem mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+//                        return @{
+//                                 @"items" : @"YTItem"
+//                                 };
+//                    }];
                     
                     self.searchItem = [YTSearchItem mj_objectWithKeyValues:responseObject];
 //                    NSLog(@" %@", responseObject);

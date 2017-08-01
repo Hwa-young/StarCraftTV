@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (void)setTabelviewCell:(YTItem*)item;
+- (void)setTableviewWithSnippet:(YTSnippetItem*)item;
 
 @end

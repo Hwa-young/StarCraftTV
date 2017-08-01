@@ -314,10 +314,10 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YTItem *tempItem = self.tableItem[indexPath.row];
-    [(YTTableViewCell*)cell setTabelviewCell:tempItem];
+    YTSnippetItem *tempItem = [self.tableItem[indexPath.row] snippet];
+    
+    [(YTTableViewCell*)cell setTableviewWithSnippet:tempItem];
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
