@@ -77,7 +77,6 @@ DEF_SINGLETON(CategoryManager);
     
     NSMutableArray *tMutableArray = [[self getSubCategoryArrayWithSubArray:[dic arrayAtPath:@"league"]] copy];
     
-    
     [arrLeagueCategoty addObject:@[NSLocalizedString(@"SEARCH", @"SEARCH"), NSLocalizedString(@"TERRAN", @"TERRAN"), NSLocalizedString(@"PROTOSS", @"PROTOSS"), NSLocalizedString(@"ZERG", @"ZERG")]];
 
     for(int i=0 ; i<[tMutableArray count] ; i++)
@@ -88,7 +87,22 @@ DEF_SINGLETON(CategoryManager);
         NSArray *cArray = tDic[@"competition"];
         for(int j=0 ; j < [cArray count] ; j++)
         {
-            [tArray addObject:[NSString stringWithString:[cArray objectAtIndex:j][@"title"]]];
+            NSString *preferredLanguageCode = [[NSLocale preferredLanguages] objectAtIndex:0];
+            if([[tArray firstObject] isEqualToString:@"ASL"])
+            {
+                if([preferredLanguageCode rangeOfString:@"ko-"].location != NSNotFound)
+                {
+                    if(j<=1)
+                        [tArray addObject:[NSString stringWithString:[cArray objectAtIndex:j][@"title"]]];
+                }
+                else
+                {
+                    if(j>=2)
+                        [tArray addObject:[NSString stringWithString:[cArray objectAtIndex:j][@"title"]]];
+                }
+            }
+            else
+                [tArray addObject:[NSString stringWithString:[cArray objectAtIndex:j][@"title"]]];
         }
         [arrLeagueCategoty addObject:tArray];
     }

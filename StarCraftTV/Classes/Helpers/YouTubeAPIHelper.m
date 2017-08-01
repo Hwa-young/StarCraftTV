@@ -44,7 +44,6 @@
 
 - (void)getObjectWith:(URLType)typeURL completion:(Completion)completion
 {
-    
     NSLog(@"Call Youtube API URL : %@", self.url.absoluteString);
     NSLog(@"Call Youtube API Params : %@", self.paramaters);
     
