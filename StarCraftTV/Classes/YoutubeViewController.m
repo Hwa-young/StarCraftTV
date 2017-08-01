@@ -110,8 +110,6 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(moviePlayerLoadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
     [defaultCenter addObserver:self selector:@selector(moviePlayerNowPlayingMovieDidChange:) name:MPMoviePlayerNowPlayingMovieDidChangeNotification object:nil];
-
-    [self.playerView bringSubviewToFront:self.thumnailImageView];
 }
 
 - (void)playYoutubeVideo
@@ -129,6 +127,8 @@
         
         [self.videoPlayerViewController.moviePlayer prepareToPlay];
         self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
+        
+        [self.playerView bringSubviewToFront:self.thumnailImageView];
     }
     else
     {
@@ -142,6 +142,22 @@
     
     [self playYoutubeVideo];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if ([self isMovingFromParentViewController])
+        [self.videoPlayerViewController.moviePlayer pause];
+    
+    [SVProgressHUD dismiss];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 
 - (NSString *)parseDuration:(NSString *)duration
 {
@@ -190,8 +206,7 @@
     //
     [infoAPI getVideoInfo:self.videoID completion:^(BOOL success, NSError *error) {
         if (success) {
-            NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"default"][@"url"];
-            
+            NSString *imageURL = [[[infoAPI.videoItem.items objectAtIndex:0] snippet] thumbnails][@"standard"][@"url"];
             [self.thumnailImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if(error)
                 {
@@ -253,21 +268,6 @@
     
     [self.thumnailImageView setHidden:YES];
     [SVProgressHUD dismiss];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    if ([self isMovingFromParentViewController])
-        [self.videoPlayerViewController.moviePlayer pause];
-    
-    [SVProgressHUD dismiss];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
