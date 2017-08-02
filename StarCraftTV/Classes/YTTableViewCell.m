@@ -86,10 +86,18 @@
             if(self.youtubeAPI.statisticsItem)
             {
                 NSNumber  *viewCount = [NSNumber numberWithInteger: [[self.youtubeAPI.statisticsItem objectForKey:@"viewCount"] integerValue]];
-                
-                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
-                                          [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
-                                          [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                if([[ UIScreen mainScreen ] bounds ].size.height == 568)
+                {
+                    [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / %@",
+                                              [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                              [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                }
+                else
+                {
+                    [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
+                                              [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                              [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                }
             }
         }
     }];
@@ -112,9 +120,18 @@
             {
                 NSNumber  *viewCount = [NSNumber numberWithInteger: [[self.youtubeAPI.statisticsItem objectForKey:@"viewCount"] integerValue]];
                 
-                [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
-                                          [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
-                                          [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                if([[ UIScreen mainScreen ] bounds ].size.height == 568)
+                {
+                    [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / %@",
+                                              [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                              [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                }
+                else
+                {
+                    [tCell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
+                                              [NSNumberFormatter localizedStringFromNumber:viewCount numberStyle:NSNumberFormatterDecimalStyle],
+                                              [self parseDuration:[self.youtubeAPI.videoInfoItem objectForKey:@"duration"]]]];
+                }
             }
         }
     }];

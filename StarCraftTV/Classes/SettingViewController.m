@@ -98,8 +98,8 @@
 // 메일 쓰기
 - (void)callMailto
 {
-    NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject='StarCraftTV'에 건의합니다.";
-    NSString *body = @"&body=건의내용";
+    NSString *recipients = @"mailto:starcrafttvapp@gmail.com?subject=";
+    NSString *body = @"&body=";
     NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
     email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 

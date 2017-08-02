@@ -10,9 +10,6 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "GAManager.h"
 
-
-#define noticeURL @"https://sites.google.com/view/starcrafttv/홈/공지사항"
-
 @interface CommonWebViewController ()
 
 @end
@@ -32,7 +29,7 @@
 //    noticeURL
     [SVProgressHUD show];
 
-    const char* cstr = "https://sites.google.com/view/starcrafttv/%ED%99%88/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD";
+    const char* cstr = "https://sites.google.com/view/starcrafttv/home/notice";
     NSString* str = [NSString stringWithUTF8String:cstr];
     
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:str]];

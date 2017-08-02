@@ -98,6 +98,7 @@
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
 {
+    NSLog(@"interstitialDidDismissScreen");
     self.interstitial = [self createAndLoadInterstitial];
 }
 
@@ -168,17 +169,17 @@
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView
 {
-//    NSLog(@"adViewDidReceiveAd");
+    NSLog(@"adViewDidReceiveAd");
 }
 
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
 {
-//    NSLog(@"didFailToReceiveAdWithError");
+    NSLog(@"didFailToReceiveAdWithError");
 }
 
 - (void)adViewWillPresentScreen:(GADBannerView *)bannerView
 {
-//    NSLog(@"adViewWillPresentScreen");
+    NSLog(@"adViewWillPresentScreen");
 }
 
 - (void)adViewWillDismissScreen:(GADBannerView *)bannerView
@@ -194,6 +195,35 @@
 - (void)adViewWillLeaveApplication:(GADBannerView *)bannerView
 {
 //    NSLog(@"adViewWillLeaveApplication");
+}
+
+/// Called when an interstitial ad request succeeded.
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+    NSLog(@"interstitialDidReceiveAd");
+}
+
+/// Called when an interstitial ad request failed.
+- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
+}
+
+/// Called just before presenting an interstitial.
+- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillPresentScreen");
+}
+
+/// Called before the interstitial is to be animated off the screen.
+- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillDismissScreen");
+    
+    //[viewAdd removeFromSuperview];
+//    [self.view removeFromSuperview];
+}
+
+/// Called just before the application will background or terminate because the user clicked on an
+/// ad that will launch another application (such as the App Store).
+- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+    NSLog(@"interstitialWillLeaveApplication");
 }
 
 - (UIBarButtonItem*)getCategoryItem

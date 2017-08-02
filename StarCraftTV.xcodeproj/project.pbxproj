@@ -199,6 +199,8 @@
 		2BA20DFB1ED2B41900205FCA /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		2BA20DFC1ED2B41900205FCA /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		2BA20DFD1ED2B41900205FCA /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		2BA7707B1F31B9BC00453ABB /* development.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
+		2BA7707C1F31B9BC00453ABB /* production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		2BAE29DE1EFA64BC0018B0D0 /* expandableImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandableImage.png; sourceTree = "<group>"; };
 		2BAE29DF1EFA64BC0018B0D0 /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
 		2BAE29E01EFA64BC0018B0D0 /* SKSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableView.h; sourceTree = "<group>"; };
@@ -361,6 +363,8 @@
 				2BE492F61ED287F60063B884 /* Resource */,
 				2B540C331ED272A2000A9879 /* Supporting Files */,
 				2BD0C0221F18B82600666174 /* Localizable.strings */,
+				2BA7707B1F31B9BC00453ABB /* development.entitlements */,
+				2BA7707C1F31B9BC00453ABB /* production.entitlements */,
 			);
 			path = StarCraftTV;
 			sourceTree = "<group>";
@@ -667,7 +671,12 @@
 					2B540C2F1ED272A2000A9879 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W8X5QUVR2D;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -903,10 +912,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y5B74CC6Z6;
+				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -926,7 +935,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a5f78896-9249-48a4-b313-77007a056663";
+				PROVISIONING_PROFILE = "ce9cc482-1beb-4586-bb1a-b798544aeef4";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -955,10 +964,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y5B74CC6Z6;
+				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -971,7 +981,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a5f78896-9249-48a4-b313-77007a056663";
+				PROVISIONING_PROFILE = "ce9cc482-1beb-4586-bb1a-b798544aeef4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -984,10 +994,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = StarCraftTV/development.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -996,7 +1008,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "822205b3-4226-49c6-aa2f-4505d62d06ae";
+				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Developement KeyChain";
 			};
 			name = Debug;
 		};
@@ -1006,9 +1019,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = StarCraftTV/production.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1017,7 +1032,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ce9cc482-1beb-4586-bb1a-b798544aeef4";
+				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Distribution KeyChain";
 			};
 			name = Release;
 		};

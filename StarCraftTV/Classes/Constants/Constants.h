@@ -35,7 +35,7 @@
 #define ISPAIDAPP [[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.starcraft.tv.app"] ? TRUE : FALSE
 
 #if defined(ISPAIDAPP) == TRUE // DEBUG is not defined or defined to be 0
-#define HEIGHT_BANNER 50
+#define HEIGHT_BANNER 0
 #else
 #define HEIGHT_BANNER 0
 #endif

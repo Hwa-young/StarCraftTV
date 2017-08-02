@@ -143,8 +143,19 @@
 
             
             [cell.titleLabel setText:[(YTItem*)[infoAPI.videoItem.items objectAtIndex:0] snippet].title];
-            [cell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@", [infoAPI.statisticsItem objectForKey:@"viewCount"], [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
-
+            
+            if([[ UIScreen mainScreen ] bounds ].size.height == 568)
+            {
+                [cell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / %@",
+                                         [infoAPI.statisticsItem objectForKey:@"viewCount"],
+                                         [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
+            }
+            else
+            {
+                [cell.dateLabel setText:[NSString stringWithFormat:@"조회수 : %@ / 재생시간 : %@",
+                                         [infoAPI.statisticsItem objectForKey:@"viewCount"],
+                                         [self parseDuration:[infoAPI.videoInfoItem objectForKey:@"duration"]]]];
+            }
         }
     }];
     
