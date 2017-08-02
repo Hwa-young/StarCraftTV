@@ -13,7 +13,6 @@
 #import "YTSearchItem.h"
 #import "YTItem.h"
 #import "YouTubeAPIHelper.h"
-#import "ActivitiItem.h"
 
 #import "Constants.h"
 

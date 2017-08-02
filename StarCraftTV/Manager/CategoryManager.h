@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TF_Core.h"
 #import "Constants.h"
-#import "League.h"
 
 #define CATEGORY_MANAGER	[CategoryManager sharedInstance]
 

@@ -16,8 +16,6 @@
 		2B0D3BD81ED544BD008FFC17 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BD61ED544BD008FFC17 /* SettingViewController.xib */; };
 		2B0D3BDC1ED544E6008FFC17 /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */; };
 		2B0D3BDD1ED544E6008FFC17 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */; };
-		2B23AF521EF22A33007EF22A /* ActivitiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF471EF22A33007EF22A /* ActivitiItem.m */; };
-		2B23AF531EF22A33007EF22A /* YTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF491EF22A33007EF22A /* YTChannel.m */; };
 		2B23AF541EF22A33007EF22A /* YTItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4B1EF22A33007EF22A /* YTItem.m */; };
 		2B23AF551EF22A33007EF22A /* YTPlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4D1EF22A33007EF22A /* YTPlaylistItem.m */; };
 		2B23AF561EF22A33007EF22A /* YTSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B23AF4F1EF22A33007EF22A /* YTSearchItem.m */; };
@@ -35,7 +33,6 @@
 		2B540C3E1ED272A2000A9879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C3C1ED272A2000A9879 /* Main.storyboard */; };
 		2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B540C411ED272A2000A9879 /* LaunchScreen.storyboard */; };
 		2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */; };
-		2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B560FBA1EDD62B000DEE3D9 /* boot.json */; };
 		2B5BF3A41F03A9F400160D7B /* UIView_Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BF3A31F03A9F400160D7B /* UIView_Custom.m */; };
 		2B5F00521EFCACD400CD4CE9 /* TribeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F00501EFCACD400CD4CE9 /* TribeCollectionViewController.m */; };
 		2B5F00531EFCACD400CD4CE9 /* TribeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F00511EFCACD400CD4CE9 /* TribeCollectionViewController.xib */; };
@@ -86,7 +83,6 @@
 		2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20421ED562870078952D /* YoutubeViewController.xib */; };
 		2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */; };
 		2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE492F81ED2881A0063B884 /* RootViewController.m */; };
-		2BF846BF1EF8C01C00712083 /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846BE1EF8C01C00712083 /* League.m */; };
 		2BF846C21EF8C1BC00712083 /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF846C11EF8C1BC00712083 /* CategoryManager.m */; };
 		2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */; };
 		D76AABA4BDEE5893AC881868 /* Pods_StarCraftTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A13671B4EE60CB1C7A23B /* Pods_StarCraftTV.framework */; };
@@ -104,10 +100,6 @@
 		2B0D3BD91ED544E6008FFC17 /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
 		2B0D3BDA1ED544E6008FFC17 /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
 		2B0D3BDB1ED544E6008FFC17 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
-		2B23AF461EF22A33007EF22A /* ActivitiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiItem.h; sourceTree = "<group>"; };
-		2B23AF471EF22A33007EF22A /* ActivitiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiItem.m; sourceTree = "<group>"; };
-		2B23AF481EF22A33007EF22A /* YTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTChannel.h; sourceTree = "<group>"; };
-		2B23AF491EF22A33007EF22A /* YTChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTChannel.m; sourceTree = "<group>"; };
 		2B23AF4A1EF22A33007EF22A /* YTItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTItem.h; sourceTree = "<group>"; };
 		2B23AF4B1EF22A33007EF22A /* YTItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTItem.m; sourceTree = "<group>"; };
 		2B23AF4C1EF22A33007EF22A /* YTPlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlaylistItem.h; sourceTree = "<group>"; };
@@ -138,7 +130,6 @@
 		2B540C441ED272A2000A9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5508A21EF66AE500ABB6BC /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
 		2B5508A31EF66AE500ABB6BC /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
-		2B560FBA1EDD62B000DEE3D9 /* boot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boot.json; sourceTree = "<group>"; };
 		2B5BF3A21F03A9F400160D7B /* UIView_Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_Custom.h; sourceTree = "<group>"; };
 		2B5BF3A31F03A9F400160D7B /* UIView_Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_Custom.m; sourceTree = "<group>"; };
 		2B5E97B71EDD3B320006DAD8 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -233,8 +224,6 @@
 		2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-circled_play_filled@2x.png"; sourceTree = "<group>"; };
 		2BE492F71ED2881A0063B884 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2BE492F81ED2881A0063B884 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		2BF846BD1EF8C01C00712083 /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
-		2BF846BE1EF8C01C00712083 /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
 		2BF846C01EF8C1BC00712083 /* CategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
 		2BF846C11EF8C1BC00712083 /* CategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-StarCraftTV-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -405,10 +394,6 @@
 		2B5E97AF1EDD3A8F0006DAD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B23AF461EF22A33007EF22A /* ActivitiItem.h */,
-				2B23AF471EF22A33007EF22A /* ActivitiItem.m */,
-				2B23AF481EF22A33007EF22A /* YTChannel.h */,
-				2B23AF491EF22A33007EF22A /* YTChannel.m */,
 				2B23AF4A1EF22A33007EF22A /* YTItem.h */,
 				2B23AF4B1EF22A33007EF22A /* YTItem.m */,
 				2BBEC3851F04967E0006F738 /* YTContentDetailsItem.h */,
@@ -419,8 +404,6 @@
 				2B23AF4F1EF22A33007EF22A /* YTSearchItem.m */,
 				2B23AF501EF22A33007EF22A /* YTSnippetItem.h */,
 				2B23AF511EF22A33007EF22A /* YTSnippetItem.m */,
-				2BF846BD1EF8C01C00712083 /* League.h */,
-				2BF846BE1EF8C01C00712083 /* League.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,7 +605,6 @@
 			isa = PBXGroup;
 			children = (
 				2BFDD32A1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist */,
-				2B560FBA1EDD62B000DEE3D9 /* boot.json */,
 				2B2702A41F0F831E000AF6B6 /* boot_mod.json */,
 				2B0D3BBE1ED53F33008FFC17 /* icons@2x */,
 			);
@@ -721,7 +703,6 @@
 				2B5F00591EFCAD4F00CD4CE9 /* TribeCollectionViewCell.xib in Resources */,
 				2B65341D1F2722AE00B725A4 /* FavoriteListViewController.xib in Resources */,
 				2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */,
-				2B560FBB1EDD62B000DEE3D9 /* boot.json in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
 				2BD0C0241F18B82600666174 /* Localizable.strings in Resources */,
@@ -828,7 +809,6 @@
 				2BA20E161ED2B41900205FCA /* UIImageView+Additions.m in Sources */,
 				2BA20DBE1ED2B3AB00205FCA /* GAManager.m in Sources */,
 				2BA20E131ED2B41900205FCA /* UIColor+Additions.m in Sources */,
-				2B23AF531EF22A33007EF22A /* YTChannel.m in Sources */,
 				2BA20E0B1ED2B41900205FCA /* NSDictionary+Additions.m in Sources */,
 				2B23AF641EF24106007EF22A /* YTTableViewCell.m in Sources */,
 				2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */,
@@ -839,7 +819,6 @@
 				2BA20E201ED2B41900205FCA /* AESCrypt.m in Sources */,
 				2BA20E0E1ED2B41900205FCA /* NSNumber+Additions.m in Sources */,
 				2BA20E211ED2B41900205FCA /* NSData+Base64.m in Sources */,
-				2BF846BF1EF8C01C00712083 /* League.m in Sources */,
 				2BA20E0A1ED2B41900205FCA /* NSDate+Additions.m in Sources */,
 				2B5F00581EFCAD4F00CD4CE9 /* TribeCollectionViewCell.m in Sources */,
 				2B5508A41EF66AE500ABB6BC /* KPDropMenu.m in Sources */,
@@ -853,7 +832,6 @@
 				2BA20E091ED2B41900205FCA /* NSArray+Additions.m in Sources */,
 				2B23AF571EF22A33007EF22A /* YTSnippetItem.m in Sources */,
 				2BE492F91ED2881A0063B884 /* RootViewController.m in Sources */,
-				2B23AF521EF22A33007EF22A /* ActivitiItem.m in Sources */,
 				2B23AF541EF22A33007EF22A /* YTItem.m in Sources */,
 				2BA20E0F1ED2B41900205FCA /* NSObject+Additions.m in Sources */,
 				2B23AF551EF22A33007EF22A /* YTPlaylistItem.m in Sources */,

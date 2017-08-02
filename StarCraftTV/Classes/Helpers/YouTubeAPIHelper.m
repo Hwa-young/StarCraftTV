@@ -27,10 +27,8 @@
 {
     self = [super init];
     if (self) {
-//        self.urlType = SEARCH;
         self.paramaters = [NSMutableDictionary new];
         self.keySearchOld = @"";
-//        self.url = [NSURL URLWithString:kSearchURL];
         self.searchItem = [YTSearchItem new];
         self.resultSearchVideo = [NSMutableArray new];
         self.searchChannel = [YTSearchItem new];
@@ -44,10 +42,6 @@
 
 - (void)getObjectWith:(URLType)typeURL completion:(Completion)completion
 {
-    NSLog(@"Call Youtube API URL : %@", self.url.absoluteString);
-    NSLog(@"Call Youtube API Params : %@", self.paramaters);
-    NSLog(@"Call Youtube API Type : %u", typeURL);
-    
     AFHTTPSessionManager *managerSession = [AFHTTPSessionManager manager];
     [managerSession GET:self.url.absoluteString
              parameters:self.paramaters
@@ -55,34 +49,25 @@
                 success:^(NSURLSessionTask *task, id responseObject) {
         if (responseObject) {
             switch (typeURL) {
-                case PLAYLISTITEM:
-//                    [YTPlaylistItem mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
-//                        return @{
-//                                 @"items" : @"YTItem"
-//                                 };
-//                    }];
                     
+                case PLAYLISTITEM:
                     self.searchItem = [YTSearchItem mj_objectWithKeyValues:responseObject];
-//                    NSLog(@" %@", responseObject);
                     break;
+                    
                 case VIDEO:
-//                    NSLog(@" %@", responseObject);
                     [YTItem mj_setupObjectClassInArray: ^NSDictionary *{
                         return @{
                                  @"items.snippet" : @"YTSnippetItem",
                                  };
                     }];
-                    
                     [YTSearchItem mj_setupObjectClassInArray: ^NSDictionary *{
                         return @{
                                  @"items" : @"YTItem"
                                  };
                     }];
-                    
-//                    NSLog(@" %@", responseObject);
                     self.searchItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
-                    
                     break;
+                    
                 case CHANNEL:
                     [YTItem mj_setupObjectClassInArray: ^NSDictionary *{
                         return @{
@@ -95,21 +80,13 @@
                                  @"items" : @"YTItem"
                                  };
                     }];
-                    
-//                    NSLog(@" %@", responseObject);
                     self.searchChannel  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     break;
                     
                 case VIDEOINFO:
-                    
                     self.videoItem  = [YTSearchItem mj_objectWithKeyValues:responseObject];
                     self.videoInfoItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"contentDetails"];
                     self.statisticsItem  = [[[YTPlaylistItem mj_objectWithKeyValues:responseObject] items] objectAtIndex:0][@"statistics"];
-                    
-                    NSLog(@"%@", self.videoItem);
-                    NSLog(@"%@", self.videoInfoItem);
-                    NSLog(@"%@", self.statisticsItem);
-
                     break;
 
                 default:

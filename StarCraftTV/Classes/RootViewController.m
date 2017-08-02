@@ -77,7 +77,7 @@
     [super viewDidLoad];
     
     [self setConfigueHUD];
-    
+
     self.interstitial = [self createAndLoadInterstitial];
     [self performSelector:@selector(callMainAD) withObject:nil afterDelay:1.5f];
 }
@@ -114,7 +114,6 @@
 {
     self.mBannerView.adUnitID = @"ca-app-pub-4829113648689267/4925533053";
     self.mBannerView.rootViewController = self;
-
     
     GADRequest *request = [GADRequest request];
 //    request.testDevices = @[kGADSimulatorID];
