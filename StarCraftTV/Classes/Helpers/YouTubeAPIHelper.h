@@ -29,7 +29,6 @@ typedef void(^Completion)(BOOL success, NSError *error);
 
 
 - (id)init;
-- (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion;
 - (void)getListPlaylistItemsInChannel:(NSString *)idChannel atQueryString:(NSString*)str completion:(Completion)completion;
 - (void)getListVideoByKeySearch:(NSString *)key completion:(Completion)completion;

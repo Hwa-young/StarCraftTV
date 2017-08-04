@@ -42,6 +42,11 @@
 
 - (void)getObjectWith:(URLType)typeURL completion:(Completion)completion
 {
+    
+    NSLog(@"Call Youtube API URL : %@", self.url.absoluteString);
+    NSLog(@"Call Youtube API Params : %@", self.paramaters);
+    NSLog(@"Call Youtube API Type : %u", typeURL);
+
     AFHTTPSessionManager *managerSession = [AFHTTPSessionManager manager];
     [managerSession GET:self.url.absoluteString
              parameters:self.paramaters
@@ -120,32 +125,6 @@
                     completion(nil, error);
                 }];
     
-}
-
-- (void)getListVideoInChannel:(NSString *)idChannel completion:(Completion)completion
-{
-    
-    self.url = [NSURL URLWithString:kSearchURL];
-    
-    if ([self.paramaters objectForKey:@"channelId"])
-        self.paramaters[@"channelId"] = idChannel;
-    else
-        [self.paramaters setObject:idChannel forKey:@"channelId"];
-    
-    if (![self.keySearchOld isEqualToString:idChannel]) {
-        if ([self.paramaters objectForKey:@"pageToken"])
-            self.paramaters[@"pageToken"] = @"";
-        else
-            [self.paramaters setObject:@"" forKey:@"pageToken"];
-    }
-    else {
-        if ([self.paramaters objectForKey:@"pageToken"])
-            self.paramaters[@"pageToken"] = self.searchItem.nextPageToken;
-        else
-            [self.paramaters setObject:self.searchItem.nextPageToken forKey:@"pageToken"];
-    }
-    
-    [self getObjectWith:VIDEO completion:completion];
 }
 
 - (void)getListPlaylistInChannel:(NSString *)idChannel completion:(Completion)completion
