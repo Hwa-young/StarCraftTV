@@ -162,6 +162,41 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *tempItem = self.tableItem[indexPath.row];
+
+    YTTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:
+                                         cell.titleLabel.text];
+    [controller setVideoID:tempItem];
+
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self removeVideoID:indexPath];
+        
+        [self.tableItem removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+        
+        if([self.tableItem count] == 0)
+        {
+            [self.NoticeLabel setHidden:NO];
+            [self.tableView setHidden:YES];
+        }
+    }
+}
+
 - (NSString *)parseDuration:(NSString *)duration
 {
     if(!duration) return @"";
@@ -198,18 +233,26 @@
         return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)removeVideoID:(NSIndexPath *)indexPath
 {
-    NSString *tempItem = self.tableItem[indexPath.row];
+    if(!self.tableItem) return;
 
-    YTTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSMutableArray *array;
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"MYVIDEOS"])
+        array = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"MYVIDEOS"]];
+    else
+        array = [NSMutableArray array];
     
-    YoutubeViewController *controller = [[YoutubeViewController alloc] initWithNibName:@"YoutubeViewController" bundle:nil title:
-                                         cell.titleLabel.text];
-    [controller setVideoID:tempItem];
-
-    [self.navigationController pushViewController:controller animated:YES];
+    NSString *videoID = [self.tableItem objectAtIndex:indexPath.row];
+    
+    if ([array containsObject:videoID])
+    {
+        [array removeObjectAtIndex:indexPath.row];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"MYVIDEOS"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
+
 
 @end
