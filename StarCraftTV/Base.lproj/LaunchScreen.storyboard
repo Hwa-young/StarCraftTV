@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,12 +24,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LImages" translatesAutoresizingMaskIntoConstraints="NO" id="vQ5-BW-jtS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12d-QP-9Kd">
+                                <rect key="frame" x="10" y="587" width="355" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="GlK-wM-CkT"/>
+                                </constraints>
+                                <string key="text">©1998 Blizzard Entertainment, Inc. All rights reserved. StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Y8k-o4-NBg"/>
-                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cKe-5v-zWw"/>
-                            <constraint firstAttribute="trailing" secondItem="vQ5-BW-jtS" secondAttribute="trailing" id="th2-UA-aWS"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vQ5-BW-jtS" secondAttribute="bottom" id="xxf-7T-3fE"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vQ5-BW-jtS" secondAttribute="bottom" id="0W7-gV-eo1"/>
+                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="AI1-dD-Lt4"/>
+                            <constraint firstAttribute="trailing" secondItem="12d-QP-9Kd" secondAttribute="trailing" constant="10" id="Drb-6q-0pa"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="12d-QP-9Kd" secondAttribute="bottom" constant="10" id="T8j-D5-53e"/>
+                            <constraint firstItem="12d-QP-9Kd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="Yad-OJ-wKH"/>
+                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eQA-p5-5E7"/>
+                            <constraint firstAttribute="trailing" secondItem="vQ5-BW-jtS" secondAttribute="trailing" id="nd4-j8-anK"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

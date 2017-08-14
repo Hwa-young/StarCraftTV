@@ -93,10 +93,10 @@
     {
         self.dropNew = [[KPDropMenu alloc] initWithFrame:CGRectMake(0, 0, 375, 50)];
         self.dropNew.delegate = self;
-        self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"24강"];
+        self.dropNew.items = @[@"결승", @"4강", @"8강", @"16강", @"24강", @"32강"];
         self.dropNew.backgroundColor = [UIColor whiteColor];
         self.dropNew.title = @"토너먼트 ▼";
-        self.dropNew.titleColor = [UIColor redColor];
+        self.dropNew.titleColor = [UIColor colorWithRed:28.f/255.f green:30.f/255.f blue:27.f/255.f alpha:1.f];
         self.dropNew.itemsFont = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
         self.dropNew.titleTextAlignment = NSTextAlignmentCenter;
         self.dropNew.DirectionDown = YES;
@@ -180,6 +180,7 @@
             
             [self.tableItem addObjectsFromArray:self.youtubeAPI.searchItem.items];
             [self.tableView reloadData];
+            [self.tableView setContentOffset:CGPointZero animated:YES];
         }
         [SVProgressHUD dismiss];
         self.isLoading = NO;

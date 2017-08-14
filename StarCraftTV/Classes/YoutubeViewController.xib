@@ -39,7 +39,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="211" id="6vX-7z-vkU"/>
                         <constraint firstItem="SZf-Tp-3a3" firstAttribute="centerY" secondItem="0V3-Av-DFK" secondAttribute="centerY" id="89F-bD-CJQ"/>
@@ -59,7 +59,8 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Gb5-cW-gIQ" secondAttribute="bottom" id="1Fj-AN-Uwd"/>
                 <constraint firstAttribute="trailing" secondItem="0V3-Av-DFK" secondAttribute="trailing" id="BNN-Ro-RoQ"/>
@@ -73,7 +74,6 @@
                 <constraint firstAttribute="trailing" secondItem="Gb5-cW-gIQ" secondAttribute="trailing" id="nV5-GQ-roR"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>

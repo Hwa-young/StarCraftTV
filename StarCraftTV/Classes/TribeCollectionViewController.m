@@ -72,7 +72,7 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     self.dropMenu.backgroundColor = [UIColor whiteColor];
     self.dropMenu.title = NSLocalizedString(@"TRIBES", @"TRIBES");
     self.dropMenu.titleFontSize = 15.f;
-    self.dropMenu.titleColor = [UIColor redColor];
+    self.dropMenu.titleColor = [UIColor colorWithRed:28.f/255.f green:30.f/255.f blue:27.f/255.f alpha:1.f];
     self.dropMenu.itemsFont = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:14.0];
     self.dropMenu.titleTextAlignment = NSTextAlignmentCenter;
     self.dropMenu.DirectionDown = YES;
@@ -134,7 +134,7 @@ static NSString * const reuseIdentifier = @"TribeCollectionViewCell";
     TribeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.nameLabel.text = [_peopleList objectAtIndex:indexPath.row];
-    [cell.nameLabel setTextColor:[UIColor blackColor]];
+    [cell.nameLabel setTextColor:[UIColor colorWithRed:28.f/255.f green:30.f/255.f blue:27.f/255.f alpha:1.f]];
     
     return cell;
 }

@@ -71,7 +71,7 @@
         [cell setBackgroundColor:[UIColor clearColor]];
         
         [cell.textLabel setText:[self.menuArray objectAtIndex:indexPath.row]];
-        [cell.textLabel setTextColor:[UIColor blackColor]];
+        [cell.textLabel setTextColor:[UIColor colorWithRed:28.f/255.f green:30.f/255.f blue:27.f/255.f alpha:1.f]];
         if([cell.textLabel.text isEqualToString:NSLocalizedString(@"VERSION", @"VERSION")])
             [cell.detailTextLabel setText:@"1.0.0"];
     }

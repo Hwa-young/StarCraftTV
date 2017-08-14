@@ -62,7 +62,7 @@
         [self.navigationController.toolbar addSubview:self.mBannerView];
         
         // Title
-        [self.navigationItem setTitle:@"SC TV"];
+        [self.navigationItem setTitle:@"StarCraft TV"];
         [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:21], NSFontAttributeName, nil]];
 
         [self loadADdata];
