@@ -74,6 +74,8 @@
 		2BAE29E81EFA64BC0018B0D0 /* SKSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E11EFA64BC0018B0D0 /* SKSTableView.m */; };
 		2BAE29E91EFA64BC0018B0D0 /* SKSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */; };
 		2BAE29EA1EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */; };
+		2BB250341F42BF3E00DB428D /* icons8-mainLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB250331F42BF3E00DB428D /* icons8-mainLogo@2x.png */; };
+		2BB250361F42C75200DB428D /* icon8-mainTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB250351F42C75200DB428D /* icon8-mainTV@2x.png */; };
 		2BBEC3871F04967E0006F738 /* YTContentDetailsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC3861F04967E0006F738 /* YTContentDetailsItem.m */; };
 		2BD0C0241F18B82600666174 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C0221F18B82600666174 /* Localizable.strings */; };
 		2BD4FB7F1EF372F40083143A /* icons8-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */; };
@@ -209,6 +211,8 @@
 		2BAE29E31EFA64BC0018B0D0 /* SKSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCell.m; sourceTree = "<group>"; };
 		2BAE29E41EFA64BC0018B0D0 /* SKSTableViewCellIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSTableViewCellIndicator.h; sourceTree = "<group>"; };
 		2BAE29E51EFA64BC0018B0D0 /* SKSTableViewCellIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSTableViewCellIndicator.m; sourceTree = "<group>"; };
+		2BB250331F42BF3E00DB428D /* icons8-mainLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-mainLogo@2x.png"; sourceTree = "<group>"; };
+		2BB250351F42C75200DB428D /* icon8-mainTV@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon8-mainTV@2x.png"; sourceTree = "<group>"; };
 		2BBEC3851F04967E0006F738 /* YTContentDetailsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTContentDetailsItem.h; sourceTree = "<group>"; };
 		2BBEC3861F04967E0006F738 /* YTContentDetailsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTContentDetailsItem.m; sourceTree = "<group>"; };
 		2BD0C0201F18B80000666174 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 		2B0D3BBE1ED53F33008FFC17 /* icons@2x */ = {
 			isa = PBXGroup;
 			children = (
+				2BB250351F42C75200DB428D /* icon8-mainTV@2x.png */,
+				2BB250331F42BF3E00DB428D /* icons8-mainLogo@2x.png */,
 				2B6534161F27128600B725A4 /* icons8-bookmark_ribbon_filled@2x.png */,
 				2BD4FB7E1EF372F40083143A /* icons8-logo@2x.png */,
 				2BDF20451ED586040078952D /* icons8-circled_play_filled@2x.png */,
@@ -714,6 +720,7 @@
 				2B8416BE1F206DB800474029 /* Assets.xcassets in Resources */,
 				2B0D3BCB1ED53F33008FFC17 /* icons8-menu@2x.png in Resources */,
 				2B0D3BCA1ED53F33008FFC17 /* icons8-info@2x.png in Resources */,
+				2BB250361F42C75200DB428D /* icon8-mainTV@2x.png in Resources */,
 				2BD0C0241F18B82600666174 /* Localizable.strings in Resources */,
 				2BFDD32B1F009A2500667865 /* Pods-StarCraftTV-acknowledgements.plist in Resources */,
 				2B540C431ED272A2000A9879 /* LaunchScreen.storyboard in Resources */,
@@ -726,6 +733,7 @@
 				2BDF20461ED586040078952D /* icons8-circled_play_filled@2x.png in Resources */,
 				2BAE29E61EFA64BC0018B0D0 /* expandableImage.png in Resources */,
 				2B80DD1D1F03433900D45D0A /* CommonWebViewController.xib in Resources */,
+				2BB250341F42BF3E00DB428D /* icons8-mainLogo@2x.png in Resources */,
 				2B2702A51F0F831E000AF6B6 /* boot_mod.json in Resources */,
 				2B7BB3B61ED3D7CE00913D5C /* GoogleService-Info.plist in Resources */,
 				2BDF20441ED562870078952D /* YoutubeViewController.xib in Resources */,
@@ -993,7 +1001,6 @@
 			baseConfigurationReference = 3E04D4E6637C9DA116AA7899 /* Pods-StarCraftTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
 				CODE_SIGN_ENTITLEMENTS = StarCraftTV/development.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
@@ -1008,7 +1015,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "822205b3-4226-49c6-aa2f-4505d62d06ae";
+				PROVISIONING_PROFILE = "87ae1571-825b-4507-9e7c-eba6ce80bc97";
 				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Developement KeyChain";
 			};
 			name = Debug;
@@ -1018,10 +1025,9 @@
 			baseConfigurationReference = F9AD7CCBBC50E9E293323C5C /* Pods-StarCraftTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LImages;
 				CODE_SIGN_ENTITLEMENTS = StarCraftTV/production.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
@@ -1032,8 +1038,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "822205b3-4226-49c6-aa2f-4505d62d06ae";
-				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Developement KeyChain";
+				PROVISIONING_PROFILE = "13db4718-2e00-4648-9cf9-97e7453acfe7";
+				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Distribution KeyChain";
 			};
 			name = Release;
 		};

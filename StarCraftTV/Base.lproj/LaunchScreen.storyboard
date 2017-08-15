@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,28 +22,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LImages" translatesAutoresizingMaskIntoConstraints="NO" id="vQ5-BW-jtS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12d-QP-9Kd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="12d-QP-9Kd">
                                 <rect key="frame" x="10" y="587" width="355" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="GlK-wM-CkT"/>
+                                    <constraint firstAttribute="height" constant="70" id="dkm-ir-kIa"/>
                                 </constraints>
                                 <string key="text">©1998 Blizzard Entertainment, Inc. All rights reserved. StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</string>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon8-mainTV.png" translatesAutoresizingMaskIntoConstraints="NO" id="fkJ-Sh-mrv">
+                                <rect key="frame" x="155" y="301" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="d2o-Nz-zE5"/>
+                                    <constraint firstAttribute="width" constant="64" id="pHG-qn-7ht"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-mainLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="em4-bY-DpI">
+                                <rect key="frame" x="18" y="183" width="340" height="85"/>
+                            </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.11764705882352941" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vQ5-BW-jtS" secondAttribute="bottom" id="0W7-gV-eo1"/>
-                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="AI1-dD-Lt4"/>
-                            <constraint firstAttribute="trailing" secondItem="12d-QP-9Kd" secondAttribute="trailing" constant="10" id="Drb-6q-0pa"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="12d-QP-9Kd" secondAttribute="bottom" constant="10" id="T8j-D5-53e"/>
-                            <constraint firstItem="12d-QP-9Kd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="Yad-OJ-wKH"/>
-                            <constraint firstItem="vQ5-BW-jtS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eQA-p5-5E7"/>
-                            <constraint firstAttribute="trailing" secondItem="vQ5-BW-jtS" secondAttribute="trailing" id="nd4-j8-anK"/>
+                            <constraint firstItem="fkJ-Sh-mrv" firstAttribute="top" secondItem="em4-bY-DpI" secondAttribute="bottom" constant="33" id="72d-P8-hXG"/>
+                            <constraint firstItem="fkJ-Sh-mrv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7bb-fW-NvB"/>
+                            <constraint firstItem="fkJ-Sh-mrv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SSx-CY-LJb"/>
+                            <constraint firstItem="fkJ-Sh-mrv" firstAttribute="centerX" secondItem="12d-QP-9Kd" secondAttribute="centerX" id="dAF-lU-m77"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="12d-QP-9Kd" secondAttribute="bottom" constant="10" id="eEZ-Dq-LSg"/>
+                            <constraint firstItem="em4-bY-DpI" firstAttribute="centerX" secondItem="12d-QP-9Kd" secondAttribute="centerX" id="jEY-Wh-bjt"/>
+                            <constraint firstItem="12d-QP-9Kd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-6" id="py5-Zd-lzQ"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -53,6 +63,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LImages" width="16" height="16"/>
+        <image name="icon8-mainTV.png" width="150" height="150"/>
+        <image name="icons8-mainLogo.png" width="340" height="85"/>
     </resources>
 </document>

@@ -100,6 +100,8 @@
 {
     NSLog(@"interstitialDidDismissScreen");
     self.interstitial = [self createAndLoadInterstitial];
+    
+    [self updateFocusIfNeeded];
 }
 
 - (void)callMainAD
