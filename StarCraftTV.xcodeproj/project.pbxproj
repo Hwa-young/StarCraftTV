@@ -1003,7 +1003,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = StarCraftTV/development.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hwa-young Ko (JHMUACT3YE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				ENABLE_BITCODE = NO;
@@ -1015,7 +1015,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.starcraft.tv.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "87ae1571-825b-4507-9e7c-eba6ce80bc97";
+				PROVISIONING_PROFILE = "197f24a4-a08f-4013-b8f2-4ec4477b6f00";
 				PROVISIONING_PROFILE_SPECIFIER = "StarCraftTV Developement KeyChain";
 			};
 			name = Debug;
@@ -1027,7 +1027,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = StarCraftTV/production.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hwa-young Ko (W8X5QUVR2D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = W8X5QUVR2D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StarCraftTV/Info.plist;
