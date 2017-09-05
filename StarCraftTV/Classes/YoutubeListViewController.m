@@ -75,11 +75,18 @@
 -(void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    
-    CGRect rect = [self.view frame];
-    rect.size.height -= HEIGHT_BANNER;
 
-    [self.view setFrame:rect];
+    if(IS_OS_11_OR_LATER)
+    {
+        NSLog(@"Version 11");
+    }
+    else
+    {
+        NSLog(@"Version 11 NOT !!!!");
+//        CGRect rect = [self.view frame];
+//        rect.size.height -= HEIGHT_BANNER;
+//        [self.view setFrame:rect];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

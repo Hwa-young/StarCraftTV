@@ -27,7 +27,6 @@ static inline CGFloat AACStatusBarHeight(UIViewController *viewController)
 
     CGSize  statusBarSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = MIN(statusBarSize.width, statusBarSize.height);
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIView *view = viewController.view;
     CGRect frame = [view.superview convertRect:view.frame toView:view.window];

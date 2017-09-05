@@ -36,6 +36,7 @@
 
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-4829113648689267~3448799853"];
     
+    [FIRConfiguration.sharedInstance setLoggerLevel:FIRLoggerLevelDebug];
     [FIRApp configure];
     
     // Fabric Start
